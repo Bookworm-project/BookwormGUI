@@ -1170,8 +1170,8 @@ $(document).ready(function(){
               }
             }
           }
-		      // var slug = opt['name'] + ': ' + sname.join(', ');
-		      var slug = sname.join(', ');
+		      var slug = opt['name'] + ': ' + sname.join(', ');
+		      //var slug = sname.join(', ');
 		      slugs.push(slug);
 		    }
 	    });
