@@ -766,9 +766,7 @@ $(document).ready(function(){
 	  //extract series from DB returns
 	  var series = [];
     var myt =  $('#time_measure').val();
-    if (time_array.length == 1) {
-        myt = "month";
-    }
+
     var xtype = "datetime";
     if (myt == "author_age") {
       xtype = "linear";
@@ -783,7 +781,7 @@ $(document).ready(function(){
 	    });
 	    _.each(years, function(year){
         var datestr;
-        if (myt == "month") {
+        if (myt == "date_month") {
 		      var date = getDate(year);
 		      var opts = {
 		        n: i,
