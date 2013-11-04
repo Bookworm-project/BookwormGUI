@@ -766,7 +766,9 @@ $(document).ready(function(){
 	  //extract series from DB returns
 	  var series = [];
     var myt =  $('#time_measure').val();
-
+    if (time_array.length == 1) {
+        myt = "date_month";
+    }
     var xtype = "datetime";
     if (myt == "author_age") {
       xtype = "linear";
