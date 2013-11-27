@@ -530,19 +530,16 @@ $(document).ready(function(){
     // return fixGroupSelect();
   };  
 
-  fixTime = function() {
-    var v = $('#year-slider').slider('values');
-    if (time_array[0]['dbfield'] == "date_month" || time_array[0]['dbfield'] == "month") {
-      $('#time-val').text("" + getDate(v[0]).toDateString().substring(3) + " - " + getDate(v[1]).toDateString().substring(3));
-    }
-    else if (time_array[0]['dbfield'] == "date_year" || time_array[0]['dbfield'] == "year") {
-      $('#time-val').text("" + v[0] + " - " + v[1]);
-    }
-
-    else {
-      $('#time-val').text("" + v[0] + " - " + v[1] + "");
-    } 
-  } 
+	fixTime = function() {
+		var v = $('#year-slider').slider('values');
+		var t = $('#time_measure').val();
+		if (t == "date_month") {
+		  $('#time-val').text("" + getDate(v[0]).toDateString().substring(3) + " - " + getDate(v[1]).toDateString().substring(3));
+		}
+		else {
+          $('#time-val').text("" + v[0] + " - " + v[1]);
+        }	
+     }
   
   // delete a row
   
