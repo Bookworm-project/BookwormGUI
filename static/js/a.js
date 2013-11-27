@@ -531,14 +531,14 @@ $(document).ready(function(){
   };  
 
   fixTime = function() {
-    //var v = time_array[0]['initial'];
     var v = $('#year-slider').slider('values');
-    if (time_array[0]['dbfield'] == "date_year" || time_array[0]['dbfield'] == "year") {
-      $('#time-val').text("" + v[0] + " - " + v[1]);
-    }
-    else if (time_array[0]['dbfield'] == "date_month" || time_array[0]['dbfield'] == "month") {
+    if (time_array[0]['dbfield'] == "date_month" || time_array[0]['dbfield'] == "month") {
       $('#time-val').text("" + getDate(v[0]).toDateString().substring(3) + " - " + getDate(v[1]).toDateString().substring(3));
     }
+    else if (time_array[0]['dbfield'] == "date_year" || time_array[0]['dbfield'] == "year") {
+      $('#time-val').text("" + v[0] + " - " + v[1]);
+    }
+
     else {
       $('#time-val').text("" + v[0] + " - " + v[1] + "");
     } 
