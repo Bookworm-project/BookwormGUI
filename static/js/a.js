@@ -625,7 +625,9 @@ $(document).ready(function() {
             _.each(years, function(year) {
                 var datestr;
                 if (myt == "date_month" || myt == "month") {
-                    var date = getDate(year);
+                    //var date = getDate(year);
+		    var date = new Date()
+		    date.setFullYear(1,0,year);
                     var date_parts = date.toDateString().substring(4).split(' ');
                     var date_str_clean = date_parts[0] + ' ' + date_parts[2];
                     var opts = {
