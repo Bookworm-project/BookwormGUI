@@ -881,10 +881,10 @@
       } else {
         page = parseInt(v);
       }
-      $(".book-list").html("<ul></ul>");
+      $(".book-list").html("<table></table>");
       i = (page - 1) * 10;
       while (i < Math.min(page * 10, bookLinks.length)) {
-        $(".book-list ul").append(bookLinks[i]);
+        $(".book-list table").append(bookLinks[i]);
         i++;
       }
       $(".active", "#books").removeClass("active");
