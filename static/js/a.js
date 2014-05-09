@@ -27,7 +27,7 @@
       return renderChart();
     };
     $.ajax({
-      url: "static/arxiv.json",
+      url: "static/options.json",
       dataType: "json",
       success: function(response) {
         options = response;
