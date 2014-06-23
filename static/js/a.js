@@ -94,9 +94,12 @@
       fixSlugs();
     };
     $("#search_queries").on("click", ".box_plus", function(event) {
-      var row;
-      row = $(this).parents(".search-row").data("row");
+      var row = $(this).parents(".search-row").data("row");
       addRow(true, row);
+      // Since default removequery box color was set to black, change it to red if there is more than 1.
+      if ($('span.removequery i').length > 1) {
+            $('span.removequery i').css('color', '#DF0101');
+        }
     });
     addRow = function(copy, row) {
       var last_cat, last_cats, newCatBox, newRow, new_cat, prevterm, rowHTML, searchRow;
@@ -396,9 +399,11 @@
         $("#time-val").text("" + v[0] + " - " + v[1]);
       }
     };
+    // set all 'removequery' boxes to black by default -- then the logic below (and the logic for onclick of .box_plus) will set the right color.
+    $('span.removequery i').css('color', 'black');
     // delete a row
     $('#search_queries').on('click', '.box_x', function(event) {
-        // Don't delete box if there is only 1.
+        // Don't delete box if only 1
         var num_el_rows = $('tr.search-row').length;
         if(num_el_rows > 1){
             var row = $(this).parents('tr.search-row').data('row');
@@ -408,8 +413,14 @@
             // fix UI elements
             fixAddButton();
             popups = _(popups).without('#edit_box_' + row);
+            if ($('tr.search-row').length == 1) {
+                $('span.removequery i').css('color', 'black');
+            } else {
+                $('span.removequery i').css('color', '#DF0101');
+            }
         }
     });
+    
     getDate = function(intval) {
       var minDate;
       minDate = new Date();
