@@ -396,13 +396,19 @@
         $("#time-val").text("" + v[0] + " - " + v[1]);
       }
     };
-    $("#search_queries").on("click", ".box_x", function(event) {
-      var popups, row;
-      row = $(this).parents("tr.search-row").data("row");
-      $("#edit_box_" + row).remove();
-      $(this).parents("tr.search-row").remove();
-      fixAddButton();
-      popups = _(popups).without("#edit_box_" + row);
+    // delete a row
+    $('#search_queries').on('click', '.box_x', function(event) {
+        // Don't delete box if there is only 1.
+        var num_el_rows = $('tr.search-row').length;
+        if(num_el_rows > 1){
+            var row = $(this).parents('tr.search-row').data('row');
+            // remove corresponding edit box
+            $('#edit_box_' + row).remove();
+            $(this).parents('tr.search-row').remove();
+            // fix UI elements
+            fixAddButton();
+            popups = _(popups).without('#edit_box_' + row);
+        }
     });
     getDate = function(intval) {
       var minDate;
