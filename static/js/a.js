@@ -553,21 +553,24 @@
         },
         dataType: "html",
         success: function(response) {
-          var res;
+          var res;//slugQuery;
           res = response.split("===RESULT===")[1];
           data = eval(res);
+	  slugQuery = JSON.parse(JSON.stringify(query))
+	  delete slugQuery['time_measure'];
+	  delete slugQuery['time_limits']
+	  slugQuery['groups'] = ['date_year'];
+	  console.log(slugQuery);
           $.ajax({
             context: "#search_queries",
             url: "/cgi-bin/dbbindings.py",
             data: {
-              method: "return_slug_data",
-              queryTerms: JSON.stringify(query)
+              method: "return_json",
+              queryTerms: JSON.stringify(slugQuery)
             },
             dataType: "html",
             success: function(response) {
-              var actual_string;
-              actual_string = response.split("===RESULT===")[1];
-              cts = eval(actual_string);
+              cts = JSON.parse(response);
               renderChart();
             }
           });
