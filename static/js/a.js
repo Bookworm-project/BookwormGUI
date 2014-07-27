@@ -553,6 +553,7 @@
         },
         dataType: "html",
         success: function(response) {
+	  var slugQuery;
           data = JSON.parse(response);
 	  slugQuery = JSON.parse(JSON.stringify(query))
 	  slugQuery['groups'] = []
@@ -560,7 +561,6 @@
 	      delete limit['word'];
 	  })
 	  slugQuery['counttype'] = ['TextCount','WordCount']
-	  console.log(slugQuery)
           $.ajax({
             context: "#search_queries",
             url: "/cgi-bin/dbbindings.py",
@@ -571,7 +571,6 @@
             dataType: "html",
             success: function(response) {
 	      cts = JSON.parse(response);
-	      console.log(cts)
               renderChart();
             }
           });
@@ -613,7 +612,6 @@
       var chart, myt, q, series, xAxisLabel, xtype, yAxisLabel, year_span;
       q = $("a.box_data");
       q = q.slice(0, q.length - 1);
-      console.log(JSON.stringify(cts))
       q = _.map(q, function(el, i) {
         var a, aa, pw, s;
         s = $(el).html();
