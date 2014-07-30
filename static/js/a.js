@@ -2,7 +2,7 @@
 (function() {
 
   $(document).ready(function() {
-    var addCommas, addRow, buildQuery, colors, cts, data, doneResizing, firstQuery, fixAddButton, fixColors, fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, getSmoothing, hexColors, hidePopups, initializeSelectBoxes, lazyround, maxTime, metadata, minTime, n_pages, newEditBox, newSliders, numToReadText, options, page, permQuery, popup_imgs, popups, renderChart, resizing, rows, runQuery, search_button, showBooks, time_array, toggler, validateQuery, year_option;
+    var addCommas, addRow, buildQuery, colors, cts, data, doneResizing, firstQuery, fixAddButton, fixColors, fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, getSmoothing, hexColors, hidePopups, initializeSelectBoxes, lazyround, maxTime, metadata, minTime, n_pages, newEditBox, newSliders, numToReadText, options, page, permQuery, popup_imgs, popups, renderChart, resizing, rows, runQuery, search_button, showBooks, time_array, toggler, validateQuery, year_option,bookLinks;
     rows = 0;
     data = [];
     cts = [];
@@ -830,7 +830,7 @@
           queryTerms: JSON.stringify(query)
         },
         success: function(response) {
-          var bookLinks, cat_link, dataArray, i, linkData, n_pages, page, read_link, row, _k, _len3, _ref;
+          var cat_link, dataArray, i, linkData, n_pages, page, read_link, row, _k, _len3, _ref;
           cat_link = void 0;
           dataArray = void 0;
           i = void 0;
