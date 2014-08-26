@@ -36,6 +36,18 @@
       }
     });
     getHash = function() {
+
+      var translateOldCounttypes = function(term) {
+	  //some back-compatability for old versions of this browser.
+	  var translations = {
+	      "Occurrences_per_Million_Words":"WordsPerMillion",
+	      "Number_of_Words":"WordCount",
+	      "Percentage_of_Texts":"TextPercent",
+	      "Number_of_Books":"TextCount"
+	  }
+	  if (typeof(translations[term])!="undefined") {return translations[term]}
+	  return term
+      }
       var def, link, ps;
       link = $.URLDecode(window.location.href.split("?")[1]);
       if (link) {
@@ -47,10 +59,11 @@
             ps[key] = def[key];
           }
         });
-        return ps;
       } else {
-        return options["default_search"][Math.floor(Math.random() * options["default_search"].length)];
+	ps = options["default_search"][Math.floor(Math.random() * options["default_search"].length)];
       }
+        ps['counttype'] = translateOldCounttypes(ps['counttype'])
+        return ps;
     };
     firstQuery = function() {
       var params, search_limits;
@@ -70,10 +83,10 @@
       });
       initializeSelectBoxes();
       newSliders();
-      $(".btn", "#colltype").filter(function(i, v) {
+      $(".btn", "#collationtype").filter(function(i, v) {
         return $(v).data("val") === params["words_collation"];
       }).addClass("active");
-      $(".btn", "#collationtype").filter(function(i, v) {
+      $(".btn", "#counttype").filter(function(i, v) {
         return $(v).data("val") === params["counttype"];
       }).addClass("active");
       $("#year-slider").slider("values", params["time_limits"]);
@@ -465,8 +478,8 @@
       }
       query = {
         groups: [time_measure],
-        counttype: $(".active", "#collationtype").data("val"),
-        words_collation: $(".active", "#colltype").data("val"),
+        counttype: $(".active", "#counttype").data("val"),
+        words_collation: $(".active", "#collationtype").data("val"),
         database: options["settings"]["dbname"]
       };
       limits = [];
@@ -509,6 +522,7 @@
         i++;
       }
       query["search_limits"] = limits;
+      query["method"] = "return_json"	
       return query;
     };
     addCommas = function(str) {
@@ -548,8 +562,7 @@
       $.ajax({
         url: "/cgi-bin/dbbindings.py",
         data: {
-          method: "return_json",
-          queryTerms: JSON.stringify(query)
+          query: JSON.stringify(query)
         },
         dataType: "html",
         success: function(response) {
@@ -560,18 +573,15 @@
 	      delete limit['word'];
 	  })
 	  slugQuery['counttype'] = ['TextCount','WordCount']
-	  console.log(slugQuery)
           $.ajax({
             context: "#search_queries",
             url: "/cgi-bin/dbbindings.py",
             data: {
-              method: "return_json",
-              queryTerms: JSON.stringify(slugQuery)
+              query: JSON.stringify(slugQuery)
             },
             dataType: "html",
             success: function(response) {
 	      cts = JSON.parse(response);
-	      console.log(cts)
               renderChart();
             }
           });
@@ -608,12 +618,11 @@
       }
     };
     renderChart = function() {
-      //This is a bad way of doing it, but I don't know a better one.
+	//is this variable initialized somewhere else?
       query = buildQuery()
       var chart, myt, q, series, xAxisLabel, xtype, yAxisLabel, year_span;
       q = $("a.box_data");
       q = q.slice(0, q.length - 1);
-      console.log(JSON.stringify(cts))
       q = _.map(q, function(el, i) {
         var a, aa, pw, s;
         s = $(el).html();
@@ -644,7 +653,12 @@
       year_span = _.range($("#year-slider").slider("values", 0), $("#year-slider").slider("values", 1)); // +1
       _(data).each(function(s, i) {
         var sdata, serie, vals, years,groupName,smoothingSpan;
-        vals = s
+	  vals = {}
+	  _.keys(s).forEach(function(key) {
+	      vals[String(parseInt(key))] = s[key]
+	  })
+
+	
 	var smoothingSpan = getSmoothing($("#smoothing-slider").slider("value"))
 	if (smoothingSpan>0) {
 	    vals = smooth(vals,smoothingSpan)
@@ -654,8 +668,9 @@
 	if (typeof(query) != "undefined") {
 	  groupName = query['search_limits'][i]['word'].join(", ")
 	}
+
         years = _.filter(year_span, function(year) {
-          return vals.hasOwnProperty(year);
+          return vals.hasOwnProperty(year)
         });
         _.each(years, function(year) {
           var date, date_parts, date_str_clean, datestr, opts;
@@ -706,7 +721,7 @@
         series.push(serie);
       });
       xAxisLabel = year_option["name"];
-      yAxisLabel = $(".active", "#collationtype").data("label");
+      yAxisLabel = $(".active", "#counttype").data("label");
       chart = new Highcharts.Chart({
         chart: {
           renderTo: "chart",
@@ -840,12 +855,12 @@
       query = buildQuery();
       query["search_limits"] = [query["search_limits"][event.point.opts["n"]]];
       query["search_limits"][0][query["groups"]] = [event.point.opts["t"]];
+      query["method"] = "return_books"
       return $.ajax({
         url: "/cgi-bin/dbbindings.py",
         type: "post",
         data: {
-          method: "return_books",
-          queryTerms: JSON.stringify(query)
+          query: JSON.stringify(query)
         },
         success: function(response) {
           var cat_link, dataArray, i, linkData, n_pages, page, read_link, row, _k, _len3, _ref;
@@ -858,8 +873,8 @@
           _k = void 0;
           _len3 = void 0;
           _ref = void 0;
-          response = response.split("===RESULT===")[1];
-          dataArray = eval(eval(response)[0]);
+          response = JSON.parse(response)
+          dataArray = response
           bookLinks = [];
           _k = 0;
           _len3 = dataArray.length;
@@ -1092,4 +1107,4 @@ var smooth = function(data,span) {
     return output
 }
 
-out = smooth(data[0],1)
+
