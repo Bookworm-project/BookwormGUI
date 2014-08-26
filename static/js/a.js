@@ -566,6 +566,7 @@
         },
         dataType: "html",
         success: function(response) {
+	  var slugQuery;
           data = JSON.parse(response);
 	  slugQuery = JSON.parse(JSON.stringify(query))
 	  slugQuery['groups'] = []
