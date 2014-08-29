@@ -566,8 +566,9 @@
         },
         dataType: "html",
         success: function(response) {
+	  newSliders()
 	  var slugQuery;
-          data = JSON.parse(response);
+          data = JSON.parse(response.replace(/.*RESULT===/,""))
 	  slugQuery = JSON.parse(JSON.stringify(query))
 	  slugQuery['groups'] = []
 	  _.forEach(slugQuery['search_limits'],function(limit) {
@@ -575,7 +576,7 @@
 	  })
 	  slugQuery['counttype'] = ['TextCount','WordCount']
           $.ajax({
-            context: "#search_queries",
+              context: "#search_queries",
             url: "/cgi-bin/dbbindings.py",
             data: {
               query: JSON.stringify(slugQuery)
@@ -676,7 +677,7 @@
         _.each(years, function(year) {
           var date, date_parts, date_str_clean, datestr, opts;
           datestr = void 0;
-          if (myt === "date_month" || myt === "month") {
+          if (/(month|day|week)(_.*)?$/.test(myt)) {
             date = getDate(year);
             date_parts = date.toDateString().substring(4).split(" ");
             date_str_clean = date_parts[0] + " " + date_parts[2];
@@ -690,7 +691,7 @@
               y: parseFloat(vals[year]),
               opts: opts
             });
-          } else if (myt === "date_year" || myt === "year") {
+          } else if (/year(_.*)?$/.test(myt)) {
             opts = {
               n: i,
               t: year,
@@ -707,8 +708,10 @@
               t: year,
               str: year
             };
+	    d = new Date()
+	    d.setUTCFullYear(year)
             sdata.push({
-              x: Date.UTC(year, 0, 1),
+              x: d,
               y: parseFloat(vals[year]),
               opts: opts
             });
@@ -874,8 +877,8 @@
           _k = void 0;
           _len3 = void 0;
           _ref = void 0;
-          response = JSON.parse(response)
-          dataArray = response
+          dataArray = JSON.parse(response.replace(/.*RESULT===/,""))
+
           bookLinks = [];
           _k = 0;
           _len3 = dataArray.length;
