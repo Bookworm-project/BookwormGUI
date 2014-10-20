@@ -31,7 +31,7 @@
       dataType: "json",
       success: function(response) {
         options = response;
-        firstQuery();
+          firstQuery();
         runQuery();
       }
     });
@@ -562,9 +562,7 @@
       $.ajax({
         url: "/cgi-bin/dbbindings.py",
         data: {
-          query: JSON.stringify(query),
-	    //back-compatability--remove at some point.
-	    queryTerms: JSON.stringify(query)
+          query: JSON.stringify(query)
         },
         dataType: "html",
         success: function(response) {
@@ -581,9 +579,7 @@
               context: "#search_queries",
             url: "/cgi-bin/dbbindings.py",
             data: {
-              query: JSON.stringify(slugQuery),
-	    //back-compatability--remove at some point.
-		queryTerms: JSON.stringify(query)
+              query: JSON.stringify(slugQuery)
             },
             dataType: "html",
             success: function(response) {
@@ -868,9 +864,7 @@
         url: "/cgi-bin/dbbindings.py",
         type: "post",
         data: {
-          query: JSON.stringify(query),
-	    //back-compatability--remove at some point.
-	    queryTerms: JSON.stringify(query)
+          query: JSON.stringify(query)
         },
         success: function(response) {
           var cat_link, dataArray, i, linkData, n_pages, page, read_link, row, _k, _len3, _ref;
@@ -884,10 +878,7 @@
           _len3 = void 0;
           _ref = void 0;
           dataArray = JSON.parse(response.replace(/.*RESULT===/,""))
-	  //back-compatability--remove at some point.
-	    if (dataArray[0].match(/^\["/)) {
-		dataArray=JSON.parse(dataArray[0])
-	    }
+
           bookLinks = [];
           _k = 0;
           _len3 = dataArray.length;
