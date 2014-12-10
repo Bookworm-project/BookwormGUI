@@ -228,21 +228,21 @@
     <tr><td></td><td width=210px><p id=time-val style="width: 210px"></p></td></tr>
     <tr><td>
     <!-- So the count type is called 'collation type', and the collation type is called 'count type'? -->
-    <label for=collationtype>Quantity:</label></td>
+    <label for=counttype>Quantity:</label></td>
       <td>
     <!--Somewhere along the way, we lost the scripts to allow multiple year selections. That should be returned.-->
-    <div class="btn-group" data-toggle='buttons-radio' id='collationtype'>
-      <button class="btn btn-small" data-val='Occurrences_per_Million_Words' data-label='Words per Million'>% of words</button>
-      <button class="btn btn-small" data-val='Percentage_of_Books' data-label='% of Texts'><div id=countName1></div></button>
-      <button class="btn btn-small" data-val='Raw_Counts' data-label='Number of Words'>word count</button>
-      <button class="btn btn-small" data-val='Number_of_Books' data-label='Number of Texts'><div id=countName2></div></button>
+    <div class="btn-group" data-toggle='buttons-radio' id='counttype'>
+      <button class="btn btn-small" data-val='WordsPerMillion' data-label='Words per Million'>% of words</button>
+      <button class="btn btn-small" data-val='TextPercent' data-label='% of Texts'><div id=countName1></div></button>
+      <button class="btn btn-small" data-val='WordCount' data-label='Number of Words'>word count</button>
+      <button class="btn btn-small" data-val='TextCount' data-label='Number of Texts'><div id=countName2></div></button>
     </div>
       </td>
     </tr>
     <tr><td>
-    <label for=counttype>Case:</label></td>
+    <label for=collationtype>Case:</label></td>
       <td width=375px>
-    <div class="btn-group" data-toggle='buttons-radio' id='colltype'>
+    <div class="btn-group" data-toggle='buttons-radio' id='collationtype'>
       <button class="btn btn-mini btn-primary" data-val=Case_Sensitive>Sensitive</button>
       <button class="btn btn-mini btn-primary" data-val=Case_Insensitive>Insensitive</button>
     </div>
