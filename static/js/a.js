@@ -33,7 +33,8 @@
         options = response;
           firstQuery();
         runQuery();
-      }
+      },
+      error:function(exception){console.log('Exception:'+exception);}
     });
     getHash = function() {
 
@@ -585,9 +586,11 @@
             success: function(response) {
 	      cts = JSON.parse(response);
               renderChart();
-            }
+            },
+            error:function(exception){console.log('Exception:'+exception);}
           });
-        }
+        },
+        error:function(exception){console.log('Exception:'+exception);}
       });
     };
     minTime = function() {
@@ -914,7 +917,8 @@
           $(".pagination a", "#books").filter(function(i, v) {
             return i === page;
           }).parent("li").addClass("active");
-        }
+        },
+        error:function(exception){console.log('Exception:'+exception);}
       });
     };
     page = 0;
