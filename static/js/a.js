@@ -262,7 +262,7 @@
         $(editBox).css("top", newTop).css("left", newLeft);
       });
     };
-    search_button = "<button class='btn btn-primary search-btn'>Search</button>";
+    search_button = "<button class='btn btn-primary search-btn' rel='tooltip' title='Search the corpus!'>Search</button>";
     fixAddButton = function() {
       $(".add-td").html("");
       $("#search_queries tr.search-row:last td.add-td").html(search_button);
@@ -1037,11 +1037,12 @@
               }
               _j++;
             }
-            slug = opt["name"] + ": " + sname.join(", ");
-            slugs.push(slug);
+            slug = opt["name"] + ": " + sname.join(" | ");
+            slug_wrapped = "( "+slug+" )";
+            slugs.push(slug_wrapped);
           }
         });
-        meta_text = (slugs.length !== 0 ? slugs.join(" | ") : "All " + options["settings"]["itemName"] + "s");
+        meta_text = (slugs.length !== 0 ? slugs.join(" & ") : "All " + options["settings"]["itemName"] + "s");
         $(v).find(".box_data").html(meta_text);
       });
     };
