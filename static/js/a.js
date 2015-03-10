@@ -1037,12 +1037,12 @@
               }
               _j++;
             }
-            slug = opt["name"] + ": " + sname.join(" | ");
+            slug = opt["name"] + ": " + sname.join(" OR ");
             slug_wrapped = "( "+slug+" )";
             slugs.push(slug_wrapped);
           }
         });
-        meta_text = (slugs.length !== 0 ? slugs.join(" & ") : "All " + options["settings"]["itemName"] + "s");
+        meta_text = (slugs.length !== 0 ? slugs.join(" AND ") : "All " + options["settings"]["itemName"] + "s");
         $(v).find(".box_data").html(meta_text);
       });
     };
