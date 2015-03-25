@@ -30,10 +30,4 @@ function updateTwitterValues(share_url, title) {
 			twttr.widgets.load();                });
 	});
 
-	var request = gapi.client.urlshortener.url.insert({ 
-		'resource': {'longUrl': 'http://www.godaddy.com'} 
-	}); 
-
-	alert(request);
-
 }
