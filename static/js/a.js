@@ -640,12 +640,22 @@
         if (s === "All " + options["settings"]["itemName"] + "s") {
           aa.push("all " + options["settings"]["itemName"] + "s");
         } else {
-          a = s.split("|");
+          // need to remove custom OR styling as highcharts legend color can't handle it
+          bb = []
+          b = s.split('<em style="font-size:80%;color:#545454"><strong><kbd>OR</kbd></strong></em>');
+          _(b).each(function(ss) {
+            bb.push($.trim(ss));
+          });
+          // recombine with simple OR
+          s2 = bb.join(" _OR_ ");
+          
+          // now to remove custom AND styling for same reason
+          a = s2.split('<em style="font-size:80%"><strong><kbd>AND</kbd></strong></em>');
           _(a).each(function(ss) {
             aa.push($.trim(ss));
           });
         }
-        return "[" + aa.join(", ") + pw + "]";
+        return "[" + aa.join(" _AND_ ") + pw + "]";
       });
       series = [];
       myt = $("#time_measure").val();
@@ -1038,12 +1048,12 @@
               }
               _j++;
             }
-            slug = opt["name"] + ": " + sname.join(" <em style='font-size:80%;color:#545454'><strong><kbd>OR</kbd></strong></em> ");
+            slug = opt["name"] + ": " + sname.join(' <em style="font-size:80%;color:#545454"><strong><kbd>OR</kbd></strong></em> ');
             slug_wrapped = "( "+slug+" )";
             slugs.push(slug_wrapped);
           }
         });
-        meta_text = (slugs.length !== 0 ? slugs.join(" <em style='font-size:80%'><strong><kbd>AND</kbd></strong></em> ") : "All " + options["settings"]["itemName"] + "s");
+        meta_text = (slugs.length !== 0 ? slugs.join(' <em style="font-size:80%"><strong><kbd>AND</kbd></strong></em> ') : "All " + options["settings"]["itemName"] + "s");
         $(v).find(".box_data").html(meta_text);
       });
     };
