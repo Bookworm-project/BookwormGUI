@@ -558,7 +558,14 @@
       }
       query = buildQuery();
       $("#permalink").find("input").val(permQuery());
-      updateTwitterValues(permQuery(),"Check out this #htrc_bookworm ! ");
+      
+      try{
+      	updateTwitterValues(permQuery(),"Check out this #bookworm! ");
+      }
+      catch(err){
+      	console.log(err.message);
+      }
+      
       $("#chart").html("");
       $("#chart").addClass("loading");
       $.ajax({
