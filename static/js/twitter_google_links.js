@@ -2,7 +2,7 @@ function get_short_google_url(long_url, func)
 {
 	// NOTE - This is the Google Developer Public API Key - can only be called from
 	// specific domain addresses and must be registered as an application
-	var apiKey = 'AIzaSyD551041KfGPNMeIqx3A3a_jPyCGiDAjbw';
+	var apiKey = 'AIzaSyAeMWvbpyg19qXOvkwNZZK1q0tXrZ6Z90Q';
 	
 	if(gapi.client != "undefined" && gapi.client){
 		gapi.client.setApiKey(apiKey);
