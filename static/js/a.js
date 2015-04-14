@@ -73,7 +73,7 @@
       document.getElementById("countName1").innerHTML = "% of " + options["settings"]["itemName"] + "s";
       document.getElementById("countName2").innerHTML = options["settings"]["itemName"] + " count";
       document.getElementById("itemName").innerHTML = options["settings"]["itemName"];
-      document.getElementById("sourceURL").innerHTML = "<a href=http://" + options["settings"]["sourceURL"] + ">" + options["settings"]["sourceURL"] + "</a>";
+      document.getElementById("sourceURL").innerHTML = "<a href=\"" + options["settings"]["sourceURL"] + "\">" + options["settings"]["sourceURL"] + "</a>";
       params = getHash();
       search_limits = params["search_limits"];
       _.each(search_limits, function(el) {
