@@ -99,37 +99,37 @@
 
 <body>
   <div class="row-fluid">
-      <div id=header>
-        <div id=header_brand>
-          <h1><a href="http://bookworm.culturomics.org" target="_blank">bookworm:</a> <font id=sourceName1></font></h1>
+      <div id="header">
+        <div id="header_brand">
+          <h1><a href="http://bookworm.culturomics.org" target="_blank">bookworm:</a> <font id="sourceName1"></font></h1>
           <p>
-        <span class="subtitle">Search for trends in hundreds of thousands of <text id=itemName></text>s at <span id=sourceURL></span></span>
+        <span class="subtitle">Search for trends in hundreds of thousands of <text id="itemName"></text>s at <span id="sourceURL"></span></span>
           </p>
         </div>
 
-    <div id=header_right>
-      <a href="javascript:void(0)" class=permalink><img border=0 src="static/images/link1.PNG" width=40 class=permalink-img></a>
-      <a href="#" class=advanced><img border=0 src="static/images/gear.png" width=40 class=advanced-img></a>
-      <a href="#" class=about><img border=0 class=about-img src="static/images/info.png" width=40></a>
+    <div id="header_right">
+      <a href="javascript:void(0)" class="permalink"><img border="0" src="static/images/link1.PNG" width="40" class="permalink-img"></a>
+      <a href="#" class="advanced"><img border="0" src="static/images/gear.png" width="40" class="advanced-img"></a>
+      <a href="#" class="about"><img border="0" class="about-img" src="static/images/info.png" width="40"></a>
     </div>
   </div>
   </div>
 
-  <div id=search_queries>
+  <div id="search_queries">
 
-    <table class=top>
-      <tr class=top>
+    <table class="top">
+      <tr class="top">
       </tr>
     </table>
-    <div id=search_error>
+    <div id="search_error">
     </div>
 
   </div>
 
-  <div id=main>
-    <div id=container>
-      <div id=chart_wrapper>
-        <div id=chart>
+  <div id="main">
+    <div id="container">
+      <div id="chart_wrapper">
+        <div id="chart">
         </div>
 
         <div id="social">
@@ -174,46 +174,46 @@
 
      </div>
 
-      <div style='display:none'>
-    <div id=booksz>
-      <div id=pagination></div>
+      <div style="display:none">
+    <div id="booksz">
+      <div id="pagination"></div>
       <br style="clear:both"/><hr />
-      <div id=bookdivtitle></div>
-      <div id=bookdiv>
+      <div id="bookdivtitle"></div>
+      <div id="bookdiv">
       </div>
     </div>
       </div>
     </div>
 
-    <div class=modal id=books style='display:none'>
+    <div class="modal" id="books" style="display:none">
 
       <!-- The 2 MathJax elements for testing -->
       <!--<script id=mjconfig></script>
       <script id=mjsource></script> -->
 
-      <div class=modal-header>
-    <a class=close data-discuss=modal>×</a>
-    <h4 class=books-title>Foo</h3>
+      <div class="modal-header">
+    <a class="close" data-discuss="modal">×</a>
+    <h4 class="books-title">Foo</h3>
 </div>
-<div class=modal-body>
+<div class="modal-body">
 
-  <div class=pagination>
+  <div class="pagination">
     <ul>
-      <li><a href='#'>«</a></li>
-      <li><a href='#'>1</a></li>
-      <li><a href='#'>»</a></li>
+      <li><a href="#">«</a></li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">»</a></li>
     </ul>
   </div>
-  <div class=book-list>
+  <div class="book-list">
 
   </div>
 </div>
 </div>
 
-<span id=category_box_template class="box category_box_template"><table><tr class=category_box_row><td class=category_box_data><a href="javascript:void(0)" class=box_data><span class=box_value>All metadata</span></a></td>
+<span id="category_box_template" class="box category_box_template"><table><tr class="category_box_row"><td class="category_box_data"><a href="javascript:void(0)" class="box_data"><span class="box_value">All metadata</span></a></td>
 
-<td class=category_box_x><a class=box_x href="javascript:void(0)"><span class=removequery><i class="fa fa-minus fa-1"></i></span></a></td>
-<td> <a class=box_plus href="javascript:void(0)" alt="Add"><span class=addquery><i class="fa fa-plus fa-1"></i></span></a></td>
+<td class="category_box_x"><a class="box_x" href="javascript:void(0)"><span class="removequery"><i class="fa fa-minus fa-1"></i></span></a></td>
+<td> <a class="box_plus" href="javascript:void(0)" alt="Add"><span class="addquery"><i class="fa fa-plus fa-1"></i></span></a></td>
 
 </tr>
 </table></span>
@@ -221,42 +221,45 @@
 
 
 
-<div id=settings style="display: none">
+<div id="settings" style="display: none">
   <table>
-    <tr><td><div id=labeltime></div></td><td><div id=timetype></div></td></tr>
-    <tr><td><label for=yeartype>Time:</label></td>
-      <td width=175px><div id=year-slider></div> </td></tr>
-    <tr><td></td><td width=210px><p id=time-val style="width: 210px"></p></td></tr>
+    <tr><td><div id="labeltime"></div></td><td><div id="timetype"></div></td></tr>
+    <tr><td><label for="yeartype">Time:</label></td>
+      <td width="175px"><div id="year-slider"></div> </td></tr>
+    <tr><td></td><td width="210px"><p id="time-val" style="width: 210px"></p></td></tr>
     <tr><td>
     <!-- So the count type is called 'collation type', and the collation type is called 'count type'? -->
-    <label for=counttype>Metric:</label></td>
+    <label for="counttype">Metric:</label></td>
       <td>
     <!--Somewhere along the way, we lost the scripts to allow multiple year selections. That should be returned.-->
-    <div class="btn-group" data-toggle='buttons-radio' id='counttype'>
-      <button class="btn btn-small" data-val='WordsPerMillion' data-label='Words per Million'>% of words</button>
-      <button class="btn btn-small" data-val='TextPercent' data-label='% of Texts'><div id=countName1></div></button>
-      <button class="btn btn-small" data-val='WordCount' data-label='Number of Words'>word count</button>
-      <button class="btn btn-small" data-val='TextCount' data-label='Number of Texts'><div id=countName2></div></button>
+
+    <!-- data-toggle="tooltip" data-placement="top" data-original-title="Search" -->
+
+    <div class="btn-group" data-toggle="buttons-radio" id="counttype">
+      <button class="btn btn-mini" data-val="WordsPerMillion" data-label="Words per Million">% of words</button>
+      <button class="btn btn-mini" data-val="TextPercent" data-label="% of Texts"><div id="countName1"></div></button>
+      <button class="btn btn-mini" data-val="WordCount" data-label="Number of Words">word count</button>
+      <button class="btn btn-mini" data-val="TextCount" data-label="Number of Texts"><div id="countName2"></div></button>
     </div>
       </td>
     </tr>
     <tr><td>
-    <label for=collationtype>Case:</label></td>
-      <td width=375px>
-    <div class="btn-group" data-toggle='buttons-radio' id='collationtype'>
-      <button class="btn btn-small" data-val=Case_Sensitive>Sensitive</button>
-      <button class="btn btn-small" data-val=Case_Insensitive>Insensitive</button>
+    <label for="collationtype">Case:</label></td>
+      <td width="375px">
+    <div class="btn-group" data-toggle="buttons-radio" id="collationtype">
+      <button class="btn btn-mini" data-val="Case_Sensitive">Sensitive</button>
+      <button class="btn btn-mini" data-val="Case_Insensitive">Insensitive</button>
     </div>
       </td>
     </tr>
-    <tr><td><label for=smoothing>Smoothing:</label></td>
+    <tr><td><label for="smoothing">Smoothing:</label></td>
       <td width=175px style="vertical-align:left">
     <table class="smoothing">
       <tr>
         <td>
-          <div id=smoothing-slider width=175px></div>
+          <div id="smoothing-slider" width="175px"></div>
         </td><td>
-          <p id=smoothing-val>t</p>
+          <p id="smoothing-val">t</p>
         </td>
       </tr>
     </table>
@@ -266,18 +269,18 @@
 
 
 </div>
-<div id=about style="display: none; width: 250px;">
-    <!--<p>The <span id=sourceName2></span> bookworm is a creation of the Rice Cultural Observatory which enables you to graphically explore lexical trends across a huge digital library.</p>-->
+<div id="about" style="display: none; width: 250px;">
+    <!--<p>The <span id="sourceName2"></span> bookworm is a creation of the Rice Cultural Observatory which enables you to graphically explore lexical trends across a huge digital library.</p>-->
     <p>Bookworm was created by Benjamin Schmidt (Department of History, Northeastern), Matt Nicklay, Neva Cherniavsky Durand, Martin Camacho, and Erez Lieberman Aiden at the <a href="http://www.culturomics.org" target="_blank">Cultural Observatory</a>. It enables you to visually explore lexical trends. Bookworm is hosted through the&nbsp;generous support of the <a href="http://www.opensciencedatacloud.org/" target="_blank">Open Science Data Cloud</a>. If you use it in an academic publication, please include a link to <a href="http://bookworm.culturomics.org/" target="_blank">bookworm.culturomics.org</a>.</p>
     <!-- This help file could be dynamically named, or something?-->
 </div>
 
 
-<div id=permalink style="display:none;">
+<div id="permalink" style="display:none;">
   <table>
     <tXSr><td>
     <label>Link:</label></td><td>
-    <input type=text></input>
+    <input type="text"></input>
     </td></tr>
   </table>
 </div>
