@@ -751,20 +751,31 @@
         chart: {
           renderTo: "chart",
           reflow: false,
-          spacingTop: 20,
+          spacingTop: 70,
           zoomType: "x",
-          type: "line"
+          type: "line",
+          resetZoomButton: {
+                position: {
+                        align: 'center',
+                        y: -60
+                }
+          }
         },
         title: {
           text: null
         },
         exporting: {
-          width: 800,
           buttons: {
-            printButton: {
-              enabled: false
+                contextButton: {
+                    symbol: 'url(common/highcharts/export_icon.png)',
+                    align : 'right',
+                    y : -60,
+                    height: 60,
+                    width: 60,
+                    symbolY:30,
+                    symbolX:30
+                }
             }
-          }
         },
         lineWidth: 1,
         xAxis: {
