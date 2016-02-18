@@ -7,7 +7,12 @@
     data = [];
     cts = [];
     metadata = [];
-    options = undefined;
+    // Set default options. These are extended by the options from options.json, only overwriting when there's a new setting.
+    options = {
+        settings: {
+            host: "/cgi-bin/dbbindings.py"
+        }
+    };
     colors = ["", "128, 177, 211", "251, 128, 114", "179, 222, 105", "141, 211, 199", "190, 186, 218", "252, 205, 229", "217, 217, 217"];
     hexColors = ["", "#1F77B4", "#FF7F0E", "#2CA02C", "#D62728", "#9467BD", "#8C564B", "#E377C2", "#7F7F7F", "#BCBD22", "#17BECF"];
     resizing = null;
@@ -30,8 +35,8 @@
       url: "static/options.json",
       dataType: "json",
       success: function(response) {
-        options = response;
-          firstQuery();
+        options = $.extend(true, options, response);
+        firstQuery();
         runQuery();
       },
       error:function(exception){console.log('Exception:'+exception);}
@@ -569,7 +574,7 @@
       $("#chart").html("");
       $("#chart").addClass("loading");
       $.ajax({
-        url: "/cgi-bin/dbbindings.py",
+        url: options.settings.host,
         data: {
           query: JSON.stringify(query)
         },
@@ -586,7 +591,7 @@
 	  slugQuery['counttype'] = ['TextCount','WordCount']
           $.ajax({
               context: "#search_queries",
-            url: "/cgi-bin/dbbindings.py",
+            url: options.settings.host,
             data: {
               query: JSON.stringify(slugQuery)
             },
@@ -893,7 +898,7 @@
       query["search_limits"][0][query["groups"]] = [event.point.opts["t"]];
       query["method"] = "return_books"
       return $.ajax({
-        url: "/cgi-bin/dbbindings.py",
+        url: options.settings.host,
         type: "post",
         data: {
           query: JSON.stringify(query)
