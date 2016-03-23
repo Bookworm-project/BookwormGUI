@@ -221,7 +221,7 @@
       table = "<table></table>";
       datatypes = ["categorical"];
       opts = _.filter(options["ui_components"], function(v) {
-        return _.include(datatypes, v["type"]);
+        return _.includes(datatypes, v["type"]);
       });
       _.each(opts, function(opt) {
         var elts, row, rowHTML, select, selectHTML;
@@ -234,19 +234,15 @@
           selectHTML = "<select multiple=multiple style='width:350px;'>";
           selectHTML += "<% _(elts).each(function(el){ %> <option value='<%= el['dbcode']%>'><%= el['name']%></option><% }); %>";
           selectHTML += "</select>";
-          select = _(selectHTML).template({
-            elts: elts
-          });
+          selectTemplate = _.template(selectHTML);
+          select = selectTemplate({ elts: elts });
         }
         rowHTML = "<tr class=datarow data-name=\"<%= dbcode %>\">";
         rowHTML += "<td class=edit-box-label><%= label%></td>";
         rowHTML += "<td class=edit-box-select><%= select %></td>";
         rowHTML += "</tr>";
-        row = _(rowHTML).template({
-          label: opt["name"],
-          select: select,
-          dbcode: opt["dbfield"]
-        });
+        rowTemplate = _.template(rowHTML);
+        row = rowTemplate({ label: opt.name, select: select, dbcode: opt.dbfield });
         table = $(table).append(row);
       });
       divHTML = $(divHTML).append(table);
@@ -361,7 +357,11 @@
         }
       });
       fixTime();
-      prevvalue = $("#smoothing-slider").slider("value");
+      try {
+      	prevvalue = $("#smoothing-slider").slider("value");
+      } catch (e) {
+      	console.warn("Trying to access smoothing before initialition.");
+      }
       newvalue = 0;
       if (prevvalue != null) {
         newvalue = prevvalue;
@@ -516,7 +516,12 @@
         limit = {
           word: [terms[i]]	    
         };
-	time_limits = $("#year-slider").slider("values")
+       try {
+		time_limits = $("#year-slider").slider("values");
+	   } catch (e) {
+		console.warn("Trying to access slider before initialization.");
+		time_limits = [0, 2016];
+	   }
 	limit[time_measure] = {"$gte":time_limits[0],"$lte":time_limits[1]}
         cat = cats[i];
         for (key in cat) {
