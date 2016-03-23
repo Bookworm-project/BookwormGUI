@@ -167,16 +167,8 @@ p {
   height: 80%;
   width: 100%;
 }
-#chart_wrapper {
-  height: 90%;
-}
 #queries {
   height: 100%;
-}
-#container {
-  height: 90%;
-  width: 95%;
-  position: absolute;
 }
 #settings table label {
   font-family: 'Open Sans', sans-serif;

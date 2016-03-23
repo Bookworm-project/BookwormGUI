@@ -2,7 +2,7 @@
 (function() {
 
   $(document).ready(function() {
-    var addCommas, addRow, buildQuery, colors, cts, data, doneResizing, firstQuery, fixAddButton, fixColors, fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, getSmoothing, hexColors, hidePopups, initializeSelectBoxes, lazyround, maxTime, metadata, minTime, n_pages, newEditBox, newSliders, numToReadText, options, page, permQuery, popup_imgs, popups, renderChart, resizing, rows, runQuery, search_button, showBooks, time_array, toggler, validateQuery, year_option,bookLinks;
+    var addCommas, addRow, buildQuery, colors, cts, data, firstQuery, fixAddButton, fixColors, fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, getSmoothing, hexColors, hidePopups, initializeSelectBoxes, lazyround, maxTime, metadata, minTime, n_pages, newEditBox, newSliders, numToReadText, options, page, permQuery, popup_imgs, popups, renderChart, rows, runQuery, search_button, showBooks, time_array, toggler, validateQuery, year_option,bookLinks;
     rows = 0;
     data = [];
     cts = [];
@@ -15,22 +15,9 @@
     };
     colors = ["", "128, 177, 211", "251, 128, 114", "179, 222, 105", "141, 211, 199", "190, 186, 218", "252, 205, 229", "217, 217, 217"];
     hexColors = ["", "#1F77B4", "#FF7F0E", "#2CA02C", "#D62728", "#9467BD", "#8C564B", "#E377C2", "#7F7F7F", "#BCBD22", "#17BECF"];
-    resizing = null;
     time_array = [];
     year_option = void 0;
-    $(window).resize(function() {
-      clearTimeout(resizing);
-      resizing = setTimeout(doneResizing, 200);
-    });
-    $("#chart_wrapper").css("width", "" + ($(window).width() - 50) + "px");
-    $("#chart").css("width", "" + ($(window).width() - 50) * .98 + "px");
-    $("#chart").css("margin-left", "" + (($(window).width() - $("#chart").width()) / 2.0 - 20) + "px");
-    doneResizing = function() {
-      $("#chart_wrapper").css("width", "" + ($(window).width() - 50) + "px");
-      $("#chart").css("width", "" + ($(window).width() - 55) * .98 + "px");
-      $("#chart").css("margin-left", "" + (($(window).width() - $("#chart").width()) / 2.0 - 20) + "px");
-      return renderChart();
-    };
+
     $.ajax({
       url: "static/options.json",
       dataType: "json",
