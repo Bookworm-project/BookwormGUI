@@ -998,7 +998,7 @@
           limits[key] = query[key];
         }
       });
-      hash = $.URLEncode(JSON.stringify(limits));
+      hash = encodeURI(JSON.stringify(limits));
       link = document.location.href.split("#")[0] + "#?" + hash;
       return link;
     };
