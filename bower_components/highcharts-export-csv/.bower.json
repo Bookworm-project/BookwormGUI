@@ -1,0 +1,30 @@
+{
+  "name": "highcharts-export-csv",
+  "main": "highcharts-export-csv.js",
+  "homepage": "https://github.com/wallynm/highcharts-export-csv",
+  "authors": [
+    "Wallysson Nunes <wally.nm@gmail.com>"
+  ],
+  "description": "CSV exporting script for highcharts",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "highcharts-export-csv": "*"
+  },
+  "_release": "4cec001d4d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4cec001d4d4428353af2f42da10133a005f8ab72"
+  },
+  "_source": "git://github.com/wallynm/highcharts-export-csv.git",
+  "_target": "*",
+  "_originalSource": "highcharts-export-csv",
+  "_direct": true
+}

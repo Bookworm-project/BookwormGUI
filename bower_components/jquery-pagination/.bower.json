@@ -1,0 +1,15 @@
+{
+  "name": "jquery-pagination",
+  "homepage": "https://github.com/gbirke/jquery_pagination",
+  "version": "2.2.1",
+  "_release": "2.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.2.1",
+    "commit": "72110cc33210fdb150b7858ab1f5ecfd6d117cf2"
+  },
+  "_source": "git://github.com/gbirke/jquery_pagination.git",
+  "_target": "^2.2.1",
+  "_originalSource": "jquery-pagination",
+  "_direct": true
+}
