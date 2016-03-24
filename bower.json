@@ -27,7 +27,6 @@
     "bootstrap": "^3.3.6",
     "chosen": "^1.5.1",
     "jquery-ui-multiselect-widget": "^1.4.1",
-    "jquery-pagination": "^2.2.1",
     "highcharts": "^4.2.3",
     "keymaster": "^1.6.3",
     "highcharts-export-csv": "*",

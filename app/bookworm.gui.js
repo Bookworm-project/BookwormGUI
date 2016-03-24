@@ -41,9 +41,9 @@
 	  return term
       }
       var def, link, ps;
-      link = decodeURIComponent(document.location.search);
-      if (link) {
-        link = link.replace(/#/g, "");
+      link = decodeURIComponent(document.location.hash);
+      if (link) { 
+        link = link.substr(link.indexOf("{"), link.lastIndexOf("}"));
         ps = JSON.parse(link);
         def = options["default_search"][0];
         _(def).each(function(v, key) {
@@ -602,7 +602,7 @@
         return "" + (v.toFixed(1)) + "tr";
       }
     };
-    
+
     renderChart = function() {
 	//is this variable initialized somewhere else?
       query = buildQuery()
@@ -891,11 +891,11 @@
             bookLinks.push("<li>" + dataArray[_k] + "</li>");
             _k++;
           }
-          $(".book-list").html("<ul></ul>");
+          $("ul.book-list").html("");
           i = 0;
           _ref = Math.min(10, dataArray.length);
           while ((0 <= _ref ? i < _ref : i > _ref)) {
-            $(".book-list ul").append(bookLinks[i]);
+            $("ul.book-list").append(bookLinks[i]);
             if (0 <= _ref) {
               i++;
             } else {
@@ -905,28 +905,28 @@
           $("#books").modal("show");
           n_pages = Math.ceil(bookLinks.length / 10.0);
           page = 1;
-          $(".pagination ul").html("");
-          $(".pagination ul").append("<li><a href=\"#\">«</a></li>");
+          $("ul.pagination").html("").data("books-pages", n_pages);
+          $("ul.pagination").append("<li><a href=\"#\">«</a></li>");
           i = 1;
           while (i <= n_pages) {
-            $(".pagination ul").append("<li><a href=\"#\">" + i + "</a></li>");
+            $("ul.pagination").append("<li><a href=\"#\">" + i + "</a></li>");
             i++;
           }
-          $(".pagination ul").append("<li><a href=\"#\">»</a></li>");
+          $("ul.pagination").append("<li><a href=\"#\">»</a></li>");
           $(".active", "#books").removeClass("active");
           $(".disabled", "#books").removeClass("disabled");
           $("a:contains(«)", "#books").parent("li").addClass("disabled");
-          $(".pagination a", "#books").filter(function(i, v) {
+          $("ul.pagination a", "#books").filter(function(i, v) {
             return i === page;
           }).parent("li").addClass("active");
         },
         error:function(exception){console.log('Exception:'+exception);}
       });
     };
-    page = 0;
-    n_pages = 0;
-    $("#books").on("click", ".pagination a", function(event) {
+    page = 1;
+    $("#books").on("click", "ul.pagination a", function(event) {
       var i, v;
+      var n_pages = $("ul.pagination").data("books-pages");
       v = $(this).html();
       if (v === "«") {
         if (page <= 1) {
@@ -941,10 +941,10 @@
       } else {
         page = parseInt(v);
       }
-      $(".book-list").html("<table></table>");
+      $("ul.book-list").html("");
       i = (page - 1) * 10;
       while (i < Math.min(page * 10, bookLinks.length)) {
-        $(".book-list table").append(bookLinks[i]);
+        $("ul.book-list").append(bookLinks[i]);
         i++;
       }
       $(".active", "#books").removeClass("active");
@@ -956,11 +956,8 @@
         $("a:contains(»)", "#books").parent("li").addClass("disabled");
       }
       $(".pagination a", "#books").filter(function(i, v) {
-        return i === page;
+        return i === page && $(v).text() !== "»";
       }).parent("li").addClass("active");
-    });
-    $("#books").on("click", ".close", function(event) {
-      $("#books").modal("hide");
     });
     permQuery = function() {
       var def, hash, limits, link, query;

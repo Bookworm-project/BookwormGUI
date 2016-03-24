@@ -54,19 +54,14 @@ span.removequery i {
 span.tooltip_top {
   font-weight: bold;
 }
-.pagination {
-  margin-top: 2px;
-}
-.pagination a {
-  margin-right: 0;
-}
+
 #books {
-  width: 70%;
-  margin-left: -35%;
+  /* width: 70%; */
+  /* margin-left: -35%; */
 }
 .book-list {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
+  /* font-family: 'Open Sans', sans-serif; */
+  /* font-size: 12px; */
 }
 .book-title {
   font-weight: bold;
