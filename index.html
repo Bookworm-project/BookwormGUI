@@ -48,21 +48,75 @@
 
 			<div id="header_right">
 				<a href="javascript:void(0)" class="permalink"><img border="0" src="app/images/link1.png" width="40" class="permalink-img"></a>
-				<a href="#" class="advanced"><img border="0" src="app/images/gear.png" width="40" class="advanced-img"></a>
 				<a href="#" class="about"><img border="0" class="about-img" src="app/images/info.png" width="40"></a>
 			</div>
 
 		</div>
 	</div>
 
-	<div class="row" id="search_queries">
+	<div class="row">
 
+	<div class="col-md-6" id="search_queries">
 		<table class="top">
 			<tr class="top">
 			</tr>
 		</table>
 		<div id="search_error">
 		</div>
+
+	</div>
+
+
+	<div class="col-md-6">
+		<ul class="nav nav-pills" role="tablist">
+			<li role="presentation" class="dropdown">
+				<a id="time-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Time <span class="caret"></span>
+				</a>
+				<ul id="time-drop-menu" class="dropdown-menu" aria-labelledby="time-drop">
+					<li><a href="#"><div id="year-slider"></div></a></li>
+					<li><a href="#"><p id="time-val" style="width: 210px"></p></a></li>
+				</ul>
+			</li>
+			<li role="presentation" class="dropdown">
+				<a id="metric-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Metric <span class="caret"></span>
+				</a>
+				<ul id="metric-drop-menu" class="dropdown-menu" aria-labelledby="metric-drop">
+					<li><strong>Metric</strong></li>
+					<li><div class="btn-group" data-toggle="buttons-radio" id="counttype">
+							<button class="btn btn-default btn-xs" data-val="WordsPerMillion" data-label="Words per Million">% of words</button>
+							<button class="btn btn-default btn-xs" data-val="TextPercent" data-label="% of Texts"><div id="countName1"></div></button>
+							<button class="btn btn-default btn-xs" data-val="WordCount" data-label="Number of Words">word count</button>
+							<button class="btn btn-default btn-xs" data-val="TextCount" data-label="Number of Texts"><div id="countName2"></div></button>
+						</div>
+					</li>
+			</ul>
+			</li>
+			<li role="presentation" class="dropdown">
+				<a id="case-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Case <span class="caret"></span>
+				</a>
+				<ul id="case-drop-menu" class="dropdown-menu" aria-labelledby="case-drop">
+					<li><a href="#"><div class="btn-group" data-toggle="buttons-radio" id="collationtype">
+							<button class="btn btn-default btn-xsi" data-val="Case_Sensitive">Sensitive</button>
+							<button class="btn btn-default btn-xs" data-val="Case_Insensitive">Insensitive</button>
+						</div></a></li>
+				</ul>
+			</li>
+			<li role="presentation" class="dropdown">
+				<a id="smoothing-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Smoothing <span class="caret"></span>
+				</a>
+				<ul id="smoothing-drop-menu" class="dropdown-menu" aria-labelledby="smoothing-drop">
+					<li><a href="#"><div id="smoothing-slider" width="175px"></div></a></li>
+					<li><a href="#"><p id="smoothing-val">t</p></a></li>
+
+
+				</ul>
+			</li>
+		</ul>
+	</div>
 
 	</div>
 
@@ -129,10 +183,6 @@
 
 	<div class="modal" id="books" style="display:none">
 
-		<!-- The 2 MathJax elements for testing -->
-	  <!--<script id=mjconfig></script>
-	  <script id=mjsource></script> -->
-
 	  <div class="modal-header">
 	  	<a class="close" data-discuss="modal">×</a>
 	  	<h4 class="books-title">Foo</h4>
@@ -185,55 +235,6 @@
 
 		</table>
 	</span>
-
-	<div id="settings" style="display: none">
-		<table>
-			<tr><td><div id="labeltime"></div></td><td><div id="timetype"></div></td></tr>
-			<tr><td><label for="yeartype">Time:</label></td>
-				<td width="175px"><div id="year-slider"></div> </td></tr>
-				<tr><td></td><td width="210px"><p id="time-val" style="width: 210px"></p></td></tr>
-				<tr><td>
-					<!-- So the count type is called 'collation type', and the collation type is called 'count type'? -->
-					<label for="counttype">Metric:</label></td>
-					<td>
-						<!--Somewhere along the way, we lost the scripts to allow multiple year selections. That should be returned.-->
-
-						<!-- data-toggle="tooltip" data-placement="top" data-original-title="Search" -->
-
-						<div class="btn-group" data-toggle="buttons-radio" id="counttype">
-							<button class="btn btn-default btn-xs" data-val="WordsPerMillion" data-label="Words per Million">% of words</button>
-							<button class="btn btn-default btn-xs" data-val="TextPercent" data-label="% of Texts"><div id="countName1"></div></button>
-							<button class="btn btn-default btn-xs" data-val="WordCount" data-label="Number of Words">word count</button>
-							<button class="btn btn-default btn-xs" data-val="TextCount" data-label="Number of Texts"><div id="countName2"></div></button>
-						</div>
-					</td>
-				</tr>
-				<tr><td>
-					<label for="collationtype">Case:</label></td>
-					<td width="375px">
-						<div class="btn-group" data-toggle="buttons-radio" id="collationtype">
-							<button class="btn btn-default btn-xsi" data-val="Case_Sensitive">Sensitive</button>
-							<button class="btn btn-default btn-xs" data-val="Case_Insensitive">Insensitive</button>
-						</div>
-					</td>
-				</tr>
-				<tr><td><label for="smoothing">Smoothing:</label></td>
-					<td width=175px style="vertical-align:left">
-						<table class="smoothing">
-							<tr>
-								<td>
-									<div id="smoothing-slider" width="175px"></div>
-								</td><td>
-								<p id="smoothing-val">t</p>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-
-
-	</div>
 
 	<div id="about" style="display: none; width: 250px;">
 		<!--<p>The <span id="sourceName2"></span> bookworm is a creation of the Rice Cultural Observatory which enables you to graphically explore lexical trends across a huge digital library.</p>-->
