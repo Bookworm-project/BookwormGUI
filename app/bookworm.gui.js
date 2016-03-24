@@ -142,7 +142,7 @@
       } else {
         $(newCatBox).append($("#category_box_template").clone().removeClass("category_box_template").addClass("category_box").attr("id", "cat_box_" + rows));
       }
-      $("#cat_box_" + rows + " .box_data").html("All " + options["settings"]["itemName"] + "s");
+      $("#cat_box_" + rows + " .box_data").text("All " + options["settings"]["itemName"] + "s");
       last_cat = _.last($(".edit-box"));
       if (row) {
         last_cat = _.find($(".edit-box"), function(v) {
