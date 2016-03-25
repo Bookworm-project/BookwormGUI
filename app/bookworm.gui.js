@@ -111,42 +111,41 @@
     $("#search_queries").on("click", ".box_plus", function(event) {
       var row = $(this).parents(".search-row").data("row");
       addRow(true, row);
-      // Since default removequery box color was set to black, change it to red if there is more than 1.
-      if ($('span.removequery i').length > 1) {
-            $('span.removequery i').css('color', '#DF0101');
-        }
+      updateDeleteButton();
     });
 
 
     addRow = function(copy, row) {
       var last_cat, last_cats, newCatBox, newRow, new_cat, prevterm, rowHTML, searchRow;
       rows++;
-      prevterm = $("#search_queries .terms-td input.term").last().val();
+      prevterm = $("#search_queries input.term").last().val();
       if (row) {
-        searchRow = _.find($("tr.search-row"), function(v) {
+        searchRow = _.find($(".search-row"), function(v) {
           return $(v).data("row") === row;
         });
         prevterm = $("input.term", searchRow).val();
       }
-      rowHTML = "<tr class=search-row data-row=" + rows + ">";
-      rowHTML += "<td class=terms-td><input placeholder='Search terms' class=term></input></td>";
-      rowHTML += "<td><p class=tbl-text>in</sp></td>";
-      rowHTML += "<td class=box-td></td>";
-      rowHTML += "<td class=add-td></td>";
-      rowHTML += "</tr>";
+      rowHTML = "<p class=search-row data-row=" + rows + ">";
+      rowHTML += "<a href=\"#\" class=\"box_x\"><span class=\"removequery\"><span class=\"glyphicon glyphicon-minus\" aria-hidden=\"true\"></span></span></a>";
+      rowHTML += '<a class="box_plus" href="#" alt="Add"><span class="addquery"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></span></a>';
+      rowHTML += "<input placeholder='Search terms' class=term></input>";
+      rowHTML += " in ";
+      rowHTML += "<span class=filter-list></span>";
+      rowHTML += "</p>";
       if (!row) {
-        $("#search_queries table.top").append(rowHTML);
+        $("#search_queries").append(rowHTML);
       } else {
         $(searchRow).after(rowHTML);
       }
+      updateDeleteButton();
       if (row) {
-        newRow = _.find($("tr.search-row"), function(v) {
+        newRow = _.find($(".search-row"), function(v) {
           return $(v).data("row") === rows;
         });
-        newCatBox = $(newRow).find("td.box-td");
+        newCatBox = $(newRow).find(".filter-list");
       }
       if (!row) {
-        $("#category_box_template").clone().removeClass("category_box_template").addClass("category_box").attr("id", "cat_box_" + rows).appendTo("#search_queries table.top tr:last td.box-td");
+        $("#category_box_template").clone().removeClass("category_box_template").addClass("category_box").attr("id", "cat_box_" + rows).appendTo("#search_queries .search-row:last .filter-list");
       } else {
         $(newCatBox).append($("#category_box_template").clone().removeClass("category_box_template").addClass("category_box").attr("id", "cat_box_" + rows));
       }
@@ -187,7 +186,7 @@
       $("#search_queries").on("click", "#cat_box_" + rows + " a.box_data", function(event) {
         var editId, editOpen, hideEdit, inEdit;
         fixEditBoxPositions();
-        row = $(this).parents("tr.search-row").data("row");
+        row = $(this).parents(".search-row").data("row");
         $(_.filter($(".edit-box"), function(el) {
           return $(el).data("row") !== row;
         })).each(function(i, v) {
@@ -348,26 +347,26 @@
         $("#time-val").text("" + v[0] + " - " + v[1]);
       }
     };
-    // set all 'removequery' boxes to black by default -- then the logic below (and the logic for onclick of .box_plus) will set the right color.
-    $('span.removequery i').css('color', 'black');
+
     // delete a row
-    $('#search_queries').on('click', '.box_x', function(event) {
-        // Don't delete box if only 1
-        var num_el_rows = $('tr.search-row').length;
+    $('#search_queries').on('click', '.box_x', function(event){
+    	var num_el_rows = $('.search-row').length;
         if(num_el_rows > 1){
-            var row = $(this).parents('tr.search-row').data('row');
-            // remove corresponding edit box
+        	var row = $(this).parents('.search-row').data('row');
+        	// remove corresponding edit box
             $('.edit_box_' + row).remove();
-            $(this).parents('tr.search-row').remove();
-            // fix UI elements
-            fixAddButton();
-            if ($('tr.search-row').length == 1) {
-                $('span.removequery i').css('color', 'black');
-            } else {
-                $('span.removequery i').css('color', '#DF0101');
-            }
+            $(this).parents('.search-row').remove();
         }
+    	updateDeleteButton();
     });
+
+    var updateDeleteButton = function() {
+		if ($('.search-row').length == 1) {
+			$('span.removequery').hide();
+		} else {
+			$('span.removequery').show();
+		}
+    }
 
     
     getDate = function(intval) {
@@ -987,12 +986,12 @@
 			});
              
 
-            slug = opt["name"] + ": " + sname.join(' <em style="font-size:80%;color:#545454"><strong><kbd>OR</kbd></strong></em> ');
+            slug = opt["name"] + ": " + sname.join(' <span class="query-cond text-muted">OR</span> ');
             slug_wrapped = "( "+slug+" )";
             slugs.push(slug_wrapped);
           }
         });
-        meta_text = (slugs.length !== 0 ? slugs.join(' <em style="font-size:80%"><strong><kbd>AND</kbd></strong></em> ') : "All " + options["settings"]["itemName"] + "s");
+        meta_text = (slugs.length !== 0 ? slugs.join(' <span class="query-cond text-muted">AND</span> ') : "All " + options["settings"]["itemName"] + "s");
         $(search_limit_el).find(".box_data").html(meta_text);
       });
     };

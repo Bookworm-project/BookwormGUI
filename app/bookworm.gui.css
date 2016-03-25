@@ -79,9 +79,14 @@ span.tooltip_top {
 .tbl-text {
   vertical-align: middle;
   margin: 0px 5px;
+  display: inline;
 }
 input.term {
   width: 150px;
+}
+
+span.remove-query {
+   color: #DF0101;
 }
 
 .dropdown-padding {
@@ -113,6 +118,8 @@ input.term {
 
 .box_data {
     font-size: smaller;
+    overflow: hidden;
+    max-width: 500px;
 }
 .box .category_box_x {
   padding: 1px 4px;
@@ -256,10 +263,6 @@ tr .category_box_row {
 
 .advanced-img, .permalink-img, .about-img {
     padding: 5px;
-}
-
-.add-td {
-    vertical-align: middle;
 }
 
 #simplemodal-overlay {background-color:#DDD; }

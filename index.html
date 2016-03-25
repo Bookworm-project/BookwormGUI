@@ -4,7 +4,6 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
 	<link rel="stylesheet" href="bower_components/chosen/chosen.css" />
 	<link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" />
@@ -49,11 +48,11 @@
 
 
 	<div class="row">
-	<div class="col-md-12 text-right">
+	<div class="col-md-offset-5 col-md-7">
 		<ul class="nav nav-pills" role="tablist">
 			<li role="presentation" class="dropdown">
 				<a id="time-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					Time <span class="caret"></span>
+					<span class="glyphicon glyphicon-time"  aria-hidden="true"></span> Time <span class="caret"></span>
 				</a>
 				<ul id="time-drop-menu" class="dropdown-menu" aria-labelledby="time-drop">
 					<li><a href="#"><div id="year-slider"></div></a></li>
@@ -62,7 +61,7 @@
 			</li>
 			<li role="presentation" class="dropdown">
 				<a id="metric-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					Metric <span class="caret"></span>
+					<span class="glyphicon glyphicon-stats"  aria-hidden="true"></span> Metric <span class="caret"></span>
 				</a>
 				<ul id="metric-drop-menu" class="dropdown-menu" aria-labelledby="metric-drop">
 					<li><strong>Metric</strong></li>
@@ -77,7 +76,7 @@
 			</li>
 			<li role="presentation" class="dropdown">
 				<a id="case-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					Case <span class="caret"></span>
+					<span class="glyphicon glyphicon-sort"  aria-hidden="true"></span> Case <span class="caret"></span>
 				</a>
 				<ul id="case-drop-menu" class="dropdown-menu" aria-labelledby="case-drop">
 					<li><a href="#"><div class="btn-group" data-toggle="buttons-radio" id="collationtype">
@@ -88,19 +87,21 @@
 			</li>
 			<li role="presentation" class="dropdown">
 				<a id="smoothing-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					Smoothing <span class="caret"></span>
+					<span class="glyphicon glyphicon-link"  aria-hidden="true"></span> Smoothing <span class="caret"></span>
 				</a>
 				<ul id="smoothing-drop-menu" class="dropdown-menu" aria-labelledby="smoothing-drop">
 					<li><a href="#"><div id="smoothing-slider" width="175px"></div></a></li>
 					<li><a href="#"><p id="smoothing-val">t</p></a></li>
 				</ul>
 			</li>
-			<li><button class='btn btn-primary search-btn search-bw' rel='tooltip' title='Search the corpus!'>Search</button></li>
+			<li><button class='btn btn-primary search-btn search-bw' rel='tooltip' title='Search the corpus!'>
+					<span class="glyphicon glyphicon-search"  aria-hidden="true"></span> Search
+				</button></li>
 
 		
 		<li role="presentation" class="dropdown">
-			<a id="link-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					Share
+			<a id="link-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-label="Link" aria-haspopup="true" aria-expanded="false">
+					<span class="glyphicon glyphicon-link"  aria-hidden="true"></span>
 				</a>
 
 			<ul id="link-drop-menu" class="dropdown-menu permalink" aria-labelledby="link-drop">
@@ -114,7 +115,7 @@
 
 		<li role="presentation" class="dropdown">
 			<a id="info-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					Info
+					<span class="glyphicon glyphicon-info-sign"  aria-hidden="true"></span>
 				</a>
 
 			<ul id="info-drop-menu" class="dropdown-menu permalink" aria-labelledby="info-drop">
@@ -136,10 +137,6 @@
 	<div class="row">
 
 		<div class="col-md-12" id="search_queries">
-			<table class="top">
-				<tr class="top">
-				</tr>
-			</table>
 			<div id="search_error">
 			</div>
 
@@ -235,21 +232,14 @@
 	<span id="category_box_template" class="box category_box_template">
 		<div class="btn-group" role="group" aria-label="category_box">
 		<div class="dropdown">
-			<a class="btn btn-default" href="#" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" id="toggle1" >
-				<span class="box_data">All Metadata</span><span class="caret"></span></a>
+				<span class="box_data">All Metadata</span></a>
+			<a class="btn btn-default btn-sm" href="#" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" id="toggle1" >
+				<span class="glyphicon glyphicon-filter"  aria-hidden="true"></span> <span class="caret"></span></a>
 			<ul class="dropdown-menu facet-selection" aria-labelledby="toggle1">
 				<li style="padding:3px 20px" class="text-right">Restrict search to the following texts</li>
 				<li role="separator" class="divider"></li>
 			</ul>
 		</div>
-
-		
-		  <a class="btn btn-default box_x" href="#" role="button">
-		    <span class="removequery"> <i class="fa fa-minus fa-1"></i> </span>
-		  </a>
-		  <a class="btn btn-default box_plus" href="#" alt="Add" role="button">
-			<span class="addquery"> <i class="fa fa-plus fa-1"></i> </span>
-		  </a>
 		</div>
 
 	</span>
