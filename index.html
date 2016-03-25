@@ -52,20 +52,9 @@
 		</div>
 	</div>
 
+
 	<div class="row">
-
-	<div class="col-md-6" id="search_queries">
-		<table class="top">
-			<tr class="top">
-			</tr>
-		</table>
-		<div id="search_error">
-		</div>
-
-	</div>
-
-
-	<div class="col-md-6">
+	<div class="col-md-offset-6 col-md-6">
 		<ul class="nav nav-pills" role="tablist">
 			<li role="presentation" class="dropdown">
 				<a id="time-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -109,13 +98,28 @@
 				<ul id="smoothing-drop-menu" class="dropdown-menu" aria-labelledby="smoothing-drop">
 					<li><a href="#"><div id="smoothing-slider" width="175px"></div></a></li>
 					<li><a href="#"><p id="smoothing-val">t</p></a></li>
-
-
 				</ul>
 			</li>
+			<li><button class='btn btn-primary search-btn search-bw' rel='tooltip' title='Search the corpus!'>Search</button></li>
+
+
 		</ul>
 	</div>
 
+	</div>
+
+
+	<div class="row">
+
+		<div class="col-md-12" id="search_queries">
+			<table class="top">
+				<tr class="top">
+				</tr>
+			</table>
+			<div id="search_error">
+			</div>
+
+		</div>
 	</div>
 
 	<div class="row" id="main">
@@ -207,7 +211,10 @@
 	<span id="category_box_template" class="box category_box_template">
 		<div class="dropdown">
 			<a class="btn btn-default" href="#" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" id="toggle1" ><span class="box_data">All Metadata</span><span class="caret"></span></a>
-			<ul class="dropdown-menu" aria-labelledby="toggle1"></ul>
+			<ul class="dropdown-menu facet-selection" aria-labelledby="toggle1">
+				<li style="padding:3px 20px" class="text-right">Restrict search to the following texts</li>
+				<li role="separator" class="divider"></li>
+			</ul>
 		</div>
 
 		<div class="btn-group" role="group" aria-label="category_box">

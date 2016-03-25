@@ -1,7 +1,7 @@
 (function() {
 
   $(document).ready(function() {
-    var addCommas, addRow, buildQuery, colors, cts, data, firstQuery, fixAddButton, fixColors, fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, getSmoothing, hexColors, hidePopups, initializeSelectBoxes, lazyround, maxTime, metadata, minTime, n_pages, newEditBox, newSliders, numToReadText, options, page, permQuery, popup_imgs, popups, renderChart, rows, runQuery, search_button, showBooks, time_array, toggler, validateQuery, year_option,bookLinks;
+    var addCommas, addRow, buildQuery, colors, cts, data, firstQuery, fixColors, fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, getSmoothing, hexColors, hidePopups, initializeSelectBoxes, lazyround, maxTime, metadata, minTime, n_pages, newEditBox, newSliders, numToReadText, options, page, permQuery, popup_imgs, popups, renderChart, rows, runQuery, search_button, showBooks, time_array, toggler, validateQuery, year_option,bookLinks;
     rows = 0;
     data = [];
     cts = [];
@@ -94,7 +94,7 @@
       }
       $("#smoothing-val").text(getSmoothing(params["smoothingSpan"]) + " " + params["timeUnit"]["unit"] + "s");
       $(".edit-box").each(function(i, v) {
-        $(v).find("tr.datarow").each(function(r, row) {
+        $(v).find(".datarow").each(function(r, row) {
           var key;
           key = $(row).data("name");
           _(search_limits[i][key]).each(function(k) {
@@ -157,7 +157,7 @@
         });
       }
       last_cats = {};
-      $(last_cat).find("tr.datarow").each(function(i2, v2) {
+      $(last_cat).find(".datarow").each(function(i2, v2) {
         var singlecats;
         singlecats = [];
         $(v2).find("option:selected").each(function(i3, v3) {
@@ -172,7 +172,7 @@
         $(".edit-box").last().find("select")
 			.each(function(i2, v2) {
 			  var name;
-			  name = $(v2).parents("tr.datarow").data("name");
+			  name = $(v2).parents(".datarow").data("name");
 			  _.each(last_cats[name], function(elv) {
 				$("option[value='" + elv + "']", v2).attr("selected", "selected");
 			  });
@@ -213,13 +213,12 @@
         return false;
       });
       fixSlugs();
-      fixAddButton();
     };
 
 
     newEditBox = function(num) {
     	divName = "edit_box_" + num;
-    	divHTML = $("<form><table></table></form>").addClass("edit-box").addClass(divName).data("row", num);
+    	divHTML = $("<form class='form-horizontal'></form>").addClass("edit-box").addClass(divName).data("row", num);
 		  datatypes = ["categorical"];
 		  opts = _.filter(options["ui_components"], function(v) {
 			return _.includes(datatypes, v["type"]);
@@ -237,10 +236,9 @@
 			  selectTemplate = _.template(selectHTML);
 			  select = selectTemplate({ elts: elts });
 			}
-			rowHTML = "<tr class=datarow data-name=\"<%= dbcode %>\">";
-			rowHTML += "<td class=edit-box-label><%= label%></td>";
-			rowHTML += "<td class=edit-box-select><%= select %></td>";
-			rowHTML += "</tr>";
+
+			rowHTML = "<li class=\"dropdown-header edit-box-label\"><%= label%></li>"
+    		rowHTML += "<li class=\"datarow edit-box-select\" data-name=\"<%= dbcode %>\" ><%= select %></li>";
 			rowTemplate = _.template(rowHTML);
 			row = rowTemplate({ label: opt.name, select: select, dbcode: opt.dbfield });
 			divHTML.append(row);
@@ -248,15 +246,10 @@
 		  $("#cat_box_"+num+" .dropdown ul").append(divHTML);
     };
 
-
-    search_button = "<button class='btn btn-primary search-btn' rel='tooltip' title='Search the corpus!'>Search</button>";
-    fixAddButton = function() {
-      $(".add-td").html("");
-      $("#search_queries tr.search-row:last td.add-td").html(search_button);
-    };
     $("#search_queries").on("click", ".add-query", function(event) {
       addRow(true);
     });
+
     fixXButton = function() {};
     toggler = function(link, target) {
       $(link).click(function(event) {
@@ -466,7 +459,7 @@
           return $(el).data("row") === row;
         });
         subcats = {};
-        $(edit_box).find("tr.datarow").each(function(i2, v2) {
+        $(edit_box).find(".datarow").each(function(i2, v2) {
           var singlecats;
           singlecats = [];
           $(v2).find("option:selected").each(function(i3, v3) {
@@ -1014,8 +1007,8 @@
         slugs = [];
         _.forEach(opts, function(opt) {
           var elts, lim, slug, sname, _i, _j, _k;
-          if (opt["type"] === "categorical" && limit[opt["dbfield"]]) {
-            lim = limit[opt["dbfield"]];
+          if (opt.type === "categorical" && limit[opt.dbfield]) {
+            lim = limit[opt.dbfield];
             _j = void 0;
             sname = void 0;
             elts = _.map(opt["categorical"]["sort_order"], function(key) {
@@ -1063,7 +1056,7 @@
       backdrop: false
     });
     $("#books").modal("hide");
-    $("#search_queries").on("click", ".search-btn", function(event) {
+    $(".search-bw.search-btn").on("click", function(event) {
       runQuery();
     });
     validateQuery = function() {
