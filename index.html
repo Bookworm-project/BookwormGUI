@@ -44,17 +44,12 @@
 				</p>
 			</div>
 
-			<div id="header_right">
-				<a href="javascript:void(0)" class="permalink"><img border="0" src="app/images/link1.png" width="40" class="permalink-img"></a>
-				<a href="#" class="about"><img border="0" class="about-img" src="app/images/info.png" width="40"></a>
-			</div>
-
 		</div>
 	</div>
 
 
 	<div class="row">
-	<div class="col-md-offset-6 col-md-6">
+	<div class="col-md-12 text-right">
 		<ul class="nav nav-pills" role="tablist">
 			<li role="presentation" class="dropdown">
 				<a id="time-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -101,6 +96,35 @@
 				</ul>
 			</li>
 			<li><button class='btn btn-primary search-btn search-bw' rel='tooltip' title='Search the corpus!'>Search</button></li>
+
+		
+		<li role="presentation" class="dropdown">
+			<a id="link-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Share
+				</a>
+
+			<ul id="link-drop-menu" class="dropdown-menu permalink" aria-labelledby="link-drop">
+				<form>
+					<li class="dropdown-header">Link to this view</li>
+					<li class="dropdown-padding" id="permalink"><input type="text"></input></li>
+					<li role="separator" class="divider"></li>
+				</form>
+			</ul>
+		</li>
+
+		<li role="presentation" class="dropdown">
+			<a id="info-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Info
+				</a>
+
+			<ul id="info-drop-menu" class="dropdown-menu permalink" aria-labelledby="info-drop">
+				<form><li class="dropdown-padding">Bookworm was created by Benjamin Schmidt (Department of History, Northeastern), Matt Nicklay, Neva Cherniavsky Durand, Martin Camacho, and 
+					Erez Lieberman Aiden at the <a href="http://www.culturomics.org" target="_blank">Cultural Observatory</a>. It enables you to visually explore lexical trends. 
+					Bookworm is hosted through the&nbsp;generous support of the <a href="http://www.opensciencedatacloud.org/" target="_blank">Open Science Data Cloud</a>. 
+					If you use it in an academic publication, please include a link to <a href="http://bookworm.culturomics.org/" target="_blank">bookworm.culturomics.org</a>.
+				</li></form>
+			</ul>
+		</li>
 
 
 		</ul>
@@ -209,15 +233,17 @@
 	</div><!-- /.modal -->
 
 	<span id="category_box_template" class="box category_box_template">
+		<div class="btn-group" role="group" aria-label="category_box">
 		<div class="dropdown">
-			<a class="btn btn-default" href="#" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" id="toggle1" ><span class="box_data">All Metadata</span><span class="caret"></span></a>
+			<a class="btn btn-default" href="#" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" id="toggle1" >
+				<span class="box_data">All Metadata</span><span class="caret"></span></a>
 			<ul class="dropdown-menu facet-selection" aria-labelledby="toggle1">
 				<li style="padding:3px 20px" class="text-right">Restrict search to the following texts</li>
 				<li role="separator" class="divider"></li>
 			</ul>
 		</div>
 
-		<div class="btn-group" role="group" aria-label="category_box">
+		
 		  <a class="btn btn-default box_x" href="#" role="button">
 		    <span class="removequery"> <i class="fa fa-minus fa-1"></i> </span>
 		  </a>
@@ -228,25 +254,6 @@
 
 	</span>
 
-	<div id="about" style="display: none; width: 250px;">
-		<!--<p>The <span id="sourceName2"></span> bookworm is a creation of the Rice Cultural Observatory which enables you to graphically explore lexical trends across a huge digital library.</p>-->
-		<p>Bookworm was created by Benjamin Schmidt (Department of History, Northeastern), Matt Nicklay, Neva Cherniavsky Durand, Martin Camacho, and Erez Lieberman Aiden at the <a href="http://www.culturomics.org" target="_blank">Cultural Observatory</a>. It enables you to visually explore lexical trends. Bookworm is hosted through the&nbsp;generous support of the <a href="http://www.opensciencedatacloud.org/" target="_blank">Open Science Data Cloud</a>. If you use it in an academic publication, please include a link to <a href="http://bookworm.culturomics.org/" target="_blank">bookworm.culturomics.org</a>.</p>
-		<!-- This help file could be dynamically named, or something?-->
-	</div>
-
-
-	<div id="permalink" style="display:none;">
-		<table>
-			<tr>
-				<td>
-					<label>Link:</label>
-				</td>
-				<td>
-					<input type="text"></input>
-				</td>
-			</tr>
-		</table>
-	</div>
 
 	<script type="text/javascript">
 		$(document).ready(function(){

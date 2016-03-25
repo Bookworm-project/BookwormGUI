@@ -1,7 +1,8 @@
 (function() {
 
   $(document).ready(function() {
-    var addCommas, addRow, buildQuery, colors, cts, data, firstQuery, fixColors, fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, getSmoothing, hexColors, hidePopups, initializeSelectBoxes, lazyround, maxTime, metadata, minTime, n_pages, newEditBox, newSliders, numToReadText, options, page, permQuery, popup_imgs, popups, renderChart, rows, runQuery, search_button, showBooks, time_array, toggler, validateQuery, year_option,bookLinks;
+    var addCommas, addRow, buildQuery, colors, cts, data, firstQuery, fixColors, fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, getSmoothing, hexColors, initializeSelectBoxes, lazyround,
+    maxTime, metadata, minTime, n_pages, newEditBox, newSliders, numToReadText, options, page, permQuery, renderChart, rows, runQuery, search_button, showBooks, time_array, toggler, validateQuery, year_option,bookLinks;
     rows = 0;
     data = [];
     cts = [];
@@ -204,7 +205,6 @@
           $(document).off("click", "body", inEdit);
         };
         if (!editOpen) {
-          hidePopups();
           $(".edit_box_" + row).show();
           $(document).on("click", "body", inEdit);
         } else {
@@ -262,28 +262,6 @@
         hideTarget = function() {};
       });
     };
-    $(".about").click(function(event) {
-      var hideSettings, inSettings;
-      inSettings = function(evt) {
-        if ($(evt.target).parents("#about").length === 0) {
-          hideSettings();
-        }
-      };
-      hideSettings = function() {
-        $(".about-img").css("background-color", "#ffffff");
-        $("#about").hide();
-        $(document).off("click", "body", inSettings);
-      };
-      if ($("#about").is(":visible")) {
-        hideSettings();
-      } else {
-        hidePopups();
-        $(".about-img").css("background-color", "#abcdef");
-        $("#about").show();
-        $(document).on("click", "body", inSettings);
-      }
-      return false;
-    });
 
 
     newSliders = function() {
@@ -383,7 +361,6 @@
             $(this).parents('tr.search-row').remove();
             // fix UI elements
             fixAddButton();
-            popups = _(popups).without('.edit_box_' + row);
             if ($('tr.search-row').length == 1) {
                 $('span.removequery i').css('color', 'black');
             } else {
@@ -971,31 +948,15 @@
       link = document.location.href.split("#")[0] + "#?" + hash;
       return link;
     };
+
+
     $(".permalink").click(function(event) {
-      var hidePermalink, inSettings;
-      inSettings = function(evt) {
-        if ($(evt.target).parents("#permalink").length === 0) {
-          hidePermalink();
-        }
-      };
-      hidePermalink = function() {
-        $(".permalink-img").css("background-color", "#ffffff");
-        $("#permalink").hide();
-        $(document).off("click", "body", inSettings);
-      };
-      if ($("#permalink").is(":visible")) {
-        hidePermalink();
-      } else {
-        hidePopups();
-        $("#permalink").css("top", $(".permalink").height() + $(".permalink").position().top);
-        $("#permalink").css("left", $(".permalink").width() + $(".permalink").position().left - $("#permalink").width() - 11);
-        $(".permalink-img").css("background-color", "#abcdef");
-        $("#permalink").show();
-        $("#permalink input").focus().select();
-        $(document).on("click", "body", inSettings);
-      }
+		$("#permalink").show();
+		$("#permalink input").focus().select();
       return false;
-    });
+    }).dropdown();
+
+
     fixSlugs = function() {
       var limits, opts, query;
       query = buildQuery();
@@ -1039,18 +1000,6 @@
       fixSlugs();
     });
 
-    popups = ["#permalink", "#about"];
-    popup_imgs = [".permalink-img", ".about-img"];
-    hidePopups = function() {
-      _(popups).each(function(v) {
-        $(v).hide();
-      });
-      _(popup_imgs).each(function(v) {
-        $(v).css("background-color", "#ffffff");
-      });
-      $(document).off("click", "body");
-    };
-    key("esc", hidePopups);
     key("enter", runQuery);
     $("#books").modal({
       backdrop: false

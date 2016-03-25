@@ -83,6 +83,19 @@ span.tooltip_top {
 input.term {
   width: 150px;
 }
+
+.dropdown-padding {
+  padding: 3px 20px;
+}
+
+#info-drop-menu > li > a {
+    display: inline;
+    padding: initial;
+    clear: none;
+    white-space: normal;
+    color: blue;
+}
+
 .category_box_template {
   display: none;
 }
