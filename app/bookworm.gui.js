@@ -27,6 +27,7 @@
       },
       error:function(exception){console.log('Exception:'+exception);}
     });
+
     getHash = function() {
 
       var translateOldCounttypes = function(term) {
@@ -57,6 +58,8 @@
         ps['counttype'] = translateOldCounttypes(ps['counttype'])
         return ps;
     };
+
+
     firstQuery = function() {
       var params, search_limits;
       document.getElementById("sourceName1").innerHTML = options["settings"]["sourceName"];
@@ -102,6 +105,8 @@
       });
       fixSlugs();
     };
+
+
     $("#search_queries").on("click", ".box_plus", function(event) {
       var row = $(this).parents(".search-row").data("row");
       addRow(true, row);
@@ -110,15 +115,17 @@
             $('span.removequery i').css('color', '#DF0101');
         }
     });
+
+
     addRow = function(copy, row) {
       var last_cat, last_cats, newCatBox, newRow, new_cat, prevterm, rowHTML, searchRow;
       rows++;
-      prevterm = $("#search_queries table.top tr.search-row:last td.terms-td input.term").attr("value");
+      prevterm = $("#search_queries .terms-td input.term").last().val();
       if (row) {
         searchRow = _.find($("tr.search-row"), function(v) {
           return $(v).data("row") === row;
         });
-        prevterm = $("input.term", searchRow).attr("value");
+        prevterm = $("input.term", searchRow).val();
       }
       rowHTML = "<tr class=search-row data-row=" + rows + ">";
       rowHTML += "<td class=terms-td><input placeholder='Search terms' class=term></input></td>";
@@ -159,18 +166,23 @@
         last_cats[$(v2).data("name")] = singlecats;
       });
       newEditBox(rows);
+
       if (copy) {
         $("input.term", newRow).val(prevterm);
-        new_cat = _.last($(".edit-box"));
-        $("select", new_cat).each(function(i2, v2) {
-          var name;
-          name = $(v2).parents("tr.datarow").data("name");
-          _.each(last_cats[name], function(elv) {
-            $("option[value='" + elv + "']", v2).attr("selected", "selected");
-          });
-          $(v2).trigger("liszt:updated");
-        });
+        $(".edit-box").last().find("select")
+			.each(function(i2, v2) {
+			  var name;
+			  name = $(v2).parents("tr.datarow").data("name");
+			  _.each(last_cats[name], function(elv) {
+				$("option[value='" + elv + "']", v2).attr("selected", "selected");
+			  });
+			  $(v2).trigger("liszt:updated");
+			})
       }
+      // Initialize Chosen for nicer select boxes. This is not done at newEditBox, because copied
+      // rows may have options changed
+      $(".edit-box").last().find("select").chosen({ width: '100%' });
+      
       $("#search_queries").on("click", "#cat_box_" + rows + " a.box_data", function(event) {
         var editId, editOpen, hideEdit, inEdit;
         fixEditBoxPositions();
@@ -180,7 +192,7 @@
         })).each(function(i, v) {
           $(v).hide();
         });
-        editId = "#edit_box_" + row;
+        editId = ".edit_box_" + row;
         editOpen = $(editId).is(":visible");
         inEdit = function(evt) {
           if ($(evt.target).parents(editId).length === 0) {
@@ -188,12 +200,12 @@
           }
         };
         hideEdit = function() {
-          $("#edit_box_" + row).hide();
+          $(".edit_box_" + row).hide();
           $(document).off("click", "body", inEdit);
         };
         if (!editOpen) {
           hidePopups();
-          $("#edit_box_" + row).show();
+          $(".edit_box_" + row).show();
           $(document).on("click", "body", inEdit);
         } else {
           hideEdit();
@@ -203,56 +215,40 @@
       fixSlugs();
       fixAddButton();
     };
+
+
     newEditBox = function(num) {
-      var datatypes, divHTML, divName, opts, table;
-      divName = "edit_box_" + num;
-      popups.push("#" + divName);
-      divHTML = $("<div></div>").attr("id", divName).addClass("edit-box").data("row", num).css("display", "none").html("<span class=subtitle>Restrict search to the following " + options["settings"]["itemName"] + "s</span>");
-      table = "<table></table>";
-      datatypes = ["categorical"];
-      opts = _.filter(options["ui_components"], function(v) {
-        return _.includes(datatypes, v["type"]);
-      });
-      _.each(opts, function(opt) {
-        var elts, row, rowHTML, select, selectHTML;
-        row = $(row).append($("<td></td>").html(opt["name"]).addClass("edit-box-label"));
-        select = "";
-        if (opt["type"] === "categorical") {
-          elts = _(opt["categorical"]["sort_order"]).map(function(key) {
-            return opt["categorical"]["descriptions"][key];
-          });
-          selectHTML = "<select multiple=multiple style='width:350px;'>";
-          selectHTML += "<% _(elts).each(function(el){ %> <option value='<%= el['dbcode']%>'><%= el['name']%></option><% }); %>";
-          selectHTML += "</select>";
-          selectTemplate = _.template(selectHTML);
-          select = selectTemplate({ elts: elts });
-        }
-        rowHTML = "<tr class=datarow data-name=\"<%= dbcode %>\">";
-        rowHTML += "<td class=edit-box-label><%= label%></td>";
-        rowHTML += "<td class=edit-box-select><%= select %></td>";
-        rowHTML += "</tr>";
-        rowTemplate = _.template(rowHTML);
-        row = rowTemplate({ label: opt.name, select: select, dbcode: opt.dbfield });
-        table = $(table).append(row);
-      });
-      divHTML = $(divHTML).append(table);
-      $("body").append(divHTML);
-      fixEditBoxPositions();
-      $("#" + divName + " select").data("placeholder", "All").chosen();
+    	divName = "edit_box_" + num;
+    	divHTML = $("<form><table></table></form>").addClass("edit-box").addClass(divName).data("row", num);
+		  datatypes = ["categorical"];
+		  opts = _.filter(options["ui_components"], function(v) {
+			return _.includes(datatypes, v["type"]);
+		  });
+		  _.each(opts, function(opt) {
+			var elts, row, rowHTML, select, selectHTML;
+			row = $(row).append($("<td></td>").html(opt["name"]).addClass("edit-box-label"));
+			if (opt["type"] === "categorical") {
+			  elts = _(opt["categorical"]["sort_order"]).map(function(key) {
+				return opt["categorical"]["descriptions"][key];
+			  });
+			  selectHTML = "<select multiple=multiple style='width:350px;'>";
+			  selectHTML += "<% _(elts).each(function(el){ %> <option value='<%= el['dbcode']%>'><%= el['name']%></option><% }); %>";
+			  selectHTML += "</select>";
+			  selectTemplate = _.template(selectHTML);
+			  select = selectTemplate({ elts: elts });
+			}
+			rowHTML = "<tr class=datarow data-name=\"<%= dbcode %>\">";
+			rowHTML += "<td class=edit-box-label><%= label%></td>";
+			rowHTML += "<td class=edit-box-select><%= select %></td>";
+			rowHTML += "</tr>";
+			rowTemplate = _.template(rowHTML);
+			row = rowTemplate({ label: opt.name, select: select, dbcode: opt.dbfield });
+			divHTML.append(row);
+		  });
+		  $("#cat_box_"+num+" .dropdown ul").append(divHTML);
     };
-    fixEditBoxPositions = function() {
-      _($(".edit-box")).each(function(v, i) {
-        var editBox, metaBox, newLeft, newTop;
-        i = $(v).data("row");
-        editBox = "#edit_box_" + i;
-        metaBox = $(_.filter($("tr.search-row"), function(r) {
-          return $(r).data("row") === i;
-        })).find(".category_box");
-        newTop = $(metaBox).position().top + $(metaBox).height() + 2;
-        newLeft = $(metaBox).position().left;
-        $(editBox).css("top", newTop).css("left", newLeft);
-      });
-    };
+
+
     search_button = "<button class='btn btn-primary search-btn' rel='tooltip' title='Search the corpus!'>Search</button>";
     fixAddButton = function() {
       $(".add-td").html("");
@@ -295,6 +291,7 @@
       }
       return false;
     });
+
 
     newSliders = function() {
       var newvalue, prevvalue, _j;
@@ -389,11 +386,11 @@
         if(num_el_rows > 1){
             var row = $(this).parents('tr.search-row').data('row');
             // remove corresponding edit box
-            $('#edit_box_' + row).remove();
+            $('.edit_box_' + row).remove();
             $(this).parents('tr.search-row').remove();
             // fix UI elements
             fixAddButton();
-            popups = _(popups).without('#edit_box_' + row);
+            popups = _(popups).without('.edit_box_' + row);
             if ($('tr.search-row').length == 1) {
                 $('span.removequery i').css('color', 'black');
             } else {
@@ -401,6 +398,7 @@
             }
         }
     });
+
     
     getDate = function(intval) {
       var minDate;
@@ -413,6 +411,8 @@
       minDate.setDate(minDate.getDate() + intval);
       return minDate;
     };
+
+
     getSmoothing = function(intval) {
       if (intval <= 10) {
         return intval;
@@ -426,6 +426,8 @@
         return 36;
       }
     };
+
+
     fixColors = function() {
       $(".category_box").each(function(i, v) {
         return $(this).find("td").css("background-color", "rgba(" + colors[i + 1] + ",1)");
@@ -459,6 +461,7 @@
       $(".search-row").each(function(i, v) {
         var edit_box, row, subcats;
         row = $(v).data("row");
+
         edit_box = _.find($(".edit-box"), function(el) {
           return $(el).data("row") === row;
         });
@@ -607,7 +610,7 @@
 	//is this variable initialized somewhere else?
       query = buildQuery()
       var chart, myt, q, series, xAxisLabel, xtype, yAxisLabel, year_span;
-      q = $("a.box_data");
+      q = $(".box_data");
       q = q.slice(0, q.length - 1);
       q = _.map(q, function(el, i) {
         var a, aa, pw, s;
@@ -1005,49 +1008,44 @@
       query = buildQuery();
       opts = options["ui_components"];
       limits = query["search_limits"];
-      _($(".category_box")).each(function(v, i) {
+      $(".category_box").each(function(i, search_limit_el) {
         var limit, meta_text, slugs;
         limit = limits[i];
         slugs = [];
-        _(opts).each(function(opt) {
+        _.forEach(opts, function(opt) {
           var elts, lim, slug, sname, _i, _j, _k;
           if (opt["type"] === "categorical" && limit[opt["dbfield"]]) {
             lim = limit[opt["dbfield"]];
             _j = void 0;
             sname = void 0;
-            elts = _(opt["categorical"]["sort_order"]).map(function(key) {
+            elts = _.map(opt["categorical"]["sort_order"], function(key) {
               return opt["categorical"]["descriptions"][key];
             });
             sname = [];
-            _i = 0;
-            _k = 0;
-            _j = 0;
-            while (_j < elts.length) {
-              _k = 0;
-              while (_k < lim.length) {
-                if (elts[_j]["dbcode"] === lim[_k]) {
-                  if (typeof elts[_j]["shortname"] === "undefined") {
-                    sname[_i++] = elts[_j]["name"];
-                  } else {
-                    sname[_i++] = elts[_j]["shortname"];
-                  }
-                }
-                _k++;
-              }
-              _j++;
-            }
+			_.each(elts, function(elt, _j){
+				if (_.includes(lim, elt.dbcode)){
+					  if (typeof elt.shortname === "undefined") {
+						sname.push(elt.name);
+					  } else {
+						sname.push(elt.shortname);
+					  }
+				}
+			});
+             
+
             slug = opt["name"] + ": " + sname.join(' <em style="font-size:80%;color:#545454"><strong><kbd>OR</kbd></strong></em> ');
             slug_wrapped = "( "+slug+" )";
             slugs.push(slug_wrapped);
           }
         });
         meta_text = (slugs.length !== 0 ? slugs.join(' <em style="font-size:80%"><strong><kbd>AND</kbd></strong></em> ') : "All " + options["settings"]["itemName"] + "s");
-        $(v).find(".box_data").html(meta_text);
+        $(search_limit_el).find(".box_data").html(meta_text);
       });
     };
     $(document).on("change", ".edit-box select", function(event) {
       fixSlugs();
     });
+
     popups = ["#permalink", "#about"];
     popup_imgs = [".permalink-img", ".about-img"];
     hidePopups = function() {
