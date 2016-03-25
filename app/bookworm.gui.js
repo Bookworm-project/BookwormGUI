@@ -576,38 +576,21 @@
     };
 
     renderChart = function() {
-	//is this variable initialized somewhere else?
-      query = buildQuery()
-      var chart, myt, q, series, xAxisLabel, xtype, yAxisLabel, year_span;
+      var chart, myt, q, series, xAxisLabel, xtype, yAxisLabel, year_span, filter_str;
+      var query = buildQuery();
       q = $(".box_data");
       q = q.slice(0, q.length - 1);
       q = _.map(q, function(el, i) {
         var a, aa, pw, s;
-        s = $(el).html();
+        filter_str = $(el).html();
         pw = "; " + numToReadText(cts[i][0]) + " " + 
 	      options["settings"]["itemName"] + "s, " + 
 	      numToReadText(cts[i][1]) + 
 	      " words";
-        aa = [];
-        if (s === "All " + options["settings"]["itemName"] + "s") {
-          aa.push("all " + options["settings"]["itemName"] + "s");
-        } else {
-          // need to remove custom OR styling as highcharts legend color can't handle it
-          bb = []
-          b = s.split('<em style="font-size:80%;color:#545454"><strong><kbd>OR</kbd></strong></em>');
-          _(b).each(function(ss) {
-            bb.push($.trim(ss));
-          });
-          // recombine with simple OR
-          s2 = bb.join(" _OR_ ");
-          
-          // now to remove custom AND styling for same reason
-          a = s2.split('<em style="font-size:80%"><strong><kbd>AND</kbd></strong></em>');
-          _(a).each(function(ss) {
-            aa.push($.trim(ss));
-          });
+        if (filter_str !== "All " + options.settings.itemName + "s") {
+          filter_str = filter_str.replace(/<.?span.*?>/g, '_');
         }
-        return "[" + aa.join(" _AND_ ") + pw + "]";
+        return "[" + filter_str + "]";
       });
       series = [];
       myt = $("#time_measure").val();

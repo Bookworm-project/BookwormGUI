@@ -11,6 +11,7 @@
   text-decoration: none;
   color: #000000;
 }
+
 h3,
 h4 {
   font-family: 'Open Sans', sans-serif;
@@ -28,9 +29,6 @@ li.datarow {
     padding: 3px 20px;
 }
 
-#chart {
-  width: 90%;
-}
 #search_error {
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
@@ -152,6 +150,7 @@ span.remove-query {
 .edit-box table {
   clear: both;
 }
+
 .subtitle {
   font-family: 'Open Sans', sans-serif;
   font-size: 100%;
@@ -161,6 +160,7 @@ span.remove-query {
   vertical-align: baseline;
   letter-spacing: 0em;
 }
+
 .subtitle a {
   color: #2976a7;
   font-family: "Open Sans", sans-serif;
@@ -174,11 +174,14 @@ span.remove-query {
 }
 .box_plus:hover {
   text-decoration: underline;
+}
 
 #chart {
   height: 80%;
+  min-height:600px;
   width: 100%;
 }
+
 #queries {
   height: 100%;
 }
@@ -189,6 +192,7 @@ span.remove-query {
 #year-slider {
   margin-left: 5px;
 }
+
 #smoothing-val,
 #time-val {
   vertical-align: middle;
@@ -203,6 +207,7 @@ span.remove-query {
 li {
   font-family: 'Open Sans', sans-serif;
 }
+
 .loading {
   background: url(images/ajax-loader.gif) no-repeat center center;
 }
