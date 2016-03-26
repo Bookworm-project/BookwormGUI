@@ -90,7 +90,7 @@
 
 		
 		<li role="presentation" class="dropdown">
-			<a id="link-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-label="Link" aria-haspopup="true" aria-expanded="false">
+			<a id="link-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-label="Link" aria-haspopup="true" aria-expanded="false" title="Link">
 					<span class="glyphicon glyphicon-link"  aria-hidden="true"></span>
 				</a>
 
@@ -101,7 +101,7 @@
 		</li>
 
 		<li role="presentation" class="dropdown">
-			<a id="info-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			<a id="info-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Info">
 					<span class="glyphicon glyphicon-info-sign"  aria-hidden="true"></span>
 				</a>
 
@@ -114,7 +114,18 @@
 			</ul>
 		</li>
 
-			<li><button class='btn btn-primary search-btn search-bw' rel='tooltip' title='Search the corpus!'>
+		<li role="presentation" class="dropdown">
+			<a id="export-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Export">
+					<span class="glyphicon glyphicon-cloud-download"  aria-hidden="true"></span>
+				</a>
+
+			<ul id="export-drop-menu" class="dropdown-menu" aria-labelledby="info-drop">
+				<li><a href="#" class="bw-export-png">Export PNG</a></li>
+				<li><a href="#" class="bw-export-pdf">Export PDF</a></li>
+			</ul>
+		</li>
+
+		<li><button class='btn btn-primary search-btn search-bw' rel='tooltip' title='Search the corpus!'>
 					<span class="glyphicon glyphicon-search"  aria-hidden="true"></span> Search
 			</button></li>
 		</ul>

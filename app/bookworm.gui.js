@@ -699,21 +699,13 @@
                 }
           }
         },
+        exporting: {
+        	// This still allows for API calles, it just removes the 
+        	// button on the chart
+        	enabled: false	
+        },
         title: {
           text: null
-        },
-        exporting: {
-          buttons: {
-                contextButton: {
-                    symbol: 'url(common/highcharts/export_icon.png)',
-                    align : 'right',
-                    y : -60,
-                    height: 60,
-                    width: 60,
-                    symbolY:30,
-                    symbolX:30
-                }
-            }
         },
         lineWidth: 1,
         xAxis: {
@@ -815,7 +807,17 @@
           }
         }
       });
+
+	/* Add export handlers for buttons in GUI */
+    $('.bw-export-png').click(function () {
+    	chart.exportChart({filename:"bookworm", type:"image/png"});
+    });
+    $('.bw-export-pdf').click(function () {
+    	chart.exportChart({filename:"bookworm", type:"application/pdf"});
+    });
+
     };
+
     $("#search_queries").on("keydown", "input.term", function(event) {
       if (event.keyCode === 13) {
         runQuery();
