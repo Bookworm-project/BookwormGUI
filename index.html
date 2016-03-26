@@ -49,12 +49,12 @@
 
 	<div class="row">
 
-		<div class="col-md-7 col-md-offset-5 col-sm-9 col-sm-offset-3 col-xs-12">
+		<div class="col-xs-12">
 
-		<ul class="nav nav-pills" role="tablist">
+		<ul class="nav nav-pills navbar-right" role="tablist">
 			<li role="presentation" class="dropdown">
 				<a id="time-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					<span class="glyphicon glyphicon-time"  aria-hidden="true"></span> Dates <span class="caret"></span>
+					<span class="glyphicon glyphicon-time"  aria-hidden="true"></span> <span class="hidden-xs">Dates </span><span class="caret"></span>
 				</a>
 				<ul id="time-drop-menu" class="dropdown-menu" aria-labelledby="time-drop">
 					<li class="dropdown-header">Date Limits</li>
@@ -67,7 +67,7 @@
 			</li>
 			<li role="presentation" class="dropdown">
 				<a id="metric-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					<span class="glyphicon glyphicon-stats"  aria-hidden="true"></span> Metric <span class="caret"></span>
+					<span class="glyphicon glyphicon-stats"  aria-hidden="true"></span> <span class="hidden-xs">Metric </span><span class="caret"></span>
 				</a>
 				<ul id="metric-drop-menu" class="dropdown-menu counttype" aria-labelledby="metric-drop">
 					<li class="dropdown-header">Metric</li>
@@ -79,7 +79,7 @@
 			</li>
 			<li role="presentation" class="dropdown">
 				<a id="case-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					<span class="glyphicon glyphicon-sort"  aria-hidden="true"></span> Case <span class="caret"></span>
+					<span class="glyphicon glyphicon-sort"  aria-hidden="true"></span> <span class="hidden-xs">Case </span><span class="caret"></span>
 				</a>
 				<ul id="case-drop-menu" class="dropdown-menu collationtype" aria-labelledby="case-drop">
 					<li class="dropdown-header">Case</li>
@@ -88,8 +88,20 @@
 				</ul>
 			</li>
 
-		
-		<li role="presentation" class="dropdown">
+		<li><button class='btn btn-primary search-btn search-bw' rel='tooltip' title='Search the corpus!'>
+					<span class="glyphicon glyphicon-search"  aria-hidden="true"></span> Search
+			</button></li>
+		</ul>
+
+
+		</div>
+
+		<div class="col-xs-12 col-sm-9 col-md-10" id="search_queries">
+		</div>
+
+		<div class="pull-right" class="minor-controls">
+			<ul class="nav nav-pills" role="tablist">
+			<li role="presentation" class="dropdown">
 			<a id="link-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-label="Link" aria-haspopup="true" aria-expanded="false" title="Link">
 					<span class="glyphicon glyphicon-link"  aria-hidden="true"></span>
 				</a>
@@ -124,16 +136,7 @@
 				<li><a href="#" class="bw-export-pdf">Export PDF</a></li>
 			</ul>
 		</li>
-
-		<li><button class='btn btn-primary search-btn search-bw' rel='tooltip' title='Search the corpus!'>
-					<span class="glyphicon glyphicon-search"  aria-hidden="true"></span> Search
-			</button></li>
 		</ul>
-
-
-		</div>
-
-		<div class="col-xs-12" id="search_queries">
 		</div>
 	</div>
 
@@ -150,7 +153,6 @@
 	</div>
 
 	<div class="row">
-
 
 	
 			<div id="social">

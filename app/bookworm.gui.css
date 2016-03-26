@@ -115,7 +115,7 @@ span.remove-query {
 .box_data {
     font-size: smaller;
     overflow: hidden;
-    max-width: 600px;
+    max-width: 500px;
     display: inline-block;
     vertical-align: middle;
 }
