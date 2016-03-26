@@ -60,14 +60,22 @@
         return ps;
     };
 
+	// Interactivity for metric/case selection dropdowns
+	$(".collationtype li").on("click", function(event) {
+		$(".collationtype li").removeClass("active");
+		$(this).addClass("active");
+	})
+	$(".counttype li").on("click", function(event) {
+		$(".counttype li").removeClass("active");
+		$(this).addClass("active");
+	})
+
 
     firstQuery = function() {
       var params, search_limits;
       document.getElementById("sourceName1").innerHTML = options["settings"]["sourceName"];
       document.title = "bookworm " + options["settings"]["sourceName"];
-      document.getElementById("countName1").innerHTML = "% of " + options["settings"]["itemName"] + "s";
-      document.getElementById("countName2").innerHTML = options["settings"]["itemName"] + " count";
-      document.getElementById("itemName").innerHTML = options["settings"]["itemName"];
+      $(".bw-texttype").text(options.settings.itemName + "s");
       document.getElementById("sourceURL").innerHTML = "<a href=\"" + options["settings"]["sourceURL"] + "\">" + options["settings"]["sourceURL"] + "</a>";
       params = getHash();
       search_limits = params["search_limits"];
@@ -79,10 +87,10 @@
       });
       initializeSelectBoxes();
       newSliders();
-      $(".btn", "#collationtype").filter(function(i, v) {
+      $(".collationtype li").filter(function(i, v) {
         return $(v).data("val") === params["words_collation"];
       }).addClass("active");
-      $(".btn", "#counttype").filter(function(i, v) {
+      $(".counttype li").filter(function(i, v) {
         return $(v).data("val") === params["counttype"];
       }).addClass("active");
       if ("time_limits" in params) {
@@ -181,7 +189,7 @@
       }
       // Initialize Chosen for nicer select boxes. This is not done at newEditBox, because copied
       // rows may have options changed
-      $(".edit-box").last().find("select").chosen({ width: '100%' });
+      $(".edit-box").last().find("select").trigger("chosen:updated");
       
       $("#search_queries").on("click", "#cat_box_" + rows + " a.box_data", function(event) {
         var editId, editOpen, hideEdit, inEdit;
@@ -217,7 +225,7 @@
 
     newEditBox = function(num) {
     	divName = "edit_box_" + num;
-    	divHTML = $("<form class='form-horizontal'></form>").addClass("edit-box").addClass(divName).data("row", num);
+    	divHTML = $("<form class='form-horizontal dropdown-padding'></form>").addClass("edit-box").addClass(divName).data("row", num);
 		  datatypes = ["categorical"];
 		  opts = _.filter(options["ui_components"], function(v) {
 			return _.includes(datatypes, v["type"]);
@@ -229,18 +237,19 @@
 			  elts = _(opt["categorical"]["sort_order"]).map(function(key) {
 				return opt["categorical"]["descriptions"][key];
 			  });
-			  selectHTML = "<select multiple=multiple style='width:350px;'>";
+			  selectHTML = "<select data-placeholder='All texts' multiple=multiple style='width:350px;'>";
 			  selectHTML += "<% _(elts).each(function(el){ %> <option value='<%= el['dbcode']%>'><%= el['name']%></option><% }); %>";
 			  selectHTML += "</select>";
 			  selectTemplate = _.template(selectHTML);
 			  select = selectTemplate({ elts: elts });
 			}
 
-			rowHTML = "<li class=\"dropdown-header edit-box-label\"><%= label%></li>"
-    		rowHTML += "<li class=\"datarow edit-box-select\" data-name=\"<%= dbcode %>\" ><%= select %></li>";
+			rowHTML = "<div class=\"form-group\"><label for='x' class=\"col-sm-4 edit-box-label\"><%= label%></label>"
+    		rowHTML += "<div class=\"datarow edit-box-select col-sm-8\" data-name=\"<%= dbcode %>\" ><%= select %></div></div>";
 			rowTemplate = _.template(rowHTML);
 			row = rowTemplate({ label: opt.name, select: select, dbcode: opt.dbfield });
 			divHTML.append(row);
+			$(divHTML).find("select").chosen({ width: '100%' })
 		  });
 		  $("#cat_box_"+num+" .dropdown ul").append(divHTML);
     };
@@ -417,8 +426,8 @@
       }
       query = {
         groups: [time_measure],
-        counttype: $(".active", "#counttype").data("val"),
-        words_collation: $(".active", "#collationtype").data("val"),
+        counttype: $(".counttype li.active").data("val"),
+        words_collation: $(".collationtype li.active").data("val"),
         database: options["settings"]["dbname"]
       };
       limits = [];
@@ -521,8 +530,8 @@
         success: function(response) {
 	  newSliders()
 	  var slugQuery;
-          data = JSON.parse(response.replace(/.*RESULT===/,""))
-	  slugQuery = JSON.parse(JSON.stringify(query))
+      data = JSON.parse(response.replace(/.*RESULT===/,""));
+	  slugQuery = JSON.parse(JSON.stringify(query));
 	  slugQuery['groups'] = []
 	  _.forEach(slugQuery['search_limits'],function(limit) {
 	      delete limit['word'];
@@ -674,12 +683,13 @@
         series.push(serie);
       });
       xAxisLabel = year_option["name"];
-      yAxisLabel = $(".active", "#counttype").data("label");
+      yAxisLabel = $(".active", ".counttype").data("label");
       chart = new Highcharts.Chart({
         chart: {
           renderTo: "chart",
-          reflow: false,
-          spacingTop: 70,
+          reflow: true,
+          spacingTop: 10,
+          spacingBottom: 10,
           zoomType: "x",
           type: "line",
           resetZoomButton: {
@@ -932,11 +942,12 @@
     };
 
 
-    $(".permalink").click(function(event) {
-		$("#permalink").show();
+    $(".permalink").click(function(e) {
+    	e.preventDefault();
+    	e.stopPropagation();
 		$("#permalink input").focus().select();
-      return false;
-    }).dropdown();
+      	return true;
+    });
 
 
     fixSlugs = function() {
@@ -999,7 +1010,7 @@
       if (lengthArray.length > 0) {
         error = "Sorry, this Bookworm is only configured to support 1-word, 2-word, and 3-word phrases.";
       }
-      $("#search_error").html(error);
+      $("#bw-search_error").html(error);
       if (error !== "") {
         return false;
       }

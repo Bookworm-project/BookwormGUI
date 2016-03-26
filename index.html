@@ -39,7 +39,7 @@
 			<div id="header_brand">
 				<h1><a href="http://bookworm.culturomics.org" target="_blank">bookworm:</a> <font id="sourceName1"></font></h1>
 				<p>
-					<span class="subtitle">Search for trends in hundreds of thousands of <text id="itemName"></text>s at <span id="sourceURL"></span></span>
+					<span class="subtitle">Search for trends in hundreds of thousands of <span class="bw-texttype">texts</span> at <span id="sourceURL"></span></span>
 				</p>
 			</div>
 
@@ -48,55 +48,45 @@
 
 
 	<div class="row">
-	<div class="col-md-offset-5 col-md-7">
+
+		<div class="col-md-7 col-md-offset-5 col-sm-9 col-sm-offset-3 col-xs-12">
+
 		<ul class="nav nav-pills" role="tablist">
 			<li role="presentation" class="dropdown">
 				<a id="time-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					<span class="glyphicon glyphicon-time"  aria-hidden="true"></span> Time <span class="caret"></span>
+					<span class="glyphicon glyphicon-time"  aria-hidden="true"></span> Dates <span class="caret"></span>
 				</a>
 				<ul id="time-drop-menu" class="dropdown-menu" aria-labelledby="time-drop">
+					<li class="dropdown-header">Date Limits</li>
 					<li><a href="#"><div id="year-slider"></div></a></li>
 					<li><a href="#"><p id="time-val" style="width: 210px"></p></a></li>
+					<li class="dropdown-header">Smoothing</li>
+					<li><a href="#"><div id="smoothing-slider" width="175px"></div></a></li>
+					<li><a href="#"><p id="smoothing-val">t</p></a></li>
 				</ul>
 			</li>
 			<li role="presentation" class="dropdown">
 				<a id="metric-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 					<span class="glyphicon glyphicon-stats"  aria-hidden="true"></span> Metric <span class="caret"></span>
 				</a>
-				<ul id="metric-drop-menu" class="dropdown-menu" aria-labelledby="metric-drop">
-					<li><strong>Metric</strong></li>
-					<li><div class="btn-group" data-toggle="buttons-radio" id="counttype">
-							<button class="btn btn-default btn-xs" data-val="WordsPerMillion" data-label="Words per Million">% of words</button>
-							<button class="btn btn-default btn-xs" data-val="TextPercent" data-label="% of Texts"><div id="countName1"></div></button>
-							<button class="btn btn-default btn-xs" data-val="WordCount" data-label="Number of Words">word count</button>
-							<button class="btn btn-default btn-xs" data-val="TextCount" data-label="Number of Texts"><div id="countName2"></div></button>
-						</div>
-					</li>
-			</ul>
+				<ul id="metric-drop-menu" class="dropdown-menu counttype" aria-labelledby="metric-drop">
+					<li class="dropdown-header">Metric</li>
+					<li data-val="WordsPerMillion" data-label="Words per Million"><a href="#"><span class="glyphicon glyphicon-ok bw-checkmark" aria-hidden="true"></span> Words per Million</a></li>
+					<li data-val="TextPercent" data-label="% of Texts"><a href="#"><span class="glyphicon glyphicon-ok bw-checkmark" aria-hidden="true"></span> Percent of <span class="bw-texttype">Text</span></a></li>
+					<li data-val="WordCount" data-label="Number of Words"><a href="#"><span class="glyphicon glyphicon-ok bw-checkmark" aria-hidden="true"></span> Number of Words</a></li>
+					<li data-val="TextCount" data-label="Number of Texts"><a href="#"><span class="glyphicon glyphicon-ok bw-checkmark" aria-hidden="true"></span> Number of <span class="bw-texttype">Text</span></a></li>
+				</ul>
 			</li>
 			<li role="presentation" class="dropdown">
 				<a id="case-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 					<span class="glyphicon glyphicon-sort"  aria-hidden="true"></span> Case <span class="caret"></span>
 				</a>
-				<ul id="case-drop-menu" class="dropdown-menu" aria-labelledby="case-drop">
-					<li><a href="#"><div class="btn-group" data-toggle="buttons-radio" id="collationtype">
-							<button class="btn btn-default btn-xsi" data-val="Case_Sensitive">Sensitive</button>
-							<button class="btn btn-default btn-xs" data-val="Case_Insensitive">Insensitive</button>
-						</div></a></li>
+				<ul id="case-drop-menu" class="dropdown-menu collationtype" aria-labelledby="case-drop">
+					<li class="dropdown-header">Case</li>
+					<li data-val="Case_Sensitive"><a href="#"><span class="glyphicon glyphicon-ok bw-checkmark" aria-hidden="true"></span> Case-Sensitive</a></li>
+					<li data-val="Case_Insensitive"><a href="#"><span class="glyphicon glyphicon-ok bw-checkmark" aria-hidden="true"></span> Case-Insensitive</a></li>
 				</ul>
 			</li>
-			<li role="presentation" class="dropdown">
-				<a id="smoothing-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					<span class="glyphicon glyphicon-link"  aria-hidden="true"></span> Smoothing <span class="caret"></span>
-				</a>
-				<ul id="smoothing-drop-menu" class="dropdown-menu" aria-labelledby="smoothing-drop">
-					<li><a href="#"><div id="smoothing-slider" width="175px"></div></a></li>
-					<li><a href="#"><p id="smoothing-val">t</p></a></li>
-				</ul>
-			</li>
-			<li><button class='btn btn-primary search-btn search-bw' rel='tooltip' title='Search the corpus!'>
-					<span class="glyphicon glyphicon-search"  aria-hidden="true"></span> Search
-				</button></li>
 
 		
 		<li role="presentation" class="dropdown">
@@ -105,11 +95,8 @@
 				</a>
 
 			<ul id="link-drop-menu" class="dropdown-menu permalink" aria-labelledby="link-drop">
-				<form>
-					<li class="dropdown-header">Link to this view</li>
+					<li class="dropdown-header">Copy this link</li>
 					<li class="dropdown-padding" id="permalink"><input type="text"></input></li>
-					<li role="separator" class="divider"></li>
-				</form>
 			</ul>
 		</li>
 
@@ -118,29 +105,29 @@
 					<span class="glyphicon glyphicon-info-sign"  aria-hidden="true"></span>
 				</a>
 
-			<ul id="info-drop-menu" class="dropdown-menu permalink" aria-labelledby="info-drop">
-				<form><li class="dropdown-padding">Bookworm was created by Benjamin Schmidt (Department of History, Northeastern), Matt Nicklay, Neva Cherniavsky Durand, Martin Camacho, and 
+			<ul id="info-drop-menu" class="dropdown-menu" aria-labelledby="info-drop">
+				<form class='dropdown-padding'>Bookworm was created by Benjamin Schmidt (Department of History, Northeastern), Matt Nicklay, Neva Cherniavsky Durand, Martin Camacho, and 
 					Erez Lieberman Aiden at the <a href="http://www.culturomics.org" target="_blank">Cultural Observatory</a>. It enables you to visually explore lexical trends. 
 					Bookworm is hosted through the&nbsp;generous support of the <a href="http://www.opensciencedatacloud.org/" target="_blank">Open Science Data Cloud</a>. 
 					If you use it in an academic publication, please include a link to <a href="http://bookworm.culturomics.org/" target="_blank">bookworm.culturomics.org</a>.
-				</li></form>
+				</form>
 			</ul>
 		</li>
 
-
+			<li><button class='btn btn-primary search-btn search-bw' rel='tooltip' title='Search the corpus!'>
+					<span class="glyphicon glyphicon-search"  aria-hidden="true"></span> Search
+			</button></li>
 		</ul>
-	</div>
 
-	</div>
-
-
-	<div class="row">
-
-		<div class="col-md-12" id="search_queries">
-			<div id="search_error">
-			</div>
 
 		</div>
+
+		<div class="col-xs-12" id="search_queries">
+		</div>
+	</div>
+
+	<div class="row">
+		<div id="bw-search_error" class="col-xs-12 alert alert-danger"></div>
 	</div>
 
 	<div class="row" id="main">
@@ -152,6 +139,9 @@
 	</div>
 
 	<div class="row">
+
+
+	
 			<div id="social">
 				<table cellspacing="0">
 					<tr>
