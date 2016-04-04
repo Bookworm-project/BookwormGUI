@@ -73,10 +73,10 @@
 
     firstQuery = function() {
       var params, search_limits;
-      document.getElementById("sourceName1").innerHTML = options["settings"]["sourceName"];
+      $("#sourceName1").html(options["settings"]["sourceName"]);
       document.title = "bookworm " + options["settings"]["sourceName"];
       $(".bw-texttype").text(options.settings.itemName + "s");
-      document.getElementById("sourceURL").innerHTML = "<a href=\"" + options["settings"]["sourceURL"] + "\">" + options["settings"]["sourceURL"] + "</a>";
+      $("#sourceURL").html("<a href=\"" + options["settings"]["sourceURL"] + "\">" + options["settings"]["sourceURL"] + "</a>");
       params = getHash();
       search_limits = params["search_limits"];
       _.each(search_limits, function(el) {
