@@ -476,7 +476,8 @@
         i++;
       }
       query["search_limits"] = limits;
-      query["method"] = "return_json"	
+      query["method"] = "data";
+      query["format"] = "json";
       return query;
     };
     addCommas = function(str) {
@@ -518,7 +519,7 @@
       catch(err){
       	console.log(err.message);
       }
-      
+      $("#bw-search_error, #bw-search_warning").text("").hide();
       $("#chart").html("");
       $("#chart").addClass("loading");
       $.ajax({
@@ -526,32 +527,41 @@
         data: {
           query: JSON.stringify(query)
         },
-        dataType: "html",
-        success: function(response) {
-	  newSliders()
-	  var slugQuery;
-      data = JSON.parse(response.replace(/.*RESULT===/,""));
-	  slugQuery = JSON.parse(JSON.stringify(query));
-	  slugQuery['groups'] = []
-	  _.forEach(slugQuery['search_limits'],function(limit) {
-	      delete limit['word'];
-	  })
-	  slugQuery['counttype'] = ['TextCount','WordCount']
-          $.ajax({
-              context: "#search_queries",
-            url: options.settings.host,
-            data: {
-              query: JSON.stringify(slugQuery)
-            },
-            dataType: "html",
-            success: function(response) {
-	      cts = JSON.parse(response);
-              renderChart();
-            },
-            error:function(exception){console.log('Exception:'+exception);}
-          });
+        dataType: "json",
+        error: function(err) {
+        	try {
+				json = JSON.parse(err.responseText);
+				msg = json['message'];
+        	} catch (e) {
+				msg = "Unknown backend error occurred. Sorry!";
+        	}
+        	$("#bw-search_error").text(msg).show();
+        	console.log(err);	
         },
-        error:function(exception){console.log('Exception:'+exception);}
+        success: function(response) {
+		  newSliders();
+		  var slugQuery;
+		  termData = response['data'];
+		  // Copy Query
+		  slugQuery = JSON.parse(JSON.stringify(query));
+		  slugQuery['groups'] = []
+		  _.forEach(slugQuery['search_limits'],function(limit) {
+			  delete limit['word'];
+		  })
+		  slugQuery['counttype'] = ['TextCount','WordCount'];
+		  $.ajax({
+			    context: "#search_queries",
+				url: options.settings.host,
+				data: {
+				  query: JSON.stringify(slugQuery)
+				},
+				dataType: "json",
+				success: function(response) {
+					catData = response['data'];
+					renderChart(termData, catData);
+				}
+		  });
+        }
       });
     };
     minTime = function() {
@@ -584,22 +594,29 @@
       }
     };
 
-    renderChart = function() {
+    renderChart = function(termData, catData) {
       var chart, myt, q, series, xAxisLabel, xtype, yAxisLabel, year_span, filter_str;
       var query = buildQuery();
+
+      if (!(termData instanceof Array)) {
+      	termData = [termData];
+      };
+      if (!(catData[0] instanceof Array)) {
+      	catData = [catData];
+      }
       q = $(".box_data");
       q = q.slice(0, q.length - 1);
       q = _.map(q, function(el, i) {
         var a, aa, pw, s;
         filter_str = $(el).html();
-        pw = "; " + numToReadText(cts[i][0]) + " " + 
+        pw = "; " + numToReadText(catData[i][0]) + " " + 
 	      options["settings"]["itemName"] + "s, " + 
-	      numToReadText(cts[i][1]) + 
+	      numToReadText(catData[i][1]) + 
 	      " words";
         if (filter_str !== "All " + options.settings.itemName + "s") {
           filter_str = filter_str.replace(/<.?span.*?>/g, '_');
         }
-        return "[" + filter_str + "]";
+        return "[" + filter_str + "]" + pw;
       });
       series = [];
       myt = $("#time_measure").val();
@@ -611,7 +628,7 @@
         xtype = "linear";
       }
       year_span = _.range($("#year-slider").data('slider').getValue()[0], $("#year-slider").data('slider').getValue()[1]); // +1
-      _(data).each(function(s, i) {
+      _(termData).each(function(s, i) {
         var sdata, serie, vals, years,groupName,smoothingSpan;
 	  vals = {}
 	  _.keys(s).forEach(function(key) {
@@ -626,7 +643,7 @@
 	  
         sdata = [];
 	if (typeof(query) != "undefined") {
-	  groupName = query['search_limits'][i]['word'].join(", ")
+	  groupName = query.search_limits[i].word.join(", ")
 	}
 
         years = _.filter(year_span, function(year) {
