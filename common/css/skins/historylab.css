@@ -1,0 +1,147 @@
+
+body {
+	font-family: "source-sans-pro", "Trebuchet MS", Helvetica, sans-serif
+}
+
+input, button, select, textarea, text {
+	font-family: "source-sans-pro", "Trebuchet MS", Helvetica, sans-serif;
+	box-shadow: none;
+	outline: none;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	background-image: linear-gradient(#ffffff, #ffffff 25%, #efefef)
+}
+
+.btn {
+	background-image: none;
+	background-color: #FFF;
+}
+
+a, a:hover {
+	color: #555;
+}
+
+.btn-primary, .ui-slider .ui-slider-range,
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+	background-color: #149d54;
+	background-image: none;
+}
+
+.highcharts-series path {
+	stroke-width: 1px;
+	opacity: 1;
+}
+
+.highcharts-series:hover path {
+	opacity: 1;
+	
+}
+
+.advanced, .permalink, .about {
+	text-decoration: none;
+	color: #333;
+	padding: 10px;
+	opacity: 0.8;
+}
+
+.advanced:hover, .permalink:hover, .about:hover {
+	color: #111;
+}
+
+.advanced img, .permalink img, .about img {
+	display: none;
+}
+
+.advanced:before {
+	content: "\f013";
+	font-family: 'FontAwesome';
+	font-size: 150%;
+}
+
+.about:before {
+	content: "\f129";
+	font-family: 'FontAwesome';
+	font-size: 150%;
+}
+
+.permalink:before {
+	content: "\f0c1";
+	font-family: 'FontAwesome';
+	font-size: 150%;
+}
+
+.highcharts-button {
+	
+}
+.highcharts-button image {
+	width: 20px;
+	height: 25px;
+	fill: #555;
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+.highcharts-button:hover image {
+	fill: #333;
+	opacity: 1;
+}
+.highcharts-button text {
+	content: 'download'
+}
+
+.highcharts-button rect {
+	opacity: 0;
+}
+
+#header_brand h1 {
+	color: black;
+}
+
+/*
+.highcharts-series-group:nth-child(1) {
+	fill: black;
+}
+
+.highcharts-series:nth-child(1) {
+	fill: black;
+}
+g.highcharts-series:nth-child(2n+1) {
+    fill: white;
+}
+*/
+
+/*
+g.highcharts-series:nth-child(2) path:nth-child(1) {
+    stroke: black;
+}
+
+g.highcharts-series:nth-child(3) path:nth-child(1) {
+    stroke: red;
+}
+*/
+
+#about, #settings, #permalink {
+	position: fixed;
+    top: 45px;
+    background-color: #FCFCFC;
+    padding: 15px;
+    border: 1px solid #EEE;
+    z-index: 11111;
+    right: 9px;
+    box-shadow: 1px 1px 4px #EEE;
+}
+
+#permalink {
+	padding: 3px;
+    height: 35px;
+}
+
+#permalink input {
+	
+	height: auto;
+}
+
+
+
+
