@@ -1,8 +1,12 @@
 (function() {
 
   $(document).ready(function() {
-    var addCommas, addRow, buildQuery, colors, cts, data, firstQuery, fixColors, fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, getSmoothing, hexColors, initializeSelectBoxes, lazyround,
-    maxTime, metadata, minTime, n_pages, newEditBox, newSliders, numToReadText, options, page, permQuery, renderChart, rows, runQuery, search_button, showBooks, time_array, toggler, validateQuery, year_option,bookLinks;
+    var addCommas, addRow, buildQuery, colors, cts, data, firstQuery, fixColors,
+     fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, 
+     getSmoothing, hexColors, initializeSelectBoxes, lazyround,
+     maxTime, metadata, minTime, n_pages, newEditBox, newSliders, numToReadText, 
+    options, page, permQuery, renderChart, rows, runQuery, search_button, 
+    showBooks, time_array, toggler, validateQuery, year_option,bookLinks;
     rows = 0;
     data = [];
     cts = [];
@@ -421,7 +425,12 @@
         time_measure = time_array[0]["dbfield"];
       } else {
         if (time_array.length > 1) {
-          time_measure = $("#time_measure").val();
+          time_measure = time_array[0]["dbfield"];
+//        Here we need to restore the ability for multiple year fields. The 
+//        selector is gone.          
+//        Old code:
+//
+//        time_measure = $("#time_measure").val();
         }
       }
       query = {
@@ -627,7 +636,8 @@
       if (myt === "author_age") {
         xtype = "linear";
       }
-      year_span = _.range($("#year-slider").data('slider').getValue()[0], $("#year-slider").data('slider').getValue()[1]); // +1
+      year_span = _.range($("#year-slider").data('slider').getValue()[0], 
+                          $("#year-slider").data('slider').getValue()[1] + 1)
       _(termData).each(function(s, i) {
         var sdata, serie, vals, years,groupName,smoothingSpan;
 	  vals = {}
