@@ -9,9 +9,10 @@
     "bookworm"
   ],
   "authors": [
-    "Mitt Nicklay",
-    "Peter Organisciak",
-    "Benjamin Schmidt"
+      "Mitt Nicklay",
+      "Martin Camacho",
+      "Peter Organisciak",
+      "Benjamin Schmidt"
   ],
   "license": "MIT",
   "private": true,
