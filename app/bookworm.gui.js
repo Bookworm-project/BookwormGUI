@@ -1,6 +1,10 @@
-(function() {
+import _ from 'lodash';
+import Highcharts from "highcharts";
+import key from 'keymaster';
+require('highcharts/modules/exporting')(Highcharts);
 
-  $(document).ready(function() {
+export function BookwormModule() {
+
     var addCommas, addRow, buildQuery, colors, cts, data, firstQuery, fixColors,
      fixEditBoxPositions, fixSlugs, fixTime, fixXButton, getDate, getHash, 
      getSmoothing, hexColors, initializeSelectBoxes, lazyround,
@@ -119,13 +123,11 @@
       fixSlugs();
     };
 
-
     $("#search_queries").on("click", ".box_plus", function(event) {
       var row = $(this).parents(".search-row").data("row");
       addRow(true, row);
       updateDeleteButton();
     });
-
 
     addRow = function(copy, row) {
       var last_cat, last_cats, newCatBox, newRow, new_cat, prevterm, rowHTML, searchRow;
@@ -228,6 +230,7 @@
 
 
     newEditBox = function(num) {
+    	var divName, divHTML, datatypes, opts, selectTemplate, rowTemplate;
     	divName = "edit_box_" + num;
     	divHTML = $("<form class='form-horizontal dropdown-padding'></form>").addClass("edit-box").addClass(divName).data("row", num);
 		  datatypes = ["categorical"];
@@ -521,13 +524,6 @@
       }
       query = buildQuery();
       $("#permalink").find("input").val(permQuery());
-      
-      try{
-      	updateTwitterValues(permQuery(),"Check out this #bookworm! ");
-      }
-      catch(err){
-      	console.log(err.message);
-      }
       $("#bw-search_error, #bw-search_warning").text("").hide();
       $("#chart").html("");
       $("#chart").addClass("loading");
@@ -538,6 +534,7 @@
         },
         dataType: "json",
         error: function(err) {
+            var msg;
         	try {
 				json = JSON.parse(err.responseText);
 				msg = json['message'];
@@ -550,7 +547,7 @@
         success: function(response) {
 		  newSliders();
 		  var slugQuery;
-		  termData = response['data'];
+		  var termData = response['data'];
 		  // Copy Query
 		  slugQuery = JSON.parse(JSON.stringify(query));
 		  slugQuery['groups'] = []
@@ -566,7 +563,7 @@
 				},
 				dataType: "json",
 				success: function(response) {
-					catData = response['data'];
+					var catData = response['data'];
 					renderChart(termData, catData);
 				}
 		  });
@@ -1010,7 +1007,7 @@
              
 
             slug = opt["name"] + ": " + sname.join(' <span class="query-cond text-muted">OR</span> ');
-            slug_wrapped = "( "+slug+" )";
+            var slug_wrapped = "( "+slug+" )";
             slugs.push(slug_wrapped);
           }
         });
@@ -1045,9 +1042,7 @@
       }
       return true;
     };
-  });
-
-}).call(this);
+}
 
 var smooth = function(data,span) {
     //This could be modified to take a kernel or something.
@@ -1058,7 +1053,7 @@ var smooth = function(data,span) {
     _.forEach(years,function(year) {
 	//for each date, append it to the nearby years if they exist in the original.
 	_.forEach(_.range(-span,span+1),function(offset) {
-	    comparator = String(parseInt(year)+offset)
+	    var comparator = String(parseInt(year)+offset)
 	    if (typeof(data[comparator]) !="undefined") {
 		if (typeof(smoothingGroups[String(year)])=="undefined") {
 		    //Initialize if missing
@@ -1075,6 +1070,17 @@ var smooth = function(data,span) {
 	output[year] = sum(smoothingGroups[year])/smoothingGroups[year].length
     })
     return output
-}
 
+    $(document).ready(function(){
+        $("[rel=tooltip]").tooltip({ placement: 'right'});
+    });
 
+    window.fbAsyncInit = function() {FB.init({status: true, xfbml: true});};
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js";
+			fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+};
