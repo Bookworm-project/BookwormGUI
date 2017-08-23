@@ -628,7 +628,10 @@
         return "[" + filter_str + "]" + pw;
       });
       series = [];
-      myt = $("#time_measure").val();
+      // Pulls from... where is this exactly?
+      // XXX FIX
+      myt = time_array[0]["dbfield"];
+      console.log(myt)
       if (time_array.length === 1) {
         myt = time_array[0]["dbfield"];
       }
@@ -1045,36 +1048,39 @@
       }
       return true;
     };
-  });
-
-}).call(this);
-
-var smooth = function(data,span) {
+  function smooth(data,span,myt) {
     //This could be modified to take a kernel or something.
     var output,years,smoothingGroups;
+    myt = myt || time_array[0]["dbfield"];
     output = {}
     smoothingGroups = {};
     years = _.keys(data);
     _.forEach(years,function(year) {
-	//for each date, append it to the nearby years if they exist in the original.
-	_.forEach(_.range(-span,span+1),function(offset) {
-	    comparator = String(parseInt(year)+offset)
-	    if (typeof(data[comparator]) !="undefined") {
-		if (typeof(smoothingGroups[String(year)])=="undefined") {
-		    //Initialize if missing
-		    smoothingGroups[String(year)] = []
-		}
-		smoothingGroups[String(year)] = smoothingGroups[String(year)].concat(data[comparator])
-	    }
-	})
+      multiplier =
+        myt.match(/_week/) ? 7 :
+        myt.match(/_month/) ? 30 :
+        1
+
+      //for each date, append it to the nearby years if they exist in the original.
+      _.forEach(_.range(-span*multiplier,span*multiplier+1),function(offset) {
+        comparator = String(parseInt(year)+offset)
+        if (typeof(data[comparator]) !="undefined") {
+          if (typeof(smoothingGroups[String(year)])=="undefined") {
+            //Initialize if missing
+            smoothingGroups[String(year)] = []
+          }
+          smoothingGroups[String(year)] = smoothingGroups[String(year)].concat(data[comparator])
+        }
+      })
     })
     var sum = function(arr) {
-	return arr.reduce(function(a,b) {return a+b})
+      return arr.reduce(function(a,b) {return a+b})
     }
     _.forEach(years,function(year) {
-	output[year] = sum(smoothingGroups[year])/smoothingGroups[year].length
+      output[year] = sum(smoothingGroups[year])/smoothingGroups[year].length
     })
     return output
-}
+  }
+  });
 
-
+}).call(this);

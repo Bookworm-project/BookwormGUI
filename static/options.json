@@ -1,1 +1,134 @@
-{"ui_components": [{"type": "text", "dbfield": "word", "name": "Word(s)"}, {"name": "episodeNumber", "initial": [1, 543], "range": [1, 543], "type": "time", "dbfield": "episodeNumber", "unit": "episodeNumber"}, {"name": "season", "initial": [2, 25], "range": [2, 25], "type": "time", "dbfield": "season", "unit": "season"}, {"name": "ep", "initial": [1, 25], "range": [1, 25], "type": "time", "dbfield": "ep", "unit": "ep"}, {"name": "minute", "initial": [1, 24], "range": [1, 24], "type": "time", "dbfield": "minute", "unit": "minute"}, {"name": "second", "initial": [1, 1390], "range": [1, 1390], "type": "time", "dbfield": "second", "unit": "second"}], "default_search": [{"counttype": "Occurrences_per_Million_Words", "smoothingSpan": 0, "words_collation": "Case_Sensitive", "time_measure": "episodeNumber", "search_limits": [{"word": ["test"]}]}], "settings": {"sourceName": "simpsons", "sourceURL": "simpsons", "itemName": " text", "dbname": "simpsons"}}
+{"ui_components": [{"type": "text", "dbfield": "word", "name": "Word(s)"},
+{"categorical":
+{"sort_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"], "descriptions":
+{"11":
+{"shortname": "CNN", "dbcode": "11", "name": "CNN"}, "10":
+{"shortname": "FOX News", "dbcode": "10", "name": "FOX News"}, "13":
+{"shortname": "LINKTV", "dbcode": "13", "name": "LINKTV"}, "12":
+{"shortname": "FOX", "dbcode": "12", "name": "FOX"}, "15":
+{"shortname": "FOX Business", "dbcode": "15", "name": "FOX Business"}, "14":
+{"shortname": "Me-TV", "dbcode": "14", "name": "Me-TV"}, "17":
+{"shortname": "KOAA", "dbcode": "17", "name": "KOAA"}, "16":
+{"shortname": "PBS", "dbcode": "16", "name": "PBS"}, "19":
+{"shortname": "KDVR", "dbcode": "19", "name": "KDVR"}, "18":
+{"shortname": "KKTV", "dbcode": "18", "name": "KKTV"}, "1":
+{"shortname": "KMTP", "dbcode": "1", "name": "KMTP"}, "3":
+{"shortname": "ABC", "dbcode": "3", "name": "ABC"}, "2":
+{"shortname": "CSPAN", "dbcode": "2", "name": "CSPAN"}, "5":
+{"shortname": "Al Jazeera America", "dbcode": "5", "name": "Al Jazeera America"}, "4":
+{"shortname": "FRANCE24", "dbcode": "4", "name": "FRANCE24"}, "7":
+{"shortname": "Bloomberg", "dbcode": "7", "name": "Bloomberg"}, "6":
+{"shortname": "CBS", "dbcode": "6", "name": "CBS"}, "9":
+{"shortname": "NBC", "dbcode": "9", "name": "NBC"}, "8":
+{"shortname": "MSNBC", "dbcode": "8", "name": "MSNBC"}}}, "type": "categorical", "dbfield": "Network__id", "name": "Network"},
+{"categorical":
+{"sort_order": ["1", "2"], "descriptions":
+{"1":
+{"shortname": "Comcast Cable", "dbcode": "1", "name": "Comcast Cable"}, "2":
+{"shortname": "Antenna", "dbcode": "2", "name": "Antenna"}}}, "type": "categorical", "dbfield": "source__id", "name": "source"},
+{"categorical":
+{"sort_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"], "descriptions":
+{"24":
+{"shortname": "KGAN", "dbcode": "24", "name": "KGAN"}, "25":
+{"shortname": "KNTV", "dbcode": "25", "name": "KNTV"}, "26":
+{"shortname": "KOAA", "dbcode": "26", "name": "KOAA"}, "27":
+{"shortname": "KMEG", "dbcode": "27", "name": "KMEG"}, "20":
+{"shortname": "KCCI", "dbcode": "20", "name": "KCCI"}, "21":
+{"shortname": "KPIX", "dbcode": "21", "name": "KPIX"}, "22":
+{"shortname": "FBC", "dbcode": "22", "name": "FBC"}, "23":
+{"shortname": "KCRG", "dbcode": "23", "name": "KCRG"}, "28":
+{"shortname": "KDVR", "dbcode": "28", "name": "KDVR"}, "29":
+{"shortname": "KKTV", "dbcode": "29", "name": "KKTV"}, "1":
+{"shortname": "KMTP", "dbcode": "1", "name": "KMTP"}, "3":
+{"shortname": "CSPAN", "dbcode": "3", "name": "CSPAN"}, "2":
+{"shortname": "FRANCE24", "dbcode": "2", "name": "FRANCE24"}, "5":
+{"shortname": "BLOOMBERG", "dbcode": "5", "name": "BLOOMBERG"}, "4":
+{"shortname": "ALJAZAM", "dbcode": "4", "name": "ALJAZAM"}, "7":
+{"shortname": "MSNBCW", "dbcode": "7", "name": "MSNBCW"}, "6":
+{"shortname": "WPVI", "dbcode": "6", "name": "WPVI"}, "9":
+{"shortname": "FOXNEWSW", "dbcode": "9", "name": "FOXNEWSW"}, "8":
+{"shortname": "CSPAN3", "dbcode": "8", "name": "CSPAN3"}, "11":
+{"shortname": "CNNW", "dbcode": "11", "name": "CNNW"}, "10":
+{"shortname": "CSPAN2", "dbcode": "10", "name": "CSPAN2"}, "13":
+{"shortname": "KMGH", "dbcode": "13", "name": "KMGH"}, "12":
+{"shortname": "KLAS", "dbcode": "12", "name": "KLAS"}, "15":
+{"shortname": "KGO", "dbcode": "15", "name": "KGO"}, "14":
+{"shortname": "KCAU", "dbcode": "14", "name": "KCAU"}, "17":
+{"shortname": "KWWL", "dbcode": "17", "name": "KWWL"}, "16":
+{"shortname": "KYW", "dbcode": "16", "name": "KYW"}, "19":
+{"shortname": "KOLO", "dbcode": "19", "name": "KOLO"}, "18":
+{"shortname": "LINKTV", "dbcode": "18", "name": "LINKTV"}, "30":
+{"shortname": "KVVU", "dbcode": "30", "name": "KVVU"}}}, "type": "categorical", "dbfield": "contributor__id", "name": "contributor"},
+{"categorical":
+{"sort_order": ["1"], "descriptions":
+{"1":
+{"shortname": "Internet Archive", "dbcode": "1", "name": "Internet Archive"}}}, "type": "categorical", "dbfield": "Sponsor__id", "name": "Sponsor"},
+{"categorical":
+{"sort_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26"], "descriptions":
+{"24":
+{"shortname": "Channel v703", "dbcode": "24", "name": "Channel v703"}, "25":
+{"shortname": "Channel v31.1", "dbcode": "25", "name": "Channel v31.1"}, "26":
+{"shortname": "Channel v14.1", "dbcode": "26", "name": "Channel v14.1"}, "20":
+{"shortname": "Channel v2.1", "dbcode": "20", "name": "Channel v2.1"}, "21":
+{"shortname": "Channel v11.1", "dbcode": "21", "name": "Channel v11.1"}, "22":
+{"shortname": "Channel v705", "dbcode": "22", "name": "Channel v705"}, "23":
+{"shortname": "Channel v761", "dbcode": "23", "name": "Channel v761"}, "1":
+{"shortname": "Channel v32", "dbcode": "1", "name": "Channel v32"}, "3":
+{"shortname": "Channel v24", "dbcode": "3", "name": "Channel v24"}, "2":
+{"shortname": "Channel 35", "dbcode": "2", "name": "Channel 35"}, "5":
+{"shortname": "Channel v763", "dbcode": "5", "name": "Channel v763"}, "4":
+{"shortname": "Channel v107", "dbcode": "4", "name": "Channel v107"}, "7":
+{"shortname": "Channel v787", "dbcode": "7", "name": "Channel v787"}, "6":
+{"shortname": "Channel 6", "dbcode": "6", "name": "Channel 6"}, "9":
+{"shortname": "Channel v8.1", "dbcode": "9", "name": "Channel v8.1"}, "8":
+{"shortname": "Channel v110", "dbcode": "8", "name": "Channel v110"}, "11":
+{"shortname": "Channel v760", "dbcode": "11", "name": "Channel v760"}, "10":
+{"shortname": "Channel v7.1", "dbcode": "10", "name": "Channel v7.1"}, "13":
+{"shortname": "Channel v759", "dbcode": "13", "name": "Channel v759"}, "12":
+{"shortname": "Channel v109", "dbcode": "12", "name": "Channel v109"}, "15":
+{"shortname": "Channel v5.1", "dbcode": "15", "name": "Channel v5.1"}, "14":
+{"shortname": "Channel v9.1", "dbcode": "14", "name": "Channel v9.1"}, "17":
+{"shortname": "Channel 26", "dbcode": "17", "name": "Channel 26"}, "16":
+{"shortname": "Channel v13.1", "dbcode": "16", "name": "Channel v13.1"}, "19":
+{"shortname": "Channel v27", "dbcode": "19", "name": "Channel v27"}, "18":
+{"shortname": "Channel v707", "dbcode": "18", "name": "Channel v707"}}}, "type": "categorical", "dbfield": "Tuner__id", "name": "Tuner"},
+{"categorical":
+{"sort_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"], "descriptions":
+{"11":
+{"shortname": "01:31:00", "dbcode": "11", "name": "01:31:00"}, "10":
+{"shortname": "01:00:59", "dbcode": "10", "name": "01:00:59"}, "13":
+{"shortname": "00:36:00", "dbcode": "13", "name": "00:36:00"}, "12":
+{"shortname": "02:00:00", "dbcode": "12", "name": "02:00:00"}, "14":
+{"shortname": "03:01:00", "dbcode": "14", "name": "03:01:00"}, "1":
+{"shortname": "00:31:00", "dbcode": "1", "name": "00:31:00"}, "3":
+{"shortname": "00:30:00", "dbcode": "3", "name": "00:30:00"}, "2":
+{"shortname": "01:01:00", "dbcode": "2", "name": "01:01:00"}, "5":
+{"shortname": "01:00:00", "dbcode": "5", "name": "01:00:00"}, "4":
+{"shortname": "00:16:00", "dbcode": "4", "name": "00:16:00"}, "7":
+{"shortname": "00:11:00", "dbcode": "7", "name": "00:11:00"}, "6":
+{"shortname": "02:01:00", "dbcode": "6", "name": "02:01:00"}, "9":
+{"shortname": "00:35:00", "dbcode": "9", "name": "00:35:00"}, "8":
+{"shortname": "00:30:59", "dbcode": "8", "name": "00:30:59"}}}, "type": "categorical", "dbfield": "Duration__id", "name": "Duration"},
+{"categorical":
+{"sort_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"], "descriptions":
+{"11":
+{"shortname": "CBS Evening News With Scott Pelley,Television Program", "dbcode": "11", "name": "CBS Evening News With Scott Pelley,Television Program"}, "10":
+{"shortname": "Bloomberg Markets,Television Program", "dbcode": "10", "name": "Bloomberg Markets,Television Program"}, "13":
+{"shortname": "DW News,Television Program", "dbcode": "13", "name": "DW News,Television Program"}, "12":
+{"shortname": "Today,Television Program", "dbcode": "12", "name": "Today,Television Program"}, "14":
+{"shortname": "CBS This Morning,Television Program", "dbcode": "14", "name": "CBS This Morning,Television Program"}, "1":
+{"shortname": "Journal,Television Program", "dbcode": "1", "name": "Journal,Television Program"}, "3":
+{"shortname": "News,Television Program", "dbcode": "3", "name": "News,Television Program"}, "2":
+{"shortname": "The News,Television Program", "dbcode": "2", "name": "The News,Television Program"}, "5":
+{"shortname": "NTD Bay Area News,Television Program", "dbcode": "5", "name": "NTD Bay Area News,Television Program"}, "4":
+{"shortname": "Key Capitol Hill Hearings,Television Program", "dbcode": "4", "name": "Key Capitol Hill Hearings,Television Program"}, "7":
+{"shortname": "Weekend News,Television Program", "dbcode": "7", "name": "Weekend News,Television Program"}, "6":
+{"shortname": "Charlie Rose,Television Program", "dbcode": "6", "name": "Charlie Rose,Television Program"}, "9":
+{"shortname": "Studio 1.0,Television Program", "dbcode": "9", "name": "Studio 1.0,Television Program"}, "8":
+{"shortname": "America This Morning,Television Program", "dbcode": "8", "name": "America This Morning,Television Program"}}}, "type": "categorical", "dbfield": "subject__id", "name": "subject"}, 
+{"name": "date_week", "initial": [736323, 736575], "range": [736323, 736575], "type": "time", "dbfield": "date_week", "unit": "date_week"},
+{"name": "date_month", "initial": [736329, 736573], "range": [736329, 736573], "type": "time", "dbfield": "date_month", "unit": "date_month"},
+{"name": "date_day", "initial": [736329, 736575], "range": [736329, 736575], "type": "time", "dbfield": "date_day", "unit": "date_day"}
+
+], "default_search": [{"counttype": "Occurrences_per_Million_Words", "smoothingSpan": 0, "words_collation": "Case_Sensitive", "time_measure": "date_month", "search_limits": [{"word": ["test"]}]}], "settings":
+{"sourceName": "newsarchive", "sourceURL": "newsarchive", "itemName": " text", "dbname": "newsarchive"}}
