@@ -956,7 +956,7 @@
     permQuery = function() {
       var def, hash, limits, link, query;
       query = buildQuery();
-      def = options["default_search"][0];
+      def = _.sample(options["default_search"]);
       limits = {};
       _(def).each(function(v, key) {
         var eq;
