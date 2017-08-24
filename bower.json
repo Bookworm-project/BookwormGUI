@@ -9,10 +9,10 @@
     "bookworm"
   ],
   "authors": [
-      "Mitt Nicklay",
-      "Martin Camacho",
-      "Peter Organisciak",
-      "Benjamin Schmidt"
+    "Mitt Nicklay",
+    "Martin Camacho",
+    "Peter Organisciak",
+    "Benjamin Schmidt"
   ],
   "license": "MIT",
   "private": true,
@@ -32,6 +32,7 @@
     "keymaster": "^1.6.3",
     "highcharts-export-csv": "*",
     "lodash": "^4.6.1",
-    "seiyria-bootstrap-slider": "^6.1.6"
+    "seiyria-bootstrap-slider": "^6.1.6",
+    "select2": "^4.0.3"
   }
 }

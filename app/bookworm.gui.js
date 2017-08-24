@@ -194,9 +194,9 @@
 			  $(v2).trigger("liszt:updated");
 			})
       }
-      // Initialize Chosen for nicer select boxes. This is not done at newEditBox, because copied
+      // Initialize Select2 for nicer select boxes. This is not done at newEditBox, because copied
       // rows may have options changed
-      $(".edit-box").last().find("select").trigger("chosen:updated");
+      $(".edit-box").last().find("select").trigger("select2:change");
       
       $("#search_queries").on("click", "#cat_box_" + rows + " a.box_data", function(event) {
         var editId, editOpen, hideEdit, inEdit;
@@ -256,7 +256,7 @@
 			rowTemplate = _.template(rowHTML);
 			row = rowTemplate({ label: opt.name, select: select, dbcode: opt.dbfield });
 			divHTML.append(row);
-			$(divHTML).find("select").chosen({ width: '100%' })
+			$(divHTML).find("select").select2({ width: '100%' })
 		  });
 		  $("#cat_box_"+num+" .dropdown ul").append(divHTML);
     };
