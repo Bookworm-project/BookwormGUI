@@ -631,13 +631,7 @@
         return "[" + filter_str + "]" + pw;
       });
       series = [];
-      // Pulls from... where is this exactly?
-      // XXX FIX
       myt = time_array[0]["dbfield"];
-      console.log(myt)
-      if (time_array.length === 1) {
-        myt = time_array[0]["dbfield"];
-      }
       xtype = "datetime";
       if (myt === "author_age") {
         xtype = "linear";
