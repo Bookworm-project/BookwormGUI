@@ -81,6 +81,9 @@
       document.title = "bookworm " + options["settings"]["sourceName"];
       $(".bw-texttype").text(options.settings.itemName + "s");
       $("#sourceURL").html("<a href=\"" + options["settings"]["sourceURL"] + "\">" + options["settings"]["sourceURL"] + "</a>");
+      if (options.settings.magnitude) {
+          $('.bw-magnitude').text(options.settings.magnitude);
+      }
       params = getHash();
       search_limits = params["search_limits"];
       _.each(search_limits, function(el) {
