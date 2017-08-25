@@ -232,7 +232,11 @@
 
     newEditBox = function(num) {
     	divName = "edit_box_" + num;
-    	divHTML = $("<form class='form-horizontal dropdown-padding'></form>").addClass("edit-box").addClass(divName).data("row", num);
+    	divHTML = $("<form class='form-horizontal dropdown-padding edit-box'></form>")
+    				.addClass(divName)
+    				.data("row", num)
+    				.appendTo("#cat_box_"+num+" .dropdown ul");
+
 		  datatypes = ["categorical"];
 		  opts = _.filter(options["ui_components"], function(v) {
 			return _.includes(datatypes, v["type"]);
@@ -244,7 +248,7 @@
 			  elts = _(opt["categorical"]["sort_order"]).map(function(key) {
 				return opt["categorical"]["descriptions"][key];
 			  });
-			  selectHTML = "<select data-placeholder='All texts' multiple=multiple style='width:350px;'>";
+			  selectHTML = "<select multiple=multiple style='width:350px;'>";
 			  selectHTML += "<% _(elts).each(function(el){ %> <option value='<%= el['dbcode']%>'><%= el['name']%></option><% }); %>";
 			  selectHTML += "</select>";
 			  selectTemplate = _.template(selectHTML);
@@ -255,10 +259,77 @@
     		rowHTML += "<div class=\"datarow edit-box-select col-sm-8\" data-name=\"<%= dbcode %>\" ><%= select %></div></div>";
 			rowTemplate = _.template(rowHTML);
 			row = rowTemplate({ label: opt.name, select: select, dbcode: opt.dbfield });
-			divHTML.append(row);
-			$(divHTML).find("select").select2({ width: '100%' })
+			$row = $(row).appendTo(divHTML);
+
+			function regexFindQuery(field, substring, results, page) {
+				var query = buildQuery();
+				query['counttype'] = 'TextCount';
+				query['words_collation'] = 'Case_Sensitive';
+				query['groups'] = ['*'+field+'__id', '*'+field];
+				query['search_limits'] = {};
+				if (substring.length > 0) {
+					query['search_limits'][field] = {'$grep': substring};
+				}
+				query['search_limits'][field + '__id'] = {'$gt': (page-1)*results, '$lt': page*results};
+				return query
+			};
+
+			if (opt.autofill == true) {
+				$row.find("select").select2({ 
+				  placeholder: 'All Texts',
+				  width: '100%',
+				  ajax: {
+					url: options.settings.host,
+					dataType: 'json',
+					delay: 600,
+					data: function(params) {
+						field = opt.dbfield.substring(opt.dbfield.length-4, 0)
+						page = params.page || 1;
+						term = params.term || '';
+						if (params._type == 'query:append') {
+							console.log('test');
+						}
+						// the page size refers to the size of the range that is looked at internally
+						// not the number of results returned (e.g. look at author ids 1-500, 501-1000).
+						// We don't want to search a huge range when everything matches, but the
+						// size scales up when there are more chars
+						var max_result_size;
+						if (term.length <= 1) {
+							max_result_size = 50
+						} else if (term.length <= 3){
+							max_result_size = 5*10**term.length;
+						} else {
+							max_result_size = 5*10**4;
+						}
+						query = regexFindQuery(field, term, max_result_size, page);
+						return {
+							query: JSON.stringify(query) 
+						}
+					},
+					processResults: function (data, params) {
+					  	return {
+					  		results: _.map(data.data, function(result, id) {
+											return {
+												id: id,
+												text: _.flatMap(result, function(v,k){return k+" ("+v+" results)"})[0]
+											}
+					  		}),
+					  		pagination: {
+					  			more: true
+					  		}
+						};
+					},
+					  templateSelection: function(data) {
+						return data.name || data.element.innerText;
+					  },
+					cache: true
+				  }
+				})
+				$row.find("select").val('Test').change();
+			} else {
+				$row.find("select").select2({ placeholder: 'All Texts', width: '100%' });
+			}
 		  });
-		  $("#cat_box_"+num+" .dropdown ul").append(divHTML);
     };
 
     $("#search_queries").on("click", ".add-query", function(event) {

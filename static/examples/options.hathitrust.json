@@ -1,5 +1,4 @@
 {
-  "name": "Record Date Year",
   "settings": {
     "magnitude": "millions",
     "dbname": "Bookworm2016",
@@ -1619,6 +1618,7 @@
       "dbfield": "publication_country__id",
       "type": "categorical",
       "name": "Publication Country",
+      "autofill": true,
       "categorical": {
         "descriptions": {
           "82": {
@@ -7273,6 +7273,7 @@
     {
       "dbfield": "first_author_name__id",
       "type": "categorical",
+      "autofill": true,
       "name": "First Author Name",
       "categorical": {
         "descriptions": {
