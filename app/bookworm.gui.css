@@ -177,8 +177,8 @@ span.remove-query {
 }
 
 #chart {
-  height: 80%;
-  min-height:600px;
+  height: 70%;
+  max-height:500px;
   width: 100%;
 }
 

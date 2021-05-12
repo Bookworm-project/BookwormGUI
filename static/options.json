@@ -1,134 +1,4631 @@
-{"ui_components": [{"type": "text", "dbfield": "word", "name": "Word(s)"},
-{"categorical":
-{"sort_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"], "descriptions":
-{"11":
-{"shortname": "CNN", "dbcode": "11", "name": "CNN"}, "10":
-{"shortname": "FOX News", "dbcode": "10", "name": "FOX News"}, "13":
-{"shortname": "LINKTV", "dbcode": "13", "name": "LINKTV"}, "12":
-{"shortname": "FOX", "dbcode": "12", "name": "FOX"}, "15":
-{"shortname": "FOX Business", "dbcode": "15", "name": "FOX Business"}, "14":
-{"shortname": "Me-TV", "dbcode": "14", "name": "Me-TV"}, "17":
-{"shortname": "KOAA", "dbcode": "17", "name": "KOAA"}, "16":
-{"shortname": "PBS", "dbcode": "16", "name": "PBS"}, "19":
-{"shortname": "KDVR", "dbcode": "19", "name": "KDVR"}, "18":
-{"shortname": "KKTV", "dbcode": "18", "name": "KKTV"}, "1":
-{"shortname": "KMTP", "dbcode": "1", "name": "KMTP"}, "3":
-{"shortname": "ABC", "dbcode": "3", "name": "ABC"}, "2":
-{"shortname": "CSPAN", "dbcode": "2", "name": "CSPAN"}, "5":
-{"shortname": "Al Jazeera America", "dbcode": "5", "name": "Al Jazeera America"}, "4":
-{"shortname": "FRANCE24", "dbcode": "4", "name": "FRANCE24"}, "7":
-{"shortname": "Bloomberg", "dbcode": "7", "name": "Bloomberg"}, "6":
-{"shortname": "CBS", "dbcode": "6", "name": "CBS"}, "9":
-{"shortname": "NBC", "dbcode": "9", "name": "NBC"}, "8":
-{"shortname": "MSNBC", "dbcode": "8", "name": "MSNBC"}}}, "type": "categorical", "dbfield": "Network__id", "name": "Network"},
-{"categorical":
-{"sort_order": ["1", "2"], "descriptions":
-{"1":
-{"shortname": "Comcast Cable", "dbcode": "1", "name": "Comcast Cable"}, "2":
-{"shortname": "Antenna", "dbcode": "2", "name": "Antenna"}}}, "type": "categorical", "dbfield": "source__id", "name": "source"},
-{"categorical":
-{"sort_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"], "descriptions":
-{"24":
-{"shortname": "KGAN", "dbcode": "24", "name": "KGAN"}, "25":
-{"shortname": "KNTV", "dbcode": "25", "name": "KNTV"}, "26":
-{"shortname": "KOAA", "dbcode": "26", "name": "KOAA"}, "27":
-{"shortname": "KMEG", "dbcode": "27", "name": "KMEG"}, "20":
-{"shortname": "KCCI", "dbcode": "20", "name": "KCCI"}, "21":
-{"shortname": "KPIX", "dbcode": "21", "name": "KPIX"}, "22":
-{"shortname": "FBC", "dbcode": "22", "name": "FBC"}, "23":
-{"shortname": "KCRG", "dbcode": "23", "name": "KCRG"}, "28":
-{"shortname": "KDVR", "dbcode": "28", "name": "KDVR"}, "29":
-{"shortname": "KKTV", "dbcode": "29", "name": "KKTV"}, "1":
-{"shortname": "KMTP", "dbcode": "1", "name": "KMTP"}, "3":
-{"shortname": "CSPAN", "dbcode": "3", "name": "CSPAN"}, "2":
-{"shortname": "FRANCE24", "dbcode": "2", "name": "FRANCE24"}, "5":
-{"shortname": "BLOOMBERG", "dbcode": "5", "name": "BLOOMBERG"}, "4":
-{"shortname": "ALJAZAM", "dbcode": "4", "name": "ALJAZAM"}, "7":
-{"shortname": "MSNBCW", "dbcode": "7", "name": "MSNBCW"}, "6":
-{"shortname": "WPVI", "dbcode": "6", "name": "WPVI"}, "9":
-{"shortname": "FOXNEWSW", "dbcode": "9", "name": "FOXNEWSW"}, "8":
-{"shortname": "CSPAN3", "dbcode": "8", "name": "CSPAN3"}, "11":
-{"shortname": "CNNW", "dbcode": "11", "name": "CNNW"}, "10":
-{"shortname": "CSPAN2", "dbcode": "10", "name": "CSPAN2"}, "13":
-{"shortname": "KMGH", "dbcode": "13", "name": "KMGH"}, "12":
-{"shortname": "KLAS", "dbcode": "12", "name": "KLAS"}, "15":
-{"shortname": "KGO", "dbcode": "15", "name": "KGO"}, "14":
-{"shortname": "KCAU", "dbcode": "14", "name": "KCAU"}, "17":
-{"shortname": "KWWL", "dbcode": "17", "name": "KWWL"}, "16":
-{"shortname": "KYW", "dbcode": "16", "name": "KYW"}, "19":
-{"shortname": "KOLO", "dbcode": "19", "name": "KOLO"}, "18":
-{"shortname": "LINKTV", "dbcode": "18", "name": "LINKTV"}, "30":
-{"shortname": "KVVU", "dbcode": "30", "name": "KVVU"}}}, "type": "categorical", "dbfield": "contributor__id", "name": "contributor"},
-{"categorical":
-{"sort_order": ["1"], "descriptions":
-{"1":
-{"shortname": "Internet Archive", "dbcode": "1", "name": "Internet Archive"}}}, "type": "categorical", "dbfield": "Sponsor__id", "name": "Sponsor"},
-{"categorical":
-{"sort_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26"], "descriptions":
-{"24":
-{"shortname": "Channel v703", "dbcode": "24", "name": "Channel v703"}, "25":
-{"shortname": "Channel v31.1", "dbcode": "25", "name": "Channel v31.1"}, "26":
-{"shortname": "Channel v14.1", "dbcode": "26", "name": "Channel v14.1"}, "20":
-{"shortname": "Channel v2.1", "dbcode": "20", "name": "Channel v2.1"}, "21":
-{"shortname": "Channel v11.1", "dbcode": "21", "name": "Channel v11.1"}, "22":
-{"shortname": "Channel v705", "dbcode": "22", "name": "Channel v705"}, "23":
-{"shortname": "Channel v761", "dbcode": "23", "name": "Channel v761"}, "1":
-{"shortname": "Channel v32", "dbcode": "1", "name": "Channel v32"}, "3":
-{"shortname": "Channel v24", "dbcode": "3", "name": "Channel v24"}, "2":
-{"shortname": "Channel 35", "dbcode": "2", "name": "Channel 35"}, "5":
-{"shortname": "Channel v763", "dbcode": "5", "name": "Channel v763"}, "4":
-{"shortname": "Channel v107", "dbcode": "4", "name": "Channel v107"}, "7":
-{"shortname": "Channel v787", "dbcode": "7", "name": "Channel v787"}, "6":
-{"shortname": "Channel 6", "dbcode": "6", "name": "Channel 6"}, "9":
-{"shortname": "Channel v8.1", "dbcode": "9", "name": "Channel v8.1"}, "8":
-{"shortname": "Channel v110", "dbcode": "8", "name": "Channel v110"}, "11":
-{"shortname": "Channel v760", "dbcode": "11", "name": "Channel v760"}, "10":
-{"shortname": "Channel v7.1", "dbcode": "10", "name": "Channel v7.1"}, "13":
-{"shortname": "Channel v759", "dbcode": "13", "name": "Channel v759"}, "12":
-{"shortname": "Channel v109", "dbcode": "12", "name": "Channel v109"}, "15":
-{"shortname": "Channel v5.1", "dbcode": "15", "name": "Channel v5.1"}, "14":
-{"shortname": "Channel v9.1", "dbcode": "14", "name": "Channel v9.1"}, "17":
-{"shortname": "Channel 26", "dbcode": "17", "name": "Channel 26"}, "16":
-{"shortname": "Channel v13.1", "dbcode": "16", "name": "Channel v13.1"}, "19":
-{"shortname": "Channel v27", "dbcode": "19", "name": "Channel v27"}, "18":
-{"shortname": "Channel v707", "dbcode": "18", "name": "Channel v707"}}}, "type": "categorical", "dbfield": "Tuner__id", "name": "Tuner"},
-{"categorical":
-{"sort_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"], "descriptions":
-{"11":
-{"shortname": "01:31:00", "dbcode": "11", "name": "01:31:00"}, "10":
-{"shortname": "01:00:59", "dbcode": "10", "name": "01:00:59"}, "13":
-{"shortname": "00:36:00", "dbcode": "13", "name": "00:36:00"}, "12":
-{"shortname": "02:00:00", "dbcode": "12", "name": "02:00:00"}, "14":
-{"shortname": "03:01:00", "dbcode": "14", "name": "03:01:00"}, "1":
-{"shortname": "00:31:00", "dbcode": "1", "name": "00:31:00"}, "3":
-{"shortname": "00:30:00", "dbcode": "3", "name": "00:30:00"}, "2":
-{"shortname": "01:01:00", "dbcode": "2", "name": "01:01:00"}, "5":
-{"shortname": "01:00:00", "dbcode": "5", "name": "01:00:00"}, "4":
-{"shortname": "00:16:00", "dbcode": "4", "name": "00:16:00"}, "7":
-{"shortname": "00:11:00", "dbcode": "7", "name": "00:11:00"}, "6":
-{"shortname": "02:01:00", "dbcode": "6", "name": "02:01:00"}, "9":
-{"shortname": "00:35:00", "dbcode": "9", "name": "00:35:00"}, "8":
-{"shortname": "00:30:59", "dbcode": "8", "name": "00:30:59"}}}, "type": "categorical", "dbfield": "Duration__id", "name": "Duration"},
-{"categorical":
-{"sort_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"], "descriptions":
-{"11":
-{"shortname": "CBS Evening News With Scott Pelley,Television Program", "dbcode": "11", "name": "CBS Evening News With Scott Pelley,Television Program"}, "10":
-{"shortname": "Bloomberg Markets,Television Program", "dbcode": "10", "name": "Bloomberg Markets,Television Program"}, "13":
-{"shortname": "DW News,Television Program", "dbcode": "13", "name": "DW News,Television Program"}, "12":
-{"shortname": "Today,Television Program", "dbcode": "12", "name": "Today,Television Program"}, "14":
-{"shortname": "CBS This Morning,Television Program", "dbcode": "14", "name": "CBS This Morning,Television Program"}, "1":
-{"shortname": "Journal,Television Program", "dbcode": "1", "name": "Journal,Television Program"}, "3":
-{"shortname": "News,Television Program", "dbcode": "3", "name": "News,Television Program"}, "2":
-{"shortname": "The News,Television Program", "dbcode": "2", "name": "The News,Television Program"}, "5":
-{"shortname": "NTD Bay Area News,Television Program", "dbcode": "5", "name": "NTD Bay Area News,Television Program"}, "4":
-{"shortname": "Key Capitol Hill Hearings,Television Program", "dbcode": "4", "name": "Key Capitol Hill Hearings,Television Program"}, "7":
-{"shortname": "Weekend News,Television Program", "dbcode": "7", "name": "Weekend News,Television Program"}, "6":
-{"shortname": "Charlie Rose,Television Program", "dbcode": "6", "name": "Charlie Rose,Television Program"}, "9":
-{"shortname": "Studio 1.0,Television Program", "dbcode": "9", "name": "Studio 1.0,Television Program"}, "8":
-{"shortname": "America This Morning,Television Program", "dbcode": "8", "name": "America This Morning,Television Program"}}}, "type": "categorical", "dbfield": "subject__id", "name": "subject"}, 
-{"name": "date_week", "initial": [736323, 736575], "range": [736323, 736575], "type": "time", "dbfield": "date_week", "unit": "date_week"},
-{"name": "date_month", "initial": [736329, 736573], "range": [736329, 736573], "type": "time", "dbfield": "date_month", "unit": "date_month"},
-{"name": "date_day", "initial": [736329, 736575], "range": [736329, 736575], "type": "time", "dbfield": "date_day", "unit": "date_day"}
-
-], "default_search": [{"counttype": "Occurrences_per_Million_Words", "smoothingSpan": 0, "words_collation": "Case_Sensitive", "time_measure": "date_month", "search_limits": [{"word": ["test"]}]}], "settings":
-{"sourceName": "newsarchive", "sourceURL": "newsarchive", "itemName": " text", "dbname": "newsarchive"}}
+{
+  "settings": {
+    "magnitude": "millions",
+    "dbname": "bookworm_sample",
+    "itemName": "volume",
+    "sourceName": "HathiTrust",
+    "host": "http://localhost:10012",
+    "sourceURL": "http://hathitrust.org"
+  },
+  "ui_components": [
+    {
+      "type": "text",
+      "dbfield": "word",
+      "name": "Word(S)"
+    },
+    {
+      "dbfield": "languages__id",
+      "type": "categorical",
+      "name": "Language",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "eng",
+            "shortname": "eng"
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "lat",
+            "shortname": "lat"
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "fre",
+            "shortname": "fre"
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "hin",
+            "shortname": "hin"
+          },
+          "5": {
+            "dbcode": "5",
+            "name": "ara",
+            "shortname": "ara"
+          },
+          "6": {
+            "dbcode": "6",
+            "name": "ger",
+            "shortname": "ger"
+          },
+          "7": {
+            "dbcode": "7",
+            "name": "chi",
+            "shortname": "chi"
+          },
+          "8": {
+            "dbcode": "8",
+            "name": "jpn",
+            "shortname": "jpn"
+          },
+          "9": {
+            "dbcode": "9",
+            "name": "heb",
+            "shortname": "heb"
+          },
+          "10": {
+            "dbcode": "10",
+            "name": "grc",
+            "shortname": "grc"
+          },
+          "11": {
+            "dbcode": "11",
+            "name": "tam",
+            "shortname": "tam"
+          },
+          "12": {
+            "dbcode": "12",
+            "name": "san",
+            "shortname": "san"
+          },
+          "13": {
+            "dbcode": "13",
+            "name": "vie",
+            "shortname": "vie"
+          },
+          "14": {
+            "dbcode": "14",
+            "name": "por",
+            "shortname": "por"
+          },
+          "15": {
+            "dbcode": "15",
+            "name": "urd",
+            "shortname": "urd"
+          },
+          "16": {
+            "dbcode": "16",
+            "name": "rum",
+            "shortname": "rum"
+          },
+          "17": {
+            "dbcode": "17",
+            "name": "bul",
+            "shortname": "bul"
+          },
+          "18": {
+            "dbcode": "18",
+            "name": "tha",
+            "shortname": "tha"
+          },
+          "19": {
+            "dbcode": "19",
+            "name": "cat",
+            "shortname": "cat"
+          },
+          "20": {
+            "dbcode": "20",
+            "name": "cze",
+            "shortname": "cze"
+          },
+          "21": {
+            "dbcode": "21",
+            "name": "tel",
+            "shortname": "tel"
+          },
+          "22": {
+            "dbcode": "22",
+            "name": "may",
+            "shortname": "may"
+          },
+          "23": {
+            "dbcode": "23",
+            "name": "per",
+            "shortname": "per"
+          },
+          "24": {
+            "dbcode": "24",
+            "name": "fin",
+            "shortname": "fin"
+          },
+          "25": {
+            "dbcode": "25",
+            "name": "gre",
+            "shortname": "gre"
+          },
+          "26": {
+            "dbcode": "26",
+            "name": "nor",
+            "shortname": "nor"
+          },
+          "27": {
+            "dbcode": "27",
+            "name": "mar",
+            "shortname": "mar"
+          },
+          "28": {
+            "dbcode": "28",
+            "name": "yid",
+            "shortname": "yid"
+          },
+          "29": {
+            "dbcode": "29",
+            "name": "dan",
+            "shortname": "dan"
+          },
+          "30": {
+            "dbcode": "30",
+            "name": "ukr",
+            "shortname": "ukr"
+          },
+          "31": {
+            "dbcode": "31",
+            "name": "tur",
+            "shortname": "tur"
+          },
+          "32": {
+            "dbcode": "32",
+            "name": "kor",
+            "shortname": "kor"
+          },
+          "33": {
+            "dbcode": "33",
+            "name": "srp",
+            "shortname": "srp"
+          },
+          "34": {
+            "dbcode": "34",
+            "name": "hrv",
+            "shortname": "hrv"
+          },
+          "35": {
+            "dbcode": "35",
+            "name": "spa",
+            "shortname": "spa"
+          },
+          "36": {
+            "dbcode": "36",
+            "name": "rus",
+            "shortname": "rus"
+          },
+          "37": {
+            "dbcode": "37",
+            "name": "scr",
+            "shortname": "scr"
+          },
+          "38": {
+            "dbcode": "38",
+            "name": "scc",
+            "shortname": "scc"
+          },
+          "39": {
+            "dbcode": "39",
+            "name": "ita",
+            "shortname": "ita"
+          },
+          "40": {
+            "dbcode": "40",
+            "name": "swe",
+            "shortname": "swe"
+          },
+          "41": {
+            "dbcode": "41",
+            "name": "und",
+            "shortname": "und"
+          },
+          "42": {
+            "dbcode": "42",
+            "name": "hun",
+            "shortname": "hun"
+          },
+          "43": {
+            "dbcode": "43",
+            "name": "ota",
+            "shortname": "ota"
+          },
+          "44": {
+            "dbcode": "44",
+            "name": "dut",
+            "shortname": "dut"
+          },
+          "45": {
+            "dbcode": "45",
+            "name": "slo",
+            "shortname": "slo"
+          },
+          "46": {
+            "dbcode": "46",
+            "name": "pra",
+            "shortname": "pra"
+          },
+          "47": {
+            "dbcode": "47",
+            "name": "pli",
+            "shortname": "pli"
+          },
+          "48": {
+            "dbcode": "48",
+            "name": "pol",
+            "shortname": "pol"
+          },
+          "49": {
+            "dbcode": "49",
+            "name": "pal",
+            "shortname": "pal"
+          },
+          "50": {
+            "dbcode": "50",
+            "name": "syr",
+            "shortname": "syr"
+          },
+          "51": {
+            "dbcode": "51",
+            "name": "esk",
+            "shortname": "esk"
+          },
+          "52": {
+            "dbcode": "52",
+            "name": "enm",
+            "shortname": "enm"
+          },
+          "53": {
+            "dbcode": "53",
+            "name": "ind",
+            "shortname": "ind"
+          },
+          "54": {
+            "dbcode": "54",
+            "name": "slv",
+            "shortname": "slv"
+          },
+          "55": {
+            "dbcode": "55",
+            "name": "snd",
+            "shortname": "snd"
+          },
+          "56": {
+            "dbcode": "56",
+            "name": "map",
+            "shortname": "map"
+          },
+          "57": {
+            "dbcode": "57",
+            "name": "tib",
+            "shortname": "tib"
+          },
+          "58": {
+            "dbcode": "58",
+            "name": "mul",
+            "shortname": "mul"
+          },
+          "59": {
+            "dbcode": "59",
+            "name": "ave",
+            "shortname": "ave"
+          },
+          "60": {
+            "dbcode": "60",
+            "name": "arc",
+            "shortname": "arc"
+          },
+          "61": {
+            "dbcode": "61",
+            "name": "fro",
+            "shortname": "fro"
+          },
+          "62": {
+            "dbcode": "62",
+            "name": "rom",
+            "shortname": "rom"
+          },
+          "63": {
+            "dbcode": "63",
+            "name": "pan",
+            "shortname": "pan"
+          },
+          "64": {
+            "dbcode": "64",
+            "name": "ien",
+            "shortname": "ien"
+          },
+          "65": {
+            "dbcode": "65",
+            "name": "lao",
+            "shortname": "lao"
+          },
+          "66": {
+            "dbcode": "66",
+            "name": "swa",
+            "shortname": "swa"
+          },
+          "67": {
+            "dbcode": "67",
+            "name": "kir",
+            "shortname": "kir"
+          },
+          "68": {
+            "dbcode": "68",
+            "name": "cro",
+            "shortname": "cro"
+          },
+          "69": {
+            "dbcode": "69",
+            "name": "ben",
+            "shortname": "ben"
+          },
+          "70": {
+            "dbcode": "70",
+            "name": "jrb",
+            "shortname": "jrb"
+          },
+          "71": {
+            "dbcode": "71",
+            "name": "inc",
+            "shortname": "inc"
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "52",
+          "53",
+          "54",
+          "55",
+          "56",
+          "57",
+          "58",
+          "59",
+          "60",
+          "61",
+          "62",
+          "63",
+          "64",
+          "65",
+          "66",
+          "67",
+          "68",
+          "69",
+          "70",
+          "71"
+        ]
+      }
+    },
+    {
+      "dbfield": "publication_country__id",
+      "type": "categorical",
+      "name": "Publication Country",
+      "autofill": true,
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "United States",
+            "shortname": "United States"
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "India",
+            "shortname": "India"
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "unknown",
+            "shortname": "unknown"
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "Serbia and Montenegro",
+            "shortname": "Serbia and Montenegro"
+          },
+          "5": {
+            "dbcode": "5",
+            "name": "Japan",
+            "shortname": "Japan"
+          },
+          "6": {
+            "dbcode": "6",
+            "name": "United Kingdom",
+            "shortname": "United Kingdom"
+          },
+          "7": {
+            "dbcode": "7",
+            "name": "Thailand",
+            "shortname": "Thailand"
+          },
+          "8": {
+            "dbcode": "8",
+            "name": "Vietnam",
+            "shortname": "Vietnam"
+          },
+          "9": {
+            "dbcode": "9",
+            "name": "Germany",
+            "shortname": "Germany"
+          },
+          "10": {
+            "dbcode": "10",
+            "name": "Romania",
+            "shortname": "Romania"
+          },
+          "11": {
+            "dbcode": "11",
+            "name": "Korea (South)",
+            "shortname": "Korea (South)"
+          },
+          "12": {
+            "dbcode": "12",
+            "name": "Bulgaria",
+            "shortname": "Bulgaria"
+          },
+          "13": {
+            "dbcode": "13",
+            "name": "Turkey",
+            "shortname": "Turkey"
+          },
+          "14": {
+            "dbcode": "14",
+            "name": "Finland",
+            "shortname": "Finland"
+          },
+          "15": {
+            "dbcode": "15",
+            "name": "Spain",
+            "shortname": "Spain"
+          },
+          "16": {
+            "dbcode": "16",
+            "name": "Norway",
+            "shortname": "Norway"
+          },
+          "17": {
+            "dbcode": "17",
+            "name": "Malaysia",
+            "shortname": "Malaysia"
+          },
+          "18": {
+            "dbcode": "18",
+            "name": "Israel",
+            "shortname": "Israel"
+          },
+          "19": {
+            "dbcode": "19",
+            "name": "Denmark",
+            "shortname": "Denmark"
+          },
+          "20": {
+            "dbcode": "20",
+            "name": "Czechoslovakia",
+            "shortname": "Czechoslovakia"
+          },
+          "21": {
+            "dbcode": "21",
+            "name": "Pakistan",
+            "shortname": "Pakistan"
+          },
+          "22": {
+            "dbcode": "22",
+            "name": "Iran",
+            "shortname": "Iran"
+          },
+          "23": {
+            "dbcode": "23",
+            "name": "Netherlands",
+            "shortname": "Netherlands"
+          },
+          "24": {
+            "dbcode": "24",
+            "name": "Brazil",
+            "shortname": "Brazil"
+          },
+          "25": {
+            "dbcode": "25",
+            "name": "Egypt",
+            "shortname": "Egypt"
+          },
+          "26": {
+            "dbcode": "26",
+            "name": "France",
+            "shortname": "France"
+          },
+          "27": {
+            "dbcode": "27",
+            "name": "Ukraine",
+            "shortname": "Ukraine"
+          },
+          "28": {
+            "dbcode": "28",
+            "name": "Canada",
+            "shortname": "Canada"
+          },
+          "29": {
+            "dbcode": "29",
+            "name": "Croatia",
+            "shortname": "Croatia"
+          },
+          "30": {
+            "dbcode": "30",
+            "name": "Greece",
+            "shortname": "Greece"
+          },
+          "31": {
+            "dbcode": "31",
+            "name": "Soviet Union",
+            "shortname": "Soviet Union"
+          },
+          "32": {
+            "dbcode": "32",
+            "name": "Syria",
+            "shortname": "Syria"
+          },
+          "33": {
+            "dbcode": "33",
+            "name": "Lebanon",
+            "shortname": "Lebanon"
+          },
+          "34": {
+            "dbcode": "34",
+            "name": "Portugal",
+            "shortname": "Portugal"
+          },
+          "35": {
+            "dbcode": "35",
+            "name": "Hong Kong",
+            "shortname": "Hong Kong"
+          },
+          "36": {
+            "dbcode": "36",
+            "name": "Argentina",
+            "shortname": "Argentina"
+          },
+          "37": {
+            "dbcode": "37",
+            "name": "Czech Republic",
+            "shortname": "Czech Republic"
+          },
+          "38": {
+            "dbcode": "38",
+            "name": "Slovakia",
+            "shortname": "Slovakia"
+          },
+          "39": {
+            "dbcode": "39",
+            "name": "Italy",
+            "shortname": "Italy"
+          },
+          "40": {
+            "dbcode": "40",
+            "name": "Singapore",
+            "shortname": "Singapore"
+          },
+          "41": {
+            "dbcode": "41",
+            "name": "Serbia",
+            "shortname": "Serbia"
+          },
+          "42": {
+            "dbcode": "42",
+            "name": "Russia (Federation)",
+            "shortname": "Russia (Federation)"
+          },
+          "43": {
+            "dbcode": "43",
+            "name": "Sweden",
+            "shortname": "Sweden"
+          },
+          "44": {
+            "dbcode": "44",
+            "name": "Bosnia and Hercegovina",
+            "shortname": "Bosnia and Hercegovina"
+          },
+          "45": {
+            "dbcode": "45",
+            "name": "Indonesia",
+            "shortname": "Indonesia"
+          },
+          "46": {
+            "dbcode": "46",
+            "name": "Switzerland",
+            "shortname": "Switzerland"
+          },
+          "47": {
+            "dbcode": "47",
+            "name": "Vietnam, North",
+            "shortname": "Vietnam, North"
+          },
+          "48": {
+            "dbcode": "48",
+            "name": "Mexico",
+            "shortname": "Mexico"
+          },
+          "49": {
+            "dbcode": "49",
+            "name": "Poland",
+            "shortname": "Poland"
+          },
+          "50": {
+            "dbcode": "50",
+            "name": "Austria",
+            "shortname": "Austria"
+          },
+          "51": {
+            "dbcode": "51",
+            "name": "Germany (East)",
+            "shortname": "Germany (East)"
+          },
+          "52": {
+            "dbcode": "52",
+            "name": "Belgium",
+            "shortname": "Belgium"
+          },
+          "53": {
+            "dbcode": "53",
+            "name": "China (Republic : 1949- )",
+            "shortname": "China (Republic : 1949- )"
+          },
+          "54": {
+            "dbcode": "54",
+            "name": "West Berlin",
+            "shortname": "West Berlin"
+          },
+          "55": {
+            "dbcode": "55",
+            "name": "Montenegro",
+            "shortname": "Montenegro"
+          },
+          "56": {
+            "dbcode": "56",
+            "name": "Tunisia",
+            "shortname": "Tunisia"
+          },
+          "57": {
+            "dbcode": "57",
+            "name": "Sri Lanka",
+            "shortname": "Sri Lanka"
+          },
+          "58": {
+            "dbcode": "58",
+            "name": "Iraq",
+            "shortname": "Iraq"
+          },
+          "59": {
+            "dbcode": "59",
+            "name": "Hungary",
+            "shortname": "Hungary"
+          },
+          "60": {
+            "dbcode": "60",
+            "name": "Brunei",
+            "shortname": "Brunei"
+          },
+          "61": {
+            "dbcode": "61",
+            "name": "Vietnam, South",
+            "shortname": "Vietnam, South"
+          },
+          "62": {
+            "dbcode": "62",
+            "name": "Panama",
+            "shortname": "Panama"
+          },
+          "63": {
+            "dbcode": "63",
+            "name": "China",
+            "shortname": "China"
+          },
+          "64": {
+            "dbcode": "64",
+            "name": "Philippines",
+            "shortname": "Philippines"
+          },
+          "65": {
+            "dbcode": "65",
+            "name": "Lithuania",
+            "shortname": "Lithuania"
+          },
+          "66": {
+            "dbcode": "66",
+            "name": "Korea (North)",
+            "shortname": "Korea (North)"
+          },
+          "67": {
+            "dbcode": "67",
+            "name": "Jordan",
+            "shortname": "Jordan"
+          },
+          "68": {
+            "dbcode": "68",
+            "name": "Slovenia",
+            "shortname": "Slovenia"
+          },
+          "69": {
+            "dbcode": "69",
+            "name": "Moldova",
+            "shortname": "Moldova"
+          },
+          "70": {
+            "dbcode": "70",
+            "name": "Afghanistan",
+            "shortname": "Afghanistan"
+          },
+          "71": {
+            "dbcode": "71",
+            "name": "Jan Mayen",
+            "shortname": "Jan Mayen"
+          },
+          "72": {
+            "dbcode": "72",
+            "name": "Georgia (Republic)",
+            "shortname": "Georgia (Republic)"
+          },
+          "73": {
+            "dbcode": "73",
+            "name": "Costa Rica",
+            "shortname": "Costa Rica"
+          },
+          "74": {
+            "dbcode": "74",
+            "name": "Burma",
+            "shortname": "Burma"
+          },
+          "75": {
+            "dbcode": "75",
+            "name": "Australia",
+            "shortname": "Australia"
+          },
+          "76": {
+            "dbcode": "76",
+            "name": "Angola",
+            "shortname": "Angola"
+          },
+          "77": {
+            "dbcode": "77",
+            "name": "Algeria",
+            "shortname": "Algeria"
+          },
+          "78": {
+            "dbcode": "78",
+            "name": "Yemen (People's Democratic Republic)",
+            "shortname": "Yemen (People's Democratic Republic)"
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "52",
+          "53",
+          "54",
+          "55",
+          "56",
+          "57",
+          "58",
+          "59",
+          "60",
+          "61",
+          "62",
+          "63",
+          "64",
+          "65",
+          "66",
+          "67",
+          "68",
+          "69",
+          "70",
+          "71",
+          "72",
+          "73",
+          "74",
+          "75",
+          "76",
+          "77",
+          "78"
+        ]
+      }
+    },
+    {
+      "dbfield": "publication_state__id",
+      "type": "categorical",
+      "name": "Publication State",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "",
+            "shortname": ""
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "New York (State)",
+            "shortname": "New York (State)"
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "England",
+            "shortname": "England"
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "Massachusetts",
+            "shortname": "Massachusetts"
+          },
+          "5": {
+            "dbcode": "5",
+            "name": "Illinois",
+            "shortname": "Illinois"
+          },
+          "6": {
+            "dbcode": "6",
+            "name": "California",
+            "shortname": "California"
+          },
+          "7": {
+            "dbcode": "7",
+            "name": "Michigan",
+            "shortname": "Michigan"
+          },
+          "8": {
+            "dbcode": "8",
+            "name": "Ukraine",
+            "shortname": "Ukraine"
+          },
+          "9": {
+            "dbcode": "9",
+            "name": "New Jersey",
+            "shortname": "New Jersey"
+          },
+          "10": {
+            "dbcode": "10",
+            "name": "Pennsylvania",
+            "shortname": "Pennsylvania"
+          },
+          "11": {
+            "dbcode": "11",
+            "name": "Manitoba",
+            "shortname": "Manitoba"
+          },
+          "12": {
+            "dbcode": "12",
+            "name": "District of Columbia",
+            "shortname": "District of Columbia"
+          },
+          "13": {
+            "dbcode": "13",
+            "name": "Indiana",
+            "shortname": "Indiana"
+          },
+          "14": {
+            "dbcode": "14",
+            "name": "Ohio",
+            "shortname": "Ohio"
+          },
+          "15": {
+            "dbcode": "15",
+            "name": "Colorado",
+            "shortname": "Colorado"
+          },
+          "16": {
+            "dbcode": "16",
+            "name": "Ontario",
+            "shortname": "Ontario"
+          },
+          "17": {
+            "dbcode": "17",
+            "name": "Hawaii",
+            "shortname": "Hawaii"
+          },
+          "18": {
+            "dbcode": "18",
+            "name": "Wisconsin",
+            "shortname": "Wisconsin"
+          },
+          "19": {
+            "dbcode": "19",
+            "name": "Connecticut",
+            "shortname": "Connecticut"
+          },
+          "20": {
+            "dbcode": "20",
+            "name": "Maryland",
+            "shortname": "Maryland"
+          },
+          "21": {
+            "dbcode": "21",
+            "name": "British Columbia",
+            "shortname": "British Columbia"
+          },
+          "22": {
+            "dbcode": "22",
+            "name": "Scotland",
+            "shortname": "Scotland"
+          },
+          "23": {
+            "dbcode": "23",
+            "name": "Alberta",
+            "shortname": "Alberta"
+          },
+          "24": {
+            "dbcode": "24",
+            "name": "Florida",
+            "shortname": "Florida"
+          },
+          "25": {
+            "dbcode": "25",
+            "name": "Minnesota",
+            "shortname": "Minnesota"
+          },
+          "26": {
+            "dbcode": "26",
+            "name": "Québec (Province)",
+            "shortname": "Québec (Province)"
+          },
+          "27": {
+            "dbcode": "27",
+            "name": "Washington (State)",
+            "shortname": "Washington (State)"
+          },
+          "28": {
+            "dbcode": "28",
+            "name": "Iowa",
+            "shortname": "Iowa"
+          },
+          "29": {
+            "dbcode": "29",
+            "name": "Georgia",
+            "shortname": "Georgia"
+          },
+          "30": {
+            "dbcode": "30",
+            "name": "Nebraska",
+            "shortname": "Nebraska"
+          },
+          "31": {
+            "dbcode": "31",
+            "name": "Estonia",
+            "shortname": "Estonia"
+          },
+          "32": {
+            "dbcode": "32",
+            "name": "North Carolina",
+            "shortname": "North Carolina"
+          },
+          "33": {
+            "dbcode": "33",
+            "name": "North Dakota",
+            "shortname": "North Dakota"
+          },
+          "34": {
+            "dbcode": "34",
+            "name": "Arkansas",
+            "shortname": "Arkansas"
+          },
+          "35": {
+            "dbcode": "35",
+            "name": "Oregon",
+            "shortname": "Oregon"
+          },
+          "36": {
+            "dbcode": "36",
+            "name": "Arizona",
+            "shortname": "Arizona"
+          },
+          "37": {
+            "dbcode": "37",
+            "name": "South Carolina",
+            "shortname": "South Carolina"
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37"
+        ]
+      }
+    },
+    {
+      "dbfield": "lc_subclass__id",
+      "type": "categorical",
+      "name": "Subclass",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "unknown",
+            "shortname": "unknown"
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "Language and Literature",
+            "shortname": "Language and Literature"
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "General and Old World History",
+            "shortname": "General and Old World History"
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "Philosophy, Psychology, and Religion",
+            "shortname": "Philosophy, Psychology, and Religion"
+          },
+          "5": {
+            "dbcode": "5",
+            "name": "General Works",
+            "shortname": "General Works"
+          },
+          "6": {
+            "dbcode": "6",
+            "name": "Agriculture",
+            "shortname": "Agriculture"
+          },
+          "7": {
+            "dbcode": "7",
+            "name": "Education",
+            "shortname": "Education"
+          },
+          "8": {
+            "dbcode": "8",
+            "name": "Law",
+            "shortname": "Law"
+          },
+          "9": {
+            "dbcode": "9",
+            "name": "Social Sciences",
+            "shortname": "Social Sciences"
+          },
+          "10": {
+            "dbcode": "10",
+            "name": "Technology",
+            "shortname": "Technology"
+          },
+          "11": {
+            "dbcode": "11",
+            "name": "Auxiliary Sciences of History",
+            "shortname": "Auxiliary Sciences of History"
+          },
+          "12": {
+            "dbcode": "12",
+            "name": "Music",
+            "shortname": "Music"
+          },
+          "13": {
+            "dbcode": "13",
+            "name": "Geography, Anthropology, and Recreation",
+            "shortname": "Geography, Anthropology, and Recreation"
+          },
+          "14": {
+            "dbcode": "14",
+            "name": "Medicine",
+            "shortname": "Medicine"
+          },
+          "15": {
+            "dbcode": "15",
+            "name": "Fine Arts",
+            "shortname": "Fine Arts"
+          },
+          "16": {
+            "dbcode": "16",
+            "name": "Political Science",
+            "shortname": "Political Science"
+          },
+          "17": {
+            "dbcode": "17",
+            "name": "Bibliography, Library Science, and General Information Resources",
+            "shortname": "Bibliography, Library Science, and General Information Resources"
+          },
+          "18": {
+            "dbcode": "18",
+            "name": "History of the United States and British, Dutch, French, and Latin America",
+            "shortname": "History of the United States and British, Dutch, French, and Latin America"
+          },
+          "19": {
+            "dbcode": "19",
+            "name": "History of America",
+            "shortname": "History of America"
+          },
+          "20": {
+            "dbcode": "20",
+            "name": "Science",
+            "shortname": "Science"
+          },
+          "21": {
+            "dbcode": "21",
+            "name": "Naval Science",
+            "shortname": "Naval Science"
+          },
+          "22": {
+            "dbcode": "22",
+            "name": "Military Science",
+            "shortname": "Military Science"
+          },
+          "23": {
+            "dbcode": "23",
+            "name": "Fiction and juvenile belles lettres",
+            "shortname": "Fiction and juvenile belles lettres"
+          },
+          "24": {
+            "dbcode": "24",
+            "name": "Languages and literatures of Eastern Asia, Africa, Oceania",
+            "shortname": "Languages and literatures of Eastern Asia, Africa, Oceania"
+          },
+          "25": {
+            "dbcode": "25",
+            "name": "Oriental languages and literatures",
+            "shortname": "Oriental languages and literatures"
+          },
+          "26": {
+            "dbcode": "26",
+            "name": "Academies and learned societies",
+            "shortname": "Academies and learned societies"
+          },
+          "27": {
+            "dbcode": "27",
+            "name": "Statistics",
+            "shortname": "Statistics"
+          },
+          "28": {
+            "dbcode": "28",
+            "name": "Slavic languages and literatures. Baltic languages. Albanian language",
+            "shortname": "Slavic languages and literatures. Baltic languages. Albanian language"
+          },
+          "29": {
+            "dbcode": "29",
+            "name": "United States",
+            "shortname": "United States"
+          },
+          "30": {
+            "dbcode": "30",
+            "name": "Germanic literature",
+            "shortname": "Germanic literature"
+          },
+          "31": {
+            "dbcode": "31",
+            "name": "Otorhinolaryngology",
+            "shortname": "Otorhinolaryngology"
+          },
+          "32": {
+            "dbcode": "32",
+            "name": "Economic history and conditions",
+            "shortname": "Economic history and conditions"
+          },
+          "33": {
+            "dbcode": "33",
+            "name": "Industries. Land use. Labor",
+            "shortname": "Industries. Land use. Labor"
+          },
+          "34": {
+            "dbcode": "34",
+            "name": "The family. Marriage. Women",
+            "shortname": "The family. Marriage. Women"
+          },
+          "35": {
+            "dbcode": "35",
+            "name": "The Bible",
+            "shortname": "The Bible"
+          },
+          "36": {
+            "dbcode": "36",
+            "name": "American literature",
+            "shortname": "American literature"
+          },
+          "37": {
+            "dbcode": "37",
+            "name": "French literature Italian literature Spanish literature Portuguese literature",
+            "shortname": "French literature Italian literature Spanish literature Portuguese literature"
+          },
+          "38": {
+            "dbcode": "38",
+            "name": "Balkan Peninsula",
+            "shortname": "Balkan Peninsula"
+          },
+          "39": {
+            "dbcode": "39",
+            "name": "Oceanography",
+            "shortname": "Oceanography"
+          },
+          "40": {
+            "dbcode": "40",
+            "name": "Northern Europe. Scandinavia",
+            "shortname": "Northern Europe. Scandinavia"
+          },
+          "41": {
+            "dbcode": "41",
+            "name": "Economic theory. Demography",
+            "shortname": "Economic theory. Demography"
+          },
+          "42": {
+            "dbcode": "42",
+            "name": "Asia",
+            "shortname": "Asia"
+          },
+          "43": {
+            "dbcode": "43",
+            "name": "Armies: Organization, distribution, military situation",
+            "shortname": "Armies: Organization, distribution, military situation"
+          },
+          "44": {
+            "dbcode": "44",
+            "name": "Religions. Mythology. Rationalism",
+            "shortname": "Religions. Mythology. Rationalism"
+          },
+          "45": {
+            "dbcode": "45",
+            "name": "Aquaculture. Fisheries. Angling",
+            "shortname": "Aquaculture. Fisheries. Angling"
+          },
+          "46": {
+            "dbcode": "46",
+            "name": "Folklore",
+            "shortname": "Folklore"
+          },
+          "47": {
+            "dbcode": "47",
+            "name": "Social history and conditions. Social problems. Social reform",
+            "shortname": "Social history and conditions. Social problems. Social reform"
+          },
+          "48": {
+            "dbcode": "48",
+            "name": "Social pathology. Social and public welfare. Criminology",
+            "shortname": "Social pathology. Social and public welfare. Criminology"
+          },
+          "49": {
+            "dbcode": "49",
+            "name": "Anthropology",
+            "shortname": "Anthropology"
+          },
+          "50": {
+            "dbcode": "50",
+            "name": "Spain Portugal",
+            "shortname": "Spain Portugal"
+          },
+          "51": {
+            "dbcode": "51",
+            "name": "Manners and customs (General)",
+            "shortname": "Manners and customs (General)"
+          },
+          "52": {
+            "dbcode": "52",
+            "name": "Genealogy",
+            "shortname": "Genealogy"
+          },
+          "53": {
+            "dbcode": "53",
+            "name": "Germanic languages. Scandinavian languages",
+            "shortname": "Germanic languages. Scandinavian languages"
+          },
+          "54": {
+            "dbcode": "54",
+            "name": "Individual institutions Europe",
+            "shortname": "Individual institutions Europe"
+          },
+          "55": {
+            "dbcode": "55",
+            "name": "United Kingdom and Ireland",
+            "shortname": "United Kingdom and Ireland"
+          },
+          "56": {
+            "dbcode": "56",
+            "name": "Indo-Iranian languages and literatures",
+            "shortname": "Indo-Iranian languages and literatures"
+          },
+          "57": {
+            "dbcode": "57",
+            "name": "Islam. Bahaism. Theosophy, etc.",
+            "shortname": "Islam. Bahaism. Theosophy, etc."
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "52",
+          "53",
+          "54",
+          "55",
+          "56",
+          "57"
+        ]
+      }
+    },
+    {
+      "dbfield": "lc_classes__id",
+      "type": "categorical",
+      "name": "Class",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "unknown",
+            "shortname": "unknown"
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "Language and Literature",
+            "shortname": "Language and Literature"
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "General and Old World History",
+            "shortname": "General and Old World History"
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "Philosophy, Psychology, and Religion",
+            "shortname": "Philosophy, Psychology, and Religion"
+          },
+          "5": {  
+            "dbcode": "5",
+            "name": "General Works",
+            "shortname": "General Works"
+          },
+          "6": {
+            "dbcode": "6",
+            "name": "Agriculture",
+            "shortname": "Agriculture"
+          },
+          "7": {
+            "dbcode": "7",
+            "name": "Education",
+            "shortname": "Education"
+          },
+          "8": {
+            "dbcode": "8",
+            "name": "Social Sciences",
+            "shortname": "Social Sciences"
+          },
+          "9": {
+            "dbcode": "9",
+            "name": "Law",
+            "shortname": "Law"
+          },
+          "10": {
+            "dbcode": "10",
+            "name": "Technology",
+            "shortname": "Technology"
+          },
+          "11": {
+            "dbcode": "11",
+            "name": "Auxiliary Sciences of History",
+            "shortname": "Auxiliary Sciences of History"
+          },
+          "12": {
+            "dbcode": "12",
+            "name": "Music",
+            "shortname": "Music"
+          },
+          "13": {
+            "dbcode": "13",
+            "name": "Geography, Anthropology, and Recreation",
+            "shortname": "Geography, Anthropology, and Recreation"
+          },
+          "14": { 
+            "dbcode": "14",
+            "name": "Medicine",
+            "shortname": "Medicine"
+          },
+          "15": {
+            "dbcode": "15",
+            "name": "Fine Arts",
+            "shortname": "Fine Arts"
+          },
+          "16": {
+            "dbcode": "16",
+            "name": "Political Science",
+            "shortname": "Political Science"
+          },
+          "17": {
+            "dbcode": "17",
+            "name": "Bibliography, Library Science, and General Information Resources",
+            "shortname": "Bibliography, Library Science, and General Information Resources"
+          },
+          "18": { 
+            "dbcode": "18",
+            "name": "History of the United States and British, Dutch, French, and Latin America",
+            "shortname": "History of the United States and British, Dutch, French, and Latin America"
+          },
+          "19": { 
+            "dbcode": "19",
+            "name": "History of America",
+            "shortname": "History of America"
+          },
+          "20": {
+            "dbcode": "20",
+            "name": "Science",
+            "shortname": "Science"
+          },
+          "21": {
+            "dbcode": "21",
+            "name": "Naval Science",
+            "shortname": "Naval Science"
+          },
+          "22": {
+            "dbcode": "22",
+            "name": "Military Science",
+            "shortname": "Military Science"
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22"
+        ]
+      }
+    },
+    {
+      "dbfield": "format__id",
+      "type": "categorical",
+      "name": "Format",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "http://id.loc.gov/ontologies/bibframe/Text",
+            "shortname": "Text"
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "Book",
+            "shortname": "Book"
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "PublicationVolume",
+            "shortname": "PublicationVolume"
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "http://id.loc.gov/ontologies/bibframe/NotatedMusic",
+            "shortname": "NotatedMusic"
+          },
+          "5": {
+            "dbcode": "5",
+            "name": "http://id.loc.gov/ontologies/bibframe/Cartography",
+            "shortname": "Cartography"
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      }
+    },
+    {
+      "dbfield": "mainauthor__id",
+      "type": "categorical",
+      "autofill": true,
+      "name": "Main Author Name",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "unknown",
+            "shortname": "unknown"
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "Aristophanes.",
+            "shortname": "Aristophanes."
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "Gedney, William J.",
+            "shortname": "Gedney, William J."
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "Bihar (India). Public Relations Department.",
+            "shortname": "Bihar (India). Public Relations Department."
+          },
+          "5": {
+            "dbcode": "5",
+            "name": "Ḥusayn, Ṭāhā, 1889-1973.",
+            "shortname": "Ḥusayn, Ṭāhā, 1889-1973."
+          },
+          "6": {
+            "dbcode": "6",
+            "name": "Vasu, Srisa Chandra, 1861-1918?",
+            "shortname": "Vasu, Srisa Chandra, 1861-1918?"
+          },
+          "7": {
+            "dbcode": "7",
+            "name": "Rajasthan (India). Education Department.",
+            "shortname": "Rajasthan (India). Education Department."
+          },
+          "8": {
+            "dbcode": "8",
+            "name": "Kerslake, Percy Charles.",
+            "shortname": "Kerslake, Percy Charles."
+          },
+          "9": {
+            "dbcode": "9",
+            "name": "Narayanaswami Aiyar, C. R.",
+            "shortname": "Narayanaswami Aiyar, C. R."
+          },
+          "10": {
+            "dbcode": "10",
+            "name": "Leeuwen, J. van (Jan), 1850-1924.",
+            "shortname": "Leeuwen, J. van (Jan), 1850-1924."
+          },
+          "11": {
+            "dbcode": "11",
+            "name": "Baláž, Claude,",
+            "shortname": "Baláž, Claude,"
+          },
+          "12": {
+            "dbcode": "12",
+            "name": "Beckmann, G. (Gustav), b. 1864.",
+            "shortname": "Beckmann, G. (Gustav), b. 1864."
+          },
+          "13": {
+            "dbcode": "13",
+            "name": "Beyer, Edvard, 1920-",
+            "shortname": "Beyer, Edvard, 1920-"
+          },
+          "14": {
+            "dbcode": "14",
+            "name": "Bielik, František,",
+            "shortname": "Bielik, František,"
+          },
+          "15": {
+            "dbcode": "15",
+            "name": "Council of Basel (1431-1449)",
+            "shortname": "Council of Basel (1431-1449)"
+          },
+          "16": {
+            "dbcode": "16",
+            "name": "Dannenbauer, Heinrich, 1897-",
+            "shortname": "Dannenbauer, Heinrich, 1897-"
+          },
+          "17": {
+            "dbcode": "17",
+            "name": "Haller, Johannes, 1865-1947.",
+            "shortname": "Haller, Johannes, 1865-1947."
+          },
+          "18": {
+            "dbcode": "18",
+            "name": "Herre, H. (Hermann), 1864-1921.",
+            "shortname": "Herre, H. (Hermann), 1864-1921."
+          },
+          "19": {
+            "dbcode": "19",
+            "name": "Historische und Antiquarische Gesellschaft zu Basel.",
+            "shortname": "Historische und Antiquarische Gesellschaft zu Basel."
+          },
+          "20": {
+            "dbcode": "20",
+            "name": "Instituto Joaquim Nabuco de Pesquisas Sociais.",
+            "shortname": "Instituto Joaquim Nabuco de Pesquisas Sociais."
+          },
+          "21": {
+            "dbcode": "21",
+            "name": "Norway. Statistisk sentralbyrå.",
+            "shortname": "Norway. Statistisk sentralbyrå."
+          },
+          "22": {
+            "dbcode": "22",
+            "name": "Rákoš, Elo,",
+            "shortname": "Rákoš, Elo,"
+          },
+          "23": {
+            "dbcode": "23",
+            "name": "Sandal, Mohan Lal.",
+            "shortname": "Sandal, Mohan Lal."
+          },
+          "24": {
+            "dbcode": "24",
+            "name": "Thailand. Samnakngān Sathiti hǣng Chāt.",
+            "shortname": "Thailand. Samnakngān Sathiti hǣng Chāt."
+          },
+          "25": {
+            "dbcode": "25",
+            "name": "Feuer, Lewis S. ((Lewis Samuel), 1912-2002.",
+            "shortname": "Feuer, Lewis S. ((Lewis Samuel), 1912-2002."
+          },
+          "26": {
+            "dbcode": "26",
+            "name": "Franko, Ivan, 1856-1916.",
+            "shortname": "Franko, Ivan, 1856-1916."
+          },
+          "27": {
+            "dbcode": "27",
+            "name": "Holm-Olsen, Ludvig, 1914-",
+            "shortname": "Holm-Olsen, Ludvig, 1914-"
+          },
+          "28": {
+            "dbcode": "28",
+            "name": "Peretz, Isaac Leib, 1851 or 1852-1915.",
+            "shortname": "Peretz, Isaac Leib, 1851 or 1852-1915."
+          },
+          "29": {
+            "dbcode": "29",
+            "name": "Sital Prasad, Brahmachari.",
+            "shortname": "Sital Prasad, Brahmachari."
+          },
+          "30": {
+            "dbcode": "30",
+            "name": "Wachirayānnawarōrot, Prince, Supreme Patriarch, 1859-1921.",
+            "shortname": "Wachirayānnawarōrot, Prince, Supreme Patriarch, 1859-1921."
+          },
+          "31": {
+            "dbcode": "31",
+            "name": "ʻAbduʾl-Bahá, 1844-1921.",
+            "shortname": "ʻAbduʾl-Bahá, 1844-1921."
+          },
+          "32": {
+            "dbcode": "32",
+            "name": "Alencar, Edigar de.",
+            "shortname": "Alencar, Edigar de."
+          },
+          "33": {
+            "dbcode": "33",
+            "name": "Andersen, H. C. (Hans Christian), 1805-1875.",
+            "shortname": "Andersen, H. C. (Hans Christian), 1805-1875."
+          },
+          "34": {
+            "dbcode": "34",
+            "name": "Aristotle.",
+            "shortname": "Aristotle."
+          },
+          "35": {
+            "dbcode": "35",
+            "name": "Baur, Ludwig, 1871-",
+            "shortname": "Baur, Ludwig, 1871-"
+          },
+          "36": {
+            "dbcode": "36",
+            "name": "Chen, C. S.,",
+            "shortname": "Chen, C. S.,"
+          },
+          "37": {
+            "dbcode": "37",
+            "name": "Dante Alighieri, 1265-1321.",
+            "shortname": "Dante Alighieri, 1265-1321."
+          },
+          "38": {
+            "dbcode": "38",
+            "name": "Faber, Tobias, 1915-",
+            "shortname": "Faber, Tobias, 1915-"
+          },
+          "39": {
+            "dbcode": "39",
+            "name": "Hamsun, Knut, 1859-1952.",
+            "shortname": "Hamsun, Knut, 1859-1952."
+          },
+          "40": {
+            "dbcode": "40",
+            "name": "Julianus Vizeliacensis, 12th cent.",
+            "shortname": "Julianus Vizeliacensis, 12th cent."
+          },
+          "41": {
+            "dbcode": "41",
+            "name": "Tarık Dursun K., 1931-",
+            "shortname": "Tarık Dursun K., 1931-"
+          },
+          "42": {
+            "dbcode": "42",
+            "name": "Tolstoy, Leo, graf, 1828-1910.",
+            "shortname": "Tolstoy, Leo, graf, 1828-1910."
+          },
+          "43": {
+            "dbcode": "43",
+            "name": "Turkey. Millî Eğitim Basımevi.",
+            "shortname": "Turkey. Millî Eğitim Basımevi."
+          },
+          "44": {
+            "dbcode": "44",
+            "name": "Usman Awang, 1928-",
+            "shortname": "Usman Awang, 1928-"
+          },
+          "45": {
+            "dbcode": "45",
+            "name": "Vorreux, Damien",
+            "shortname": "Vorreux, Damien"
+          },
+          "46": {
+            "dbcode": "46",
+            "name": "Abboud, Peter F.",
+            "shortname": "Abboud, Peter F."
+          },
+          "47": {
+            "dbcode": "47",
+            "name": "Asch, Sholem, 1880-1957.",
+            "shortname": "Asch, Sholem, 1880-1957."
+          },
+          "48": {
+            "dbcode": "48",
+            "name": "Callimachus.",
+            "shortname": "Callimachus."
+          },
+          "49": {
+            "dbcode": "49",
+            "name": "Corcoran, Thomas H.",
+            "shortname": "Corcoran, Thomas H."
+          },
+          "50": {
+            "dbcode": "50",
+            "name": "Dāṇḍekara, Gopāla Nīlakaṇṭha, 1917-",
+            "shortname": "Dāṇḍekara, Gopāla Nīlakaṇṭha, 1917-"
+          },
+          "51": {
+            "dbcode": "51",
+            "name": "Erasmus, Desiderius, d. 1536.",
+            "shortname": "Erasmus, Desiderius, d. 1536."
+          },
+          "52": {
+            "dbcode": "52",
+            "name": "Hō̜phrasamut Wachirayān.",
+            "shortname": "Hō̜phrasamut Wachirayān."
+          },
+          "53": {
+            "dbcode": "53",
+            "name": "Jaini, Jagomandar Lal, -1927.",
+            "shortname": "Jaini, Jagomandar Lal, -1927."
+          },
+          "54": {
+            "dbcode": "54",
+            "name": "Jenssen-Tusch, Harald, 1851-",
+            "shortname": "Jenssen-Tusch, Harald, 1851-"
+          },
+          "55": {
+            "dbcode": "55",
+            "name": "Merry, W. Walter (William Walter), 1835-1918.",
+            "shortname": "Merry, W. Walter (William Walter), 1835-1918."
+          },
+          "56": {
+            "dbcode": "56",
+            "name": "Mifʻal ʻAl masekhet.",
+            "shortname": "Mifʻal ʻAl masekhet."
+          },
+          "57": {
+            "dbcode": "57",
+            "name": "Noma, Seiroku",
+            "shortname": "Noma, Seiroku"
+          },
+          "58": {
+            "dbcode": "58",
+            "name": "Plato",
+            "shortname": "Plato"
+          },
+          "59": {
+            "dbcode": "59",
+            "name": "Sabisch, Alfred.",
+            "shortname": "Sabisch, Alfred."
+          },
+          "60": {
+            "dbcode": "60",
+            "name": "Seneca, Lucius Annaeus, ca. 4 B.C.-65 A.D.",
+            "shortname": "Seneca, Lucius Annaeus, ca. 4 B.C.-65 A.D."
+          },
+          "61": {
+            "dbcode": "61",
+            "name": "Sommer, Robert.",
+            "shortname": "Sommer, Robert."
+          },
+          "62": {
+            "dbcode": "62",
+            "name": "Takahashi, Bin",
+            "shortname": "Takahashi, Bin"
+          },
+          "63": {
+            "dbcode": "63",
+            "name": "Vietnam. Tổng cục thống kê.",
+            "shortname": "Vietnam. Tổng cục thống kê."
+          },
+          "64": {
+            "dbcode": "64",
+            "name": "Vilar, Pierre, 1906-",
+            "shortname": "Vilar, Pierre, 1906-"
+          },
+          "65": {
+            "dbcode": "65",
+            "name": "Wrocławska Kapituła Katedralna.",
+            "shortname": "Wrocławska Kapituła Katedralna."
+          },
+          "66": {
+            "dbcode": "66",
+            "name": "Accioli, Roberto Bandeira.",
+            "shortname": "Accioli, Roberto Bandeira."
+          },
+          "67": {
+            "dbcode": "67",
+            "name": "Aho, Juhani, 1861-1921.",
+            "shortname": "Aho, Juhani, 1861-1921."
+          },
+          "68": {
+            "dbcode": "68",
+            "name": "American Academy for Jewish Research.",
+            "shortname": "American Academy for Jewish Research."
+          },
+          "69": {
+            "dbcode": "69",
+            "name": "Anttila, Aarne, 1892-1952.",
+            "shortname": "Anttila, Aarne, 1892-1952."
+          },
+          "70": {
+            "dbcode": "70",
+            "name": "Arquivo Histórico Ultramarino (Portugal)",
+            "shortname": "Arquivo Histórico Ultramarino (Portugal)"
+          },
+          "71": {
+            "dbcode": "71",
+            "name": "Babur, Emperor of Hindustan, 1483-1530.",
+            "shortname": "Babur, Emperor of Hindustan, 1483-1530."
+          },
+          "72": {
+            "dbcode": "72",
+            "name": "Baron, Salo W. (Salo Wittmayer), 1895-1989.",
+            "shortname": "Baron, Salo W. (Salo Wittmayer), 1895-1989."
+          },
+          "73": {
+            "dbcode": "73",
+            "name": "Beveridge, Annette Susannah, 1842-1929.",
+            "shortname": "Beveridge, Annette Susannah, 1842-1929."
+          },
+          "74": {
+            "dbcode": "74",
+            "name": "Brásio, António, 1906-",
+            "shortname": "Brásio, António, 1906-"
+          },
+          "75": {
+            "dbcode": "75",
+            "name": "Centro de Estudos Históricos Ultramarinos (Portugal)",
+            "shortname": "Centro de Estudos Históricos Ultramarinos (Portugal)"
+          },
+          "76": {
+            "dbcode": "76",
+            "name": "Cevdet, M. (Mehmed), 1883-1935.",
+            "shortname": "Cevdet, M. (Mehmed), 1883-1935."
+          },
+          "77": {
+            "dbcode": "77",
+            "name": "Comenius, Johann Amos, 1592-1670.",
+            "shortname": "Comenius, Johann Amos, 1592-1670."
+          },
+          "78": {
+            "dbcode": "78",
+            "name": "Damrongrāchānuphāp, Prince, son of Mongkut, King of Siam, 1862-1943.",
+            "shortname": "Damrongrāchānuphāp, Prince, son of Mongkut, King of Siam, 1862-1943."
+          },
+          "79": {
+            "dbcode": "79",
+            "name": "Dindorf, Wilhelm, 1802-1883,",
+            "shortname": "Dindorf, Wilhelm, 1802-1883,"
+          },
+          "80": {
+            "dbcode": "80",
+            "name": "Durusoy, M. Orhan.",
+            "shortname": "Durusoy, M. Orhan."
+          },
+          "81": {
+            "dbcode": "81",
+            "name": "Eisner, Pavel, 1889-1958.",
+            "shortname": "Eisner, Pavel, 1889-1958."
+          },
+          "82": {
+            "dbcode": "82",
+            "name": "Engelberg, Ernst.",
+            "shortname": "Engelberg, Ernst."
+          },
+          "83": {
+            "dbcode": "83",
+            "name": "Ergin, Osman.",
+            "shortname": "Ergin, Osman."
+          },
+          "84": {
+            "dbcode": "84",
+            "name": "Freire, Paulo, 1921-1997.",
+            "shortname": "Freire, Paulo, 1921-1997."
+          },
+          "85": {
+            "dbcode": "85",
+            "name": "Galen.",
+            "shortname": "Galen."
+          },
+          "86": {
+            "dbcode": "86",
+            "name": "Glade, William P",
+            "shortname": "Glade, William P"
+          },
+          "87": {
+            "dbcode": "87",
+            "name": "Grecescu, Dimitrie, 1841-1910.",
+            "shortname": "Grecescu, Dimitrie, 1841-1910."
+          },
+          "88": {
+            "dbcode": "88",
+            "name": "Hyman, Arthur, 1921-",
+            "shortname": "Hyman, Arthur, 1921-"
+          },
+          "89": {
+            "dbcode": "89",
+            "name": "İstanbul Belediye Kütüphanesi.",
+            "shortname": "İstanbul Belediye Kütüphanesi."
+          },
+          "90": {
+            "dbcode": "90",
+            "name": "John Chrysostom, Saint, d. 407.",
+            "shortname": "John Chrysostom, Saint, d. 407."
+          },
+          "91": {
+            "dbcode": "91",
+            "name": "Lieberman, Saul, 1898-1983.",
+            "shortname": "Lieberman, Saul, 1898-1983."
+          },
+          "92": {
+            "dbcode": "92",
+            "name": "Malingrey, Anne Marie.",
+            "shortname": "Malingrey, Anne Marie."
+          },
+          "93": {
+            "dbcode": "93",
+            "name": "Mann, Jacob, 1888-1940.",
+            "shortname": "Mann, Jacob, 1888-1940."
+          },
+          "94": {
+            "dbcode": "94",
+            "name": "Mao, Zedong, 1893-1976.",
+            "shortname": "Mao, Zedong, 1893-1976."
+          },
+          "95": {
+            "dbcode": "95",
+            "name": "May, Margaret Tallmadge,",
+            "shortname": "May, Margaret Tallmadge,"
+          },
+          "96": {
+            "dbcode": "96",
+            "name": "Norway. Statistisk sentralbyrå.",
+            "shortname": "Norway. Statistisk sentralbyrå."
+          },
+          "97": {
+            "dbcode": "97",
+            "name": "Pevsner, Nikolaus, 1902-1983.",
+            "shortname": "Pevsner, Nikolaus, 1902-1983."
+          },
+          "98": {
+            "dbcode": "98",
+            "name": "Pinski, David, 1872-1959.",
+            "shortname": "Pinski, David, 1872-1959."
+          },
+          "99": {
+            "dbcode": "99",
+            "name": "Plato.",
+            "shortname": "Plato."
+          },
+          "100": {
+            "dbcode": "100",
+            "name": "Proyek Penerbitan Buku Bacaan dan Sastra Indonesia dan Daerah.",
+            "shortname": "Proyek Penerbitan Buku Bacaan dan Sastra Indonesia dan Daerah."
+          },
+          "101": {
+            "dbcode": "101",
+            "name": "Raĭnov, Bogomil.",
+            "shortname": "Raĭnov, Bogomil."
+          },
+          "102": {
+            "dbcode": "102",
+            "name": "Ramanujan, A. K., 1929-1993,",
+            "shortname": "Ramanujan, A. K., 1929-1993,"
+          },
+          "103": {
+            "dbcode": "103",
+            "name": "Santana, Francisco (Francisco Gingeira)",
+            "shortname": "Santana, Francisco (Francisco Gingeira)"
+          },
+          "104": {
+            "dbcode": "104",
+            "name": "Schram, Stuart R. (Stuart Reynolds), 1924-2012,",
+            "shortname": "Schram, Stuart R. (Stuart Reynolds), 1924-2012,"
+          },
+          "105": {
+            "dbcode": "105",
+            "name": "Sen, Rajendra Nath,",
+            "shortname": "Sen, Rajendra Nath,"
+          },
+          "106": {
+            "dbcode": "106",
+            "name": "Shamir, Moshe, 1921-2004.",
+            "shortname": "Shamir, Moshe, 1921-2004."
+          },
+          "107": {
+            "dbcode": "107",
+            "name": "Taunay, Alfredo d'Escragnolle.",
+            "shortname": "Taunay, Alfredo d'Escragnolle."
+          },
+          "108": {
+            "dbcode": "108",
+            "name": "Vatamaniuc, D. (Dimitrie), 1920-",
+            "shortname": "Vatamaniuc, D. (Dimitrie), 1920-"
+          },
+          "109": {
+            "dbcode": "109",
+            "name": "Vijnanananda, Swami, 1868-1938.",
+            "shortname": "Vijnanananda, Swami, 1868-1938."
+          },
+          "110": {
+            "dbcode": "110",
+            "name": "Vynnychenko, Volodymyr Kyrylovych, 1880-1951.",
+            "shortname": "Vynnychenko, Volodymyr Kyrylovych, 1880-1951."
+          },
+          "111": {
+            "dbcode": "111",
+            "name": "Yaşar Kemal, 1922 or 1923-2015.",
+            "shortname": "Yaşar Kemal, 1922 or 1923-2015."
+          },
+          "112": {
+            "dbcode": "112",
+            "name": "Yehoash, -1927.",
+            "shortname": "Yehoash, -1927."
+          },
+          "113": {
+            "dbcode": "113",
+            "name": "1906-",
+            "shortname": "1906-"
+          },
+          "114": {
+            "dbcode": "114",
+            "name": "Abelson, Robert P.,",
+            "shortname": "Abelson, Robert P.,"
+          },
+          "115": {
+            "dbcode": "115",
+            "name": "Albert y Paradís, Catalina, 1873-",
+            "shortname": "Albert y Paradís, Catalina, 1873-"
+          },
+          "116": {
+            "dbcode": "116",
+            "name": "Andreĭchin, Li︠u︡bomir D.",
+            "shortname": "Andreĭchin, Li︠u︡bomir D."
+          },
+          "117": {
+            "dbcode": "117",
+            "name": "Arishima, Takeo, 1878-1923.",
+            "shortname": "Arishima, Takeo, 1878-1923."
+          },
+          "118": {
+            "dbcode": "118",
+            "name": "Army Language School (U.S.)",
+            "shortname": "Army Language School (U.S.)"
+          },
+          "119": {
+            "dbcode": "119",
+            "name": "Avicenna, 980-1037.",
+            "shortname": "Avicenna, 980-1037."
+          },
+          "120": {
+            "dbcode": "120",
+            "name": "Bojer, Johan, 1872-1959.",
+            "shortname": "Bojer, Johan, 1872-1959."
+          },
+          "121": {
+            "dbcode": "121",
+            "name": "Botet y Sisó, Joaquim, 1848-1917.",
+            "shortname": "Botet y Sisó, Joaquim, 1848-1917."
+          },
+          "122": {
+            "dbcode": "122",
+            "name": "Brandes, Georg, 1842-1927.",
+            "shortname": "Brandes, Georg, 1842-1927."
+          },
+          "123": {
+            "dbcode": "123",
+            "name": "Brândzǎ, Demetriǔ.",
+            "shortname": "Brândzǎ, Demetriǔ."
+          },
+          "124": {
+            "dbcode": "124",
+            "name": "Bunyan, John, 1628-1688.",
+            "shortname": "Bunyan, John, 1628-1688."
+          },
+          "125": {
+            "dbcode": "125",
+            "name": "Butcher, James Neal,",
+            "shortname": "Butcher, James Neal,"
+          },
+          "126": {
+            "dbcode": "126",
+            "name": "Campello, Myriam.",
+            "shortname": "Campello, Myriam."
+          },
+          "127": {
+            "dbcode": "127",
+            "name": "Chaves, Castelo Branco, 1900-",
+            "shortname": "Chaves, Castelo Branco, 1900-"
+          },
+          "128": {
+            "dbcode": "128",
+            "name": "Chulalongkorn, King of Siam, 1853-1910.",
+            "shortname": "Chulalongkorn, King of Siam, 1853-1910."
+          },
+          "129": {
+            "dbcode": "129",
+            "name": "Cumhuriyet Halk Partisi. Gençlik Kolları.",
+            "shortname": "Cumhuriyet Halk Partisi. Gençlik Kolları."
+          },
+          "130": {
+            "dbcode": "130",
+            "name": "CuttaÌnÌ²anta PaÌratiyaÌr, b. 1897.",
+            "shortname": "CuttaÌnÌ²anta PaÌratiyaÌr, b. 1897."
+          },
+          "131": {
+            "dbcode": "131",
+            "name": "Černý, Václav, 1905-",
+            "shortname": "Černý, Václav, 1905-"
+          },
+          "132": {
+            "dbcode": "132",
+            "name": "Dandekar, Malatibai Madhavrao, 1913-",
+            "shortname": "Dandekar, Malatibai Madhavrao, 1913-"
+          },
+          "133": {
+            "dbcode": "133",
+            "name": "Dawe, R. D. (Roger David)",
+            "shortname": "Dawe, R. D. (Roger David)"
+          },
+          "134": {
+            "dbcode": "134",
+            "name": "Demokratik Sol Düşünce Forumu. 3d, Ankara, 1976.",
+            "shortname": "Demokratik Sol Düşünce Forumu. 3d, Ankara, 1976."
+          },
+          "135": {
+            "dbcode": "135",
+            "name": "Dickens, Charles, 1812-1870.",
+            "shortname": "Dickens, Charles, 1812-1870."
+          },
+          "136": {
+            "dbcode": "136",
+            "name": "Dindorf, Wilhelm, 1802-1883.",
+            "shortname": "Dindorf, Wilhelm, 1802-1883."
+          },
+          "137": {
+            "dbcode": "137",
+            "name": "Dolan, John Patrick.",
+            "shortname": "Dolan, John Patrick."
+          },
+          "138": {
+            "dbcode": "138",
+            "name": "Espriu, Salvador.",
+            "shortname": "Espriu, Salvador."
+          },
+          "139": {
+            "dbcode": "139",
+            "name": "Euripides.",
+            "shortname": "Euripides."
+          },
+          "140": {
+            "dbcode": "140",
+            "name": "Fabra, Pompeu, 1868-1948.",
+            "shortname": "Fabra, Pompeu, 1868-1948."
+          },
+          "141": {
+            "dbcode": "141",
+            "name": "Ferrez, Gilberto.",
+            "shortname": "Ferrez, Gilberto."
+          },
+          "142": {
+            "dbcode": "142",
+            "name": "Girindranāth Mukhopādhyāya.",
+            "shortname": "Girindranāth Mukhopādhyāya."
+          },
+          "143": {
+            "dbcode": "143",
+            "name": "Haugaard, Erik Christian,",
+            "shortname": "Haugaard, Erik Christian,"
+          },
+          "144": {
+            "dbcode": "144",
+            "name": "Hauge, Alfred.",
+            "shortname": "Hauge, Alfred."
+          },
+          "145": {
+            "dbcode": "145",
+            "name": "Henrych, Josef.",
+            "shortname": "Henrych, Josef."
+          },
+          "146": {
+            "dbcode": "146",
+            "name": "Homer.",
+            "shortname": "Homer."
+          },
+          "147": {
+            "dbcode": "147",
+            "name": "Hrubín, František, 1910-1971",
+            "shortname": "Hrubín, František, 1910-1971"
+          },
+          "148": {
+            "dbcode": "148",
+            "name": "Ibrahim Omar.",
+            "shortname": "Ibrahim Omar."
+          },
+          "149": {
+            "dbcode": "149",
+            "name": "Ignatoff, David, 1885-1954.",
+            "shortname": "Ignatoff, David, 1885-1954."
+          },
+          "150": {
+            "dbcode": "150",
+            "name": "Ivanić, Ivan, 1867-1935.",
+            "shortname": "Ivanić, Ivan, 1867-1935."
+          },
+          "151": {
+            "dbcode": "151",
+            "name": "Kabak, Aaron Abraham, 1880-1944.",
+            "shortname": "Kabak, Aaron Abraham, 1880-1944."
+          },
+          "152": {
+            "dbcode": "152",
+            "name": "Karadžić, Vuk Stefanović, 1787-1864.",
+            "shortname": "Karadžić, Vuk Stefanović, 1787-1864."
+          },
+          "153": {
+            "dbcode": "153",
+            "name": "Karadžić, Vuk Stefanović, 1787-1864.",
+            "shortname": "Karadžić, Vuk Stefanović, 1787-1864."
+          },
+          "154": {
+            "dbcode": "154",
+            "name": "Kazantzakis, Nikos, 1883-1957.",
+            "shortname": "Kazantzakis, Nikos, 1883-1957."
+          },
+          "155": {
+            "dbcode": "155",
+            "name": "Kobrin, Leon, 1872-1946.",
+            "shortname": "Kobrin, Leon, 1872-1946."
+          },
+          "156": {
+            "dbcode": "156",
+            "name": "Kundakunda.",
+            "shortname": "Kundakunda."
+          },
+          "157": {
+            "dbcode": "157",
+            "name": "Landau, L. D. (Lev Davidovich), 1908-1968",
+            "shortname": "Landau, L. D. (Lev Davidovich), 1908-1968"
+          },
+          "158": {
+            "dbcode": "158",
+            "name": "Landberg, Carlo, 1848-1924.",
+            "shortname": "Landberg, Carlo, 1848-1924."
+          },
+          "159": {
+            "dbcode": "159",
+            "name": "Leftwich, Joseph, 1892-",
+            "shortname": "Leftwich, Joseph, 1892-"
+          },
+          "160": {
+            "dbcode": "160",
+            "name": "Lifshit͡s, E. M. (Evgeniĭ Mikhaĭlovich)",
+            "shortname": "Lifshit͡s, E. M. (Evgeniĭ Mikhaĭlovich)"
+          },
+          "161": {
+            "dbcode": "161",
+            "name": "Lifson, David S.,",
+            "shortname": "Lifson, David S.,"
+          },
+          "162": {
+            "dbcode": "162",
+            "name": "Liu, Shih Shun, 1900-",
+            "shortname": "Liu, Shih Shun, 1900-"
+          },
+          "163": {
+            "dbcode": "163",
+            "name": "Løveid, Cecilie, 1951-",
+            "shortname": "Løveid, Cecilie, 1951-"
+          },
+          "164": {
+            "dbcode": "164",
+            "name": "Macedonski, Alexandru, 1854-1920.",
+            "shortname": "Macedonski, Alexandru, 1854-1920."
+          },
+          "165": {
+            "dbcode": "165",
+            "name": "March, Ausiàs, 1397?-1459.",
+            "shortname": "March, Ausiàs, 1397?-1459."
+          },
+          "166": {
+            "dbcode": "166",
+            "name": "Marx, Karl, 1818-1883.",
+            "shortname": "Marx, Karl, 1818-1883."
+          },
+          "167": {
+            "dbcode": "167",
+            "name": "Meier, August, 1923-2003.",
+            "shortname": "Meier, August, 1923-2003."
+          },
+          "168": {
+            "dbcode": "168",
+            "name": "Miladinova, Milka.",
+            "shortname": "Miladinova, Milka."
+          },
+          "169": {
+            "dbcode": "169",
+            "name": "Muḥammad Bāqir, Majlisī, d. 1699 or 1700.",
+            "shortname": "Muḥammad Bāqir, Majlisī, d. 1699 or 1700."
+          },
+          "170": {
+            "dbcode": "170",
+            "name": "Nemicandra Siddhāntacakravartin.",
+            "shortname": "Nemicandra Siddhāntacakravartin."
+          },
+          "171": {
+            "dbcode": "171",
+            "name": "Nevermann, Hans, 1902-",
+            "shortname": "Nevermann, Hans, 1902-"
+          },
+          "172": {
+            "dbcode": "172",
+            "name": "O'Neill, P. G. (Patrick Geoffrey), 1924-",
+            "shortname": "O'Neill, P. G. (Patrick Geoffrey), 1924-"
+          },
+          "173": {
+            "dbcode": "173",
+            "name": "Osho, Bhagwan Shree, 1931-1990.",
+            "shortname": "Osho, Bhagwan Shree, 1931-1990."
+          },
+          "174": {
+            "dbcode": "174",
+            "name": "Paris, Matthew, 1200-1259.",
+            "shortname": "Paris, Matthew, 1200-1259."
+          },
+          "175": {
+            "dbcode": "175",
+            "name": "Pavāra, Dayā, 1935-",
+            "shortname": "Pavāra, Dayā, 1935-"
+          },
+          "176": {
+            "dbcode": "176",
+            "name": "Paz, Octavio, 1914-1998.",
+            "shortname": "Paz, Octavio, 1914-1998."
+          },
+          "177": {
+            "dbcode": "177",
+            "name": "Pearson, Richard, 1938-",
+            "shortname": "Pearson, Richard, 1938-"
+          },
+          "178": {
+            "dbcode": "178",
+            "name": "PEN.",
+            "shortname": "PEN."
+          },
+          "179": {
+            "dbcode": "179",
+            "name": "Phutthalœ̄tlā Naphālai, King of Siam, 1768-1824.",
+            "shortname": "Phutthalœ̄tlā Naphālai, King of Siam, 1768-1824."
+          },
+          "180": {
+            "dbcode": "180",
+            "name": "Plutarch.",
+            "shortname": "Plutarch."
+          },
+          "181": {
+            "dbcode": "181",
+            "name": "Pseudo-Dionysius, the Areopagite",
+            "shortname": "Pseudo-Dionysius, the Areopagite"
+          },
+          "182": {
+            "dbcode": "182",
+            "name": "Purushottam, Boddupalli, 1927-",
+            "shortname": "Purushottam, Boddupalli, 1927-"
+          },
+          "183": {
+            "dbcode": "183",
+            "name": "Rāmakr̥ṣṇa, Naṭarāja, 1932-",
+            "shortname": "Rāmakr̥ṣṇa, Naṭarāja, 1932-"
+          },
+          "184": {
+            "dbcode": "184",
+            "name": "Rodrigues, José Honório, 1913-",
+            "shortname": "Rodrigues, José Honório, 1913-"
+          },
+          "185": {
+            "dbcode": "185",
+            "name": "Rosenblatt, H. (Henry), 1878-1956.",
+            "shortname": "Rosenblatt, H. (Henry), 1878-1956."
+          },
+          "186": {
+            "dbcode": "186",
+            "name": "Rudwick, Elliott M.",
+            "shortname": "Rudwick, Elliott M."
+          },
+          "187": {
+            "dbcode": "187",
+            "name": "Sérgio, António, 1883-1969.",
+            "shortname": "Sérgio, António, 1883-1969."
+          },
+          "188": {
+            "dbcode": "188",
+            "name": "Shabliovsʹkyĭ, I͡Evhen Stepanovych.",
+            "shortname": "Shabliovsʹkyĭ, I͡Evhen Stepanovych."
+          },
+          "189": {
+            "dbcode": "189",
+            "name": "Shevchenko, T. H. (Taras Hryhorovych), 1814-1861.",
+            "shortname": "Shevchenko, T. H. (Taras Hryhorovych), 1814-1861."
+          },
+          "190": {
+            "dbcode": "190",
+            "name": "Silva, Maria Beatriz Nizza da.",
+            "shortname": "Silva, Maria Beatriz Nizza da."
+          },
+          "191": {
+            "dbcode": "191",
+            "name": "Sinha, Nandalal.",
+            "shortname": "Sinha, Nandalal."
+          },
+          "192": {
+            "dbcode": "192",
+            "name": "Smičiklas, Tadija, 1843-1914.",
+            "shortname": "Smičiklas, Tadija, 1843-1914."
+          },
+          "193": {
+            "dbcode": "193",
+            "name": "Sophocles.",
+            "shortname": "Sophocles."
+          },
+          "194": {
+            "dbcode": "194",
+            "name": "Strothmann, Werner, 1907-",
+            "shortname": "Strothmann, Werner, 1907-"
+          },
+          "195": {
+            "dbcode": "195",
+            "name": "Thailand. Samnakngān Sētthakit ʻUtsāhakam.",
+            "shortname": "Thailand. Samnakngān Sētthakit ʻUtsāhakam."
+          },
+          "196": {
+            "dbcode": "196",
+            "name": "Tiruvaḷḷuvar.",
+            "shortname": "Tiruvaḷḷuvar."
+          },
+          "197": {
+            "dbcode": "197",
+            "name": "Trung tâm khoa học xã hội và nhân văn quốc gia (Vietnam)",
+            "shortname": "Trung tâm khoa học xã hội và nhân văn quốc gia (Vietnam)"
+          },
+          "198": {
+            "dbcode": "198",
+            "name": "United States. Congress. Senate. Special Committee on Aging. Subcommittee on Consumer Interests of the Elderly.",
+            "shortname": "United States. Congress. Senate. Special Committee on Aging. Subcommittee on Consumer Interests of the Elderly."
+          },
+          "199": {
+            "dbcode": "199",
+            "name": "University of British Columbia. Museum of Anthropology.",
+            "shortname": "University of British Columbia. Museum of Anthropology."
+          },
+          "200": {
+            "dbcode": "200",
+            "name": "Vakalopoulos, Apostolos E. (Apostolos Euangelou), 1909-",
+            "shortname": "Vakalopoulos, Apostolos E. (Apostolos Euangelou), 1909-"
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "52",
+          "53",
+          "54",
+          "55",
+          "56",
+          "57",
+          "58",
+          "59",
+          "60",
+          "61",
+          "62",
+          "63",
+          "64",
+          "65",
+          "66",
+          "67",
+          "68",
+          "69",
+          "70",
+          "71",
+          "72",
+          "73",
+          "74",
+          "75",
+          "76",
+          "77",
+          "78",
+          "79",
+          "80",
+          "81",
+          "82",
+          "83",
+          "84",
+          "85",
+          "86",
+          "87",
+          "88",
+          "89",
+          "90",
+          "91",
+          "92",
+          "93",
+          "94",
+          "95",
+          "96",
+          "97",
+          "98",
+          "99",
+          "100",
+          "101",
+          "102",
+          "103",
+          "104",
+          "105",
+          "106",
+          "107",
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118",
+          "119",
+          "120",
+          "121",
+          "122",
+          "123",
+          "124",
+          "125",
+          "126",
+          "127",
+          "128",
+          "129",
+          "130",
+          "131",
+          "132",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137",
+          "138",
+          "139",
+          "140",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "148",
+          "149",
+          "150",
+          "151",
+          "152",
+          "153",
+          "154",
+          "155",
+          "156",
+          "157",
+          "158",
+          "159",
+          "160",
+          "161",
+          "162",
+          "163",
+          "164",
+          "165",
+          "166",
+          "167",
+          "168",
+          "169",
+          "170",
+          "171",
+          "172",
+          "173",
+          "174",
+          "175",
+          "176",
+          "177",
+          "178",
+          "179",
+          "180",
+          "181",
+          "182",
+          "183",
+          "184",
+          "185",
+          "186",
+          "187",
+          "188",
+          "189",
+          "190",
+          "191",
+          "192",
+          "193",
+          "194",
+          "195",
+          "196",
+          "197",
+          "198",
+          "199",
+          "200"
+        ]
+      }
+    },
+    {
+      "dbfield": "htsource__id",
+      "type": "categorical",
+      "name": "Source Institution",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "MIU",
+            "shortname": "MIU"
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "UVA",
+            "shortname": "UVA"
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "NRLF",
+            "shortname": "NRLF"
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "HVD",
+            "shortname": "HVD"
+          },
+          "5": {
+            "dbcode": "5",
+            "name": "UCBK",
+            "shortname": "UCBK"
+          },
+          "6": {
+            "dbcode": "6",
+            "name": "KEIO",
+            "shortname": "KEIO"
+          },
+          "7": {
+            "dbcode": "7",
+            "name": "NJP",
+            "shortname": "NJP"
+          },
+          "8": {
+            "dbcode": "8",
+            "name": "WU",
+            "shortname": "WU"
+          },
+          "9": {
+            "dbcode": "9",
+            "name": "OSU",
+            "shortname": "OSU"
+          },
+          "10": {
+            "dbcode": "10",
+            "name": "UIUC",
+            "shortname": "UIUC"
+          },
+          "11": {
+            "dbcode": "11",
+            "name": "UCR",
+            "shortname": "UCR"
+          },
+          "12": {
+            "dbcode": "12",
+            "name": "INU",
+            "shortname": "INU"
+          },
+          "13": {
+            "dbcode": "13",
+            "name": "COO",
+            "shortname": "COO"
+          },
+          "14": {
+            "dbcode": "14",
+            "name": "UMN",
+            "shortname": "UMN"
+          },
+          "15": {
+            "dbcode": "15",
+            "name": "UCSC",
+            "shortname": "UCSC"
+          },
+          "16": {
+            "dbcode": "16",
+            "name": "TXU",
+            "shortname": "TXU"
+          },
+          "17": {
+            "dbcode": "17",
+            "name": "PST",
+            "shortname": "PST"
+          },
+          "18": {
+            "dbcode": "18",
+            "name": "SRLF",
+            "shortname": "SRLF"
+          },
+          "19": {
+            "dbcode": "19",
+            "name": "AEU",
+            "shortname": "AEU"
+          },
+          "20": {
+            "dbcode": "20",
+            "name": "NYP",
+            "shortname": "NYP"
+          },
+          "21": {
+            "dbcode": "21",
+            "name": "NNC",
+            "shortname": "NNC"
+          },
+          "22": {
+            "dbcode": "22",
+            "name": "UCSD",
+            "shortname": "UCSD"
+          },
+          "23": {
+            "dbcode": "23",
+            "name": "CHI",
+            "shortname": "CHI"
+          },
+          "24": {
+            "dbcode": "24",
+            "name": "UCSF",
+            "shortname": "UCSF"
+          },
+          "25": {
+            "dbcode": "25",
+            "name": "IAU",
+            "shortname": "IAU"
+          },
+          "26": {
+            "dbcode": "26",
+            "name": "NWU",
+            "shortname": "NWU"
+          },
+          "27": {
+            "dbcode": "27",
+            "name": "ILOC",
+            "shortname": "ILOC"
+          },
+          "28": {
+            "dbcode": "28",
+            "name": "ISRLF",
+            "shortname": "ISRLF"
+          },
+          "29": {
+            "dbcode": "29",
+            "name": "INRLF",
+            "shortname": "INRLF"
+          },
+          "30": {
+            "dbcode": "30",
+            "name": "UCLA",
+            "shortname": "UCLA"
+          },
+          "31": {
+            "dbcode": "31",
+            "name": "PUR",
+            "shortname": "PUR"
+          },
+          "32": {
+            "dbcode": "32",
+            "name": "UIUCL",
+            "shortname": "UIUCL"
+          },
+          "33": {
+            "dbcode": "33",
+            "name": "IUIUC",
+            "shortname": "IUIUC"
+          },
+          "34": {
+            "dbcode": "34",
+            "name": "UCD",
+            "shortname": "UCD"
+          },
+          "35": {
+            "dbcode": "35",
+            "name": "IDUKE",
+            "shortname": "IDUKE"
+          },
+          "36": {
+            "dbcode": "36",
+            "name": "YALE",
+            "shortname": "YALE"
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36"
+        ]
+      }
+    },
+    {
+      "dbfield": "genres__id",
+      "type": "categorical",
+      "name": "Genre",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "unknown",
+            "shortname": "unknown"
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "http://id.loc.gov/vocabulary/marcgt/bib",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/bib"
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "http://id.loc.gov/vocabulary/marcgt/gov",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/gov"
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "http://id.loc.gov/vocabulary/marcgt/fic",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/fic"
+          },
+          "5": {
+            "dbcode": "5",
+            "name": "http://id.loc.gov/vocabulary/marcgt/bio",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/bio"
+          },
+          "6": {
+            "dbcode": "6",
+            "name": "http://id.loc.gov/vocabulary/marcgt/fes",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/fes"
+          },
+          "7": {
+            "dbcode": "7",
+            "name": "http://id.loc.gov/vocabulary/marcgt/aut",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/aut"
+          },
+          "8": {
+            "dbcode": "8",
+            "name": "http://id.loc.gov/vocabulary/marcgt/cpb",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/cpb"
+          },
+          "9": {
+            "dbcode": "9",
+            "name": "http://id.loc.gov/vocabulary/marcgt/sta",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/sta"
+          },
+          "10": {
+            "dbcode": "10",
+            "name": "http://id.loc.gov/vocabulary/marcgt/dic",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/dic"
+          },
+          "11": {
+            "dbcode": "11",
+            "name": "http://id.loc.gov/vocabulary/marcgt/cat",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/cat"
+          },
+          "12": {
+            "dbcode": "12",
+            "name": "http://id.loc.gov/vocabulary/marcgt/enc",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/enc"
+          },
+          "13": {
+            "dbcode": "13",
+            "name": "http://id.loc.gov/vocabulary/marcgt/ind",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/ind"
+          },
+          "14": {
+            "dbcode": "14",
+            "name": "http://id.loc.gov/vocabulary/marcgt/dir",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/dir"
+          },
+          "15": {
+            "dbcode": "15",
+            "name": "http://id.loc.gov/vocabulary/marcgt/leg",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/leg"
+          },
+          "16": {
+            "dbcode": "16",
+            "name": "http://id.loc.gov/vocabulary/marcgt/rev",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/rev"
+          },
+          "17": {
+            "dbcode": "17",
+            "name": "http://id.loc.gov/vocabulary/marcgt/yea",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/yea"
+          },
+          "18": {
+            "dbcode": "18",
+            "name": "http://id.loc.gov/vocabulary/marcgt/abs",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/abs"
+          },
+          "19": {
+            "dbcode": "19",
+            "name": "http://id.loc.gov/vocabulary/marcgt/law",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/law"
+          },
+          "20": {
+            "dbcode": "20",
+            "name": "http://id.loc.gov/vocabulary/marcgt/pro",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/pro"
+          },
+          "21": {
+            "dbcode": "21",
+            "name": "http://id.loc.gov/vocabulary/marcgt/the",
+            "shortname": "http://id.loc.gov/vocabulary/marcgt/the"
+          },
+          "22": {
+            "dbcode": "22",
+            "name": "http://id.loc.gov/vocabulary/marcmuscomp/df",
+            "shortname": "http://id.loc.gov/vocabulary/marcmuscomp/df"
+          },
+          "23": {
+            "dbcode": "23",
+            "name": "http://id.loc.gov/vocabulary/marcmuscomp/fm",
+            "shortname": "http://id.loc.gov/vocabulary/marcmuscomp/fm"
+          },
+          "24": {
+            "dbcode": "24",
+            "name": "http://id.loc.gov/vocabulary/marcmuscomp/sg",
+            "shortname": "http://id.loc.gov/vocabulary/marcmuscomp/sg"
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24"
+        ]
+      }
+    },
+    {
+      "dbfield": "publication_place__id",
+      "type": "categorical",
+      "name": "Publication Place",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "India",
+            "shortname": "India"
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "New York (State)",
+            "shortname": "New York (State)"
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "No place, unknown, or undetermined",
+            "shortname": "No place, unknown, or undetermined"
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "unknown",
+            "shortname": "unknown"
+          },
+          "5": {
+            "dbcode": "5",
+            "name": "Serbia and Montenegro",
+            "shortname": "Serbia and Montenegro"
+          },
+          "6": {
+            "dbcode": "6",
+            "name": "Japan",
+            "shortname": "Japan"
+          },
+          "7": {
+            "dbcode": "7",
+            "name": "Thailand",
+            "shortname": "Thailand"
+          },
+          "8": {
+            "dbcode": "8",
+            "name": "England",
+            "shortname": "England"
+          },
+          "9": {
+            "dbcode": "9",
+            "name": "Vietnam",
+            "shortname": "Vietnam"
+          },
+          "10": {
+            "dbcode": "10",
+            "name": "Germany",
+            "shortname": "Germany"
+          },
+          "11": {
+            "dbcode": "11",
+            "name": "Romania",
+            "shortname": "Romania"
+          },
+          "12": {
+            "dbcode": "12",
+            "name": "Korea (South)",
+            "shortname": "Korea (South)"
+          },
+          "13": {
+            "dbcode": "13",
+            "name": "Bulgaria",
+            "shortname": "Bulgaria"
+          },
+          "14": {
+            "dbcode": "14",
+            "name": "Turkey",
+            "shortname": "Turkey"
+          },
+          "15": {
+            "dbcode": "15",
+            "name": "Finland",
+            "shortname": "Finland"
+          },
+          "16": {
+            "dbcode": "16",
+            "name": "Spain",
+            "shortname": "Spain"
+          },
+          "17": {
+            "dbcode": "17",
+            "name": "Norway",
+            "shortname": "Norway"
+          },
+          "18": {
+            "dbcode": "18",
+            "name": "Malaysia",
+            "shortname": "Malaysia"
+          },
+          "19": {
+            "dbcode": "19",
+            "name": "Israel",
+            "shortname": "Israel"
+          },
+          "20": {
+            "dbcode": "20",
+            "name": "Denmark",
+            "shortname": "Denmark"
+          },
+          "21": {
+            "dbcode": "21",
+            "name": "Czechoslovakia",
+            "shortname": "Czechoslovakia"
+          },
+          "22": {
+            "dbcode": "22",
+            "name": "Pakistan",
+            "shortname": "Pakistan"
+          },
+          "23": {
+            "dbcode": "23",
+            "name": "Iran",
+            "shortname": "Iran"
+          },
+          "24": {
+            "dbcode": "24",
+            "name": "Netherlands",
+            "shortname": "Netherlands"
+          },
+          "25": {
+            "dbcode": "25",
+            "name": "Ukraine",
+            "shortname": "Ukraine"
+          },
+          "26": {
+            "dbcode": "26",
+            "name": "Brazil",
+            "shortname": "Brazil"
+          },
+          "27": {
+            "dbcode": "27",
+            "name": "Egypt",
+            "shortname": "Egypt"
+          },
+          "28": {
+            "dbcode": "28",
+            "name": "Massachusetts",
+            "shortname": "Massachusetts"
+          },
+          "29": {
+            "dbcode": "29",
+            "name": "France",
+            "shortname": "France"
+          },
+          "30": {
+            "dbcode": "30",
+            "name": "Illinois",
+            "shortname": "Illinois"
+          },
+          "31": {
+            "dbcode": "31",
+            "name": "Croatia",
+            "shortname": "Croatia"
+          },
+          "32": {
+            "dbcode": "32",
+            "name": "Greece",
+            "shortname": "Greece"
+          },
+          "33": {
+            "dbcode": "33",
+            "name": "California",
+            "shortname": "California"
+          },
+          "34": {
+            "dbcode": "34",
+            "name": "Michigan",
+            "shortname": "Michigan"
+          },
+          "35": {
+            "dbcode": "35",
+            "name": "New Jersey",
+            "shortname": "New Jersey"
+          },
+          "36": {
+            "dbcode": "36",
+            "name": "Manitoba",
+            "shortname": "Manitoba"
+          },
+          "37": {
+            "dbcode": "37",
+            "name": "Pennsylvania",
+            "shortname": "Pennsylvania"
+          },
+          "38": {
+            "dbcode": "38",
+            "name": "Syria",
+            "shortname": "Syria"
+          },
+          "39": {
+            "dbcode": "39",
+            "name": "Lebanon",
+            "shortname": "Lebanon"
+          },
+          "40": {
+            "dbcode": "40",
+            "name": "Portugal",
+            "shortname": "Portugal"
+          },
+          "41": {
+            "dbcode": "41",
+            "name": "District of Columbia",
+            "shortname": "District of Columbia"
+          },
+          "42": {
+            "dbcode": "42",
+            "name": "Argentina",
+            "shortname": "Argentina"
+          },
+          "43": {
+            "dbcode": "43",
+            "name": "Hong Kong",
+            "shortname": "Hong Kong"
+          },
+          "44": {
+            "dbcode": "44",
+            "name": "Czech Republic",
+            "shortname": "Czech Republic"
+          },
+          "45": {
+            "dbcode": "45",
+            "name": "Indiana",
+            "shortname": "Indiana"
+          },
+          "46": {
+            "dbcode": "46",
+            "name": "Slovakia",
+            "shortname": "Slovakia"
+          },
+          "47": {
+            "dbcode": "47",
+            "name": "Colorado",
+            "shortname": "Colorado"
+          },
+          "48": {
+            "dbcode": "48",
+            "name": "Italy",
+            "shortname": "Italy"
+          },
+          "49": {
+            "dbcode": "49",
+            "name": "Ohio",
+            "shortname": "Ohio"
+          },
+          "50": {
+            "dbcode": "50",
+            "name": "Russia (Federation)",
+            "shortname": "Russia (Federation)"
+          },
+          "51": {
+            "dbcode": "51",
+            "name": "Serbia",
+            "shortname": "Serbia"
+          },
+          "52": {
+            "dbcode": "52",
+            "name": "Singapore",
+            "shortname": "Singapore"
+          },
+          "53": {
+            "dbcode": "53",
+            "name": "Bosnia and Herzegovina",
+            "shortname": "Bosnia and Herzegovina"
+          },
+          "54": {
+            "dbcode": "54",
+            "name": "Hawaii",
+            "shortname": "Hawaii"
+          },
+          "55": {
+            "dbcode": "55",
+            "name": "Ontario",
+            "shortname": "Ontario"
+          },
+          "56": {
+            "dbcode": "56",
+            "name": "Sweden",
+            "shortname": "Sweden"
+          },
+          "57": {
+            "dbcode": "57",
+            "name": "Connecticut",
+            "shortname": "Connecticut"
+          },
+          "58": {
+            "dbcode": "58",
+            "name": "Indonesia",
+            "shortname": "Indonesia"
+          },
+          "59": {
+            "dbcode": "59",
+            "name": "Mexico",
+            "shortname": "Mexico"
+          },
+          "60": {
+            "dbcode": "60",
+            "name": "Poland",
+            "shortname": "Poland"
+          },
+          "61": {
+            "dbcode": "61",
+            "name": "Switzerland",
+            "shortname": "Switzerland"
+          },
+          "62": {
+            "dbcode": "62",
+            "name": "Vietnam, North",
+            "shortname": "Vietnam, North"
+          },
+          "63": {
+            "dbcode": "63",
+            "name": "Wisconsin",
+            "shortname": "Wisconsin"
+          },
+          "64": {
+            "dbcode": "64",
+            "name": "Austria",
+            "shortname": "Austria"
+          },
+          "65": {
+            "dbcode": "65",
+            "name": "Belgium",
+            "shortname": "Belgium"
+          },
+          "66": {
+            "dbcode": "66",
+            "name": "Germany (East)",
+            "shortname": "Germany (East)"
+          },
+          "67": {
+            "dbcode": "67",
+            "name": "Maryland",
+            "shortname": "Maryland"
+          },
+          "68": {
+            "dbcode": "68",
+            "name": "Alberta",
+            "shortname": "Alberta"
+          },
+          "69": {
+            "dbcode": "69",
+            "name": "British Columbia",
+            "shortname": "British Columbia"
+          },
+          "70": {
+            "dbcode": "70",
+            "name": "Brunei",
+            "shortname": "Brunei"
+          },
+          "71": {
+            "dbcode": "71",
+            "name": "China (Republic : 1949 )",
+            "shortname": "China (Republic : 1949 )"
+          },
+          "72": {
+            "dbcode": "72",
+            "name": "Hungary",
+            "shortname": "Hungary"
+          },
+          "73": {
+            "dbcode": "73",
+            "name": "Iraq",
+            "shortname": "Iraq"
+          },
+          "74": {
+            "dbcode": "74",
+            "name": "Montenegro",
+            "shortname": "Montenegro"
+          },
+          "75": {
+            "dbcode": "75",
+            "name": "Scotland",
+            "shortname": "Scotland"
+          },
+          "76": {
+            "dbcode": "76",
+            "name": "Sri Lanka",
+            "shortname": "Sri Lanka"
+          },
+          "77": {
+            "dbcode": "77",
+            "name": "Tunisia",
+            "shortname": "Tunisia"
+          },
+          "78": {
+            "dbcode": "78",
+            "name": "West Berlin",
+            "shortname": "West Berlin"
+          },
+          "79": {
+            "dbcode": "79",
+            "name": "Canada",
+            "shortname": "Canada"
+          },
+          "80": {
+            "dbcode": "80",
+            "name": "China",
+            "shortname": "China"
+          },
+          "81": {
+            "dbcode": "81",
+            "name": "Florida",
+            "shortname": "Florida"
+          },
+          "82": {
+            "dbcode": "82",
+            "name": "Jordan",
+            "shortname": "Jordan"
+          },
+          "83": {
+            "dbcode": "83",
+            "name": "Korea (North)",
+            "shortname": "Korea (North)"
+          },
+          "84": {
+            "dbcode": "84",
+            "name": "Lithuania",
+            "shortname": "Lithuania"
+          },
+          "85": {
+            "dbcode": "85",
+            "name": "Minnesota",
+            "shortname": "Minnesota"
+          },
+          "86": {
+            "dbcode": "86",
+            "name": "Panama",
+            "shortname": "Panama"
+          },
+          "87": {
+            "dbcode": "87",
+            "name": "Philippines",
+            "shortname": "Philippines"
+          },
+          "88": {
+            "dbcode": "88",
+            "name": "Québec (Province)",
+            "shortname": "Québec (Province)"
+          },
+          "89": {
+            "dbcode": "89",
+            "name": "Vietnam, South",
+            "shortname": "Vietnam, South"
+          },
+          "90": {
+            "dbcode": "90",
+            "name": "Washington (State)",
+            "shortname": "Washington (State)"
+          },
+          "91": {
+            "dbcode": "91",
+            "name": "Afghanistan",
+            "shortname": "Afghanistan"
+          },
+          "92": {
+            "dbcode": "92",
+            "name": "Algeria",
+            "shortname": "Algeria"
+          },
+          "93": {
+            "dbcode": "93",
+            "name": "Angola",
+            "shortname": "Angola"
+          },
+          "94": {
+            "dbcode": "94",
+            "name": "Arizona",
+            "shortname": "Arizona"
+          },
+          "95": {
+            "dbcode": "95",
+            "name": "Arkansas",
+            "shortname": "Arkansas"
+          },
+          "96": {
+            "dbcode": "96",
+            "name": "Australia",
+            "shortname": "Australia"
+          },
+          "97": {
+            "dbcode": "97",
+            "name": "Burma",
+            "shortname": "Burma"
+          },
+          "98": {
+            "dbcode": "98",
+            "name": "Costa Rica",
+            "shortname": "Costa Rica"
+          },
+          "99": {
+            "dbcode": "99",
+            "name": "Estonia",
+            "shortname": "Estonia"
+          },
+          "100": {
+            "dbcode": "100",
+            "name": "Georgia",
+            "shortname": "Georgia"
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "52",
+          "53",
+          "54",
+          "55",
+          "56",
+          "57",
+          "58",
+          "59",
+          "60",
+          "61",
+          "62",
+          "63",
+          "64",
+          "65",
+          "66",
+          "67",
+          "68",
+          "69",
+          "70",
+          "71",
+          "72",
+          "73",
+          "74",
+          "75",
+          "76",
+          "77",
+          "78",
+          "79",
+          "80",
+          "81",
+          "82",
+          "83",
+          "84",
+          "85",
+          "86",
+          "87",
+          "88",
+          "89",
+          "90",
+          "91",
+          "92",
+          "93",
+          "94",
+          "95",
+          "96",
+          "97",
+          "98",
+          "99",
+          "100"
+        ]
+      }
+    },
+    {
+      "dbfield": "publisher__id",
+      "type": "categorical",
+      "name": "Publisher",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "unknown",
+            "shortname": "unknown"
+          },
+          "2": {
+            "dbcode": "2",
+            "name": "AMS Press",
+            "shortname": "AMS Press"
+          },
+          "3": {
+            "dbcode": "3",
+            "name": "s.n.",
+            "shortname": "s.n."
+          },
+          "4": {
+            "dbcode": "4",
+            "name": "Bihar State Public Relations Dept.",
+            "shortname": "Bihar State Public Relations Dept."
+          },
+          "5": {
+            "dbcode": "5",
+            "name": "Gyldendal",
+            "shortname": "Gyldendal"
+          },
+          "6": {
+            "dbcode": "6",
+            "name": "Dār al-Maʻarif",
+            "shortname": "Dār al-Maʻarif"
+          },
+          "7": {
+            "dbcode": "7",
+            "name": "The Directorate",
+            "shortname": "The Directorate"
+          },
+          "8": {
+            "dbcode": "8",
+            "name": "Suomalaisen Kirjallisuuden Seura",
+            "shortname": "Suomalaisen Kirjallisuuden Seura"
+          },
+          "9": {
+            "dbcode": "9",
+            "name": "Edicions 62",
+            "shortname": "Edicions 62"
+          },
+          "10": {
+            "dbcode": "10",
+            "name": "Christian Literature Society",
+            "shortname": "Christian Literature Society"
+          },
+          "11": {
+            "dbcode": "11",
+            "name": "Matica slovenska",
+            "shortname": "Matica slovenska"
+          },
+          "12": {
+            "dbcode": "12",
+            "name": "Weatherhill",
+            "shortname": "Weatherhill"
+          },
+          "13": {
+            "dbcode": "13",
+            "name": "Clarendon Press",
+            "shortname": "Clarendon Press"
+          },
+          "14": {
+            "dbcode": "14",
+            "name": "Rōngphim Sōphon Phiphatthanākō̜n",
+            "shortname": "Rōngphim Sōphon Phiphatthanākō̜n"
+          },
+          "15": {
+            "dbcode": "15",
+            "name": "Brill",
+            "shortname": "Brill"
+          },
+          "16": {
+            "dbcode": "16",
+            "name": "Doubleday",
+            "shortname": "Doubleday"
+          },
+          "17": {
+            "dbcode": "17",
+            "name": "Rōngphim Thai",
+            "shortname": "Rōngphim Thai"
+          },
+          "18": {
+            "dbcode": "18",
+            "name": "Éditions du Cerf",
+            "shortname": "Éditions du Cerf"
+          },
+          "19": {
+            "dbcode": "19",
+            "name": "Harvard University Press",
+            "shortname": "Harvard University Press"
+          },
+          "20": {
+            "dbcode": "20",
+            "name": "Kodansha International",
+            "shortname": "Kodansha International"
+          },
+          "21": {
+            "dbcode": "21",
+            "name": "Aschehoug",
+            "shortname": "Aschehoug"
+          },
+          "22": {
+            "dbcode": "22",
+            "name": "Basic Books",
+            "shortname": "Basic Books"
+          },
+          "23": {
+            "dbcode": "23",
+            "name": "Cappelen",
+            "shortname": "Cappelen"
+          },
+          "24": {
+            "dbcode": "24",
+            "name": "in aedibus B.G. Teubneri",
+            "shortname": "in aedibus B.G. Teubneri"
+          },
+          "25": {
+            "dbcode": "25",
+            "name": "Biblioteca popular de \"L'Avenç\"",
+            "shortname": "Biblioteca popular de \"L'Avenç\""
+          },
+          "26": {
+            "dbcode": "26",
+            "name": "Československý spisovatel",
+            "shortname": "Československý spisovatel"
+          },
+          "27": {
+            "dbcode": "27",
+            "name": "Dewan Bahasa dan Pustaka, Kementerian Pelajaran Malaysia",
+            "shortname": "Dewan Bahasa dan Pustaka, Kementerian Pelajaran Malaysia"
+          },
+          "28": {
+            "dbcode": "28",
+            "name": "ḥ. mo. l.",
+            "shortname": "ḥ. mo. l."
+          },
+          "29": {
+            "dbcode": "29",
+            "name": "Kraus Reprint",
+            "shortname": "Kraus Reprint"
+          },
+          "30": {
+            "dbcode": "30",
+            "name": "Praeger",
+            "shortname": "Praeger"
+          },
+          "31": {
+            "dbcode": "31",
+            "name": "SAV, t. Svornost̕",
+            "shortname": "SAV, t. Svornost̕"
+          },
+          "32": {
+            "dbcode": "32",
+            "name": "Bahai Publishing Society",
+            "shortname": "Bahai Publishing Society"
+          },
+          "33": {
+            "dbcode": "33",
+            "name": "Cornell University Press",
+            "shortname": "Cornell University Press"
+          },
+          "34": {
+            "dbcode": "34",
+            "name": "Dewan Bahasa dan Pustaka, Kementerian Pelajaran, Malaysia",
+            "shortname": "Dewan Bahasa dan Pustaka, Kementerian Pelajaran, Malaysia"
+          },
+          "35": {
+            "dbcode": "35",
+            "name": "Forṿerṭs",
+            "shortname": "Forṿerṭs"
+          },
+          "36": {
+            "dbcode": "36",
+            "name": "Macmillan",
+            "shortname": "Macmillan"
+          },
+          "37": {
+            "dbcode": "37",
+            "name": "Mouton",
+            "shortname": "Mouton"
+          },
+          "38": {
+            "dbcode": "38",
+            "name": "New American Library",
+            "shortname": "New American Library"
+          },
+          "39": {
+            "dbcode": "39",
+            "name": "Prentice-Hall",
+            "shortname": "Prentice-Hall"
+          },
+          "40": {
+            "dbcode": "40",
+            "name": "Sang-i Mīl Pablīkeshanz",
+            "shortname": "Sang-i Mīl Pablīkeshanz"
+          },
+          "41": {
+            "dbcode": "41",
+            "name": "Universitetsforlaget",
+            "shortname": "Universitetsforlaget"
+          },
+          "42": {
+            "dbcode": "42",
+            "name": "學海堂",
+            "shortname": "學海堂"
+          },
+          "43": {
+            "dbcode": "43",
+            "name": "Böhlau",
+            "shortname": "Böhlau"
+          },
+          "44": {
+            "dbcode": "44",
+            "name": "E. J. Brill",
+            "shortname": "E. J. Brill"
+          },
+          "45": {
+            "dbcode": "45",
+            "name": "Editura Academiei Republicii Socialiste România",
+            "shortname": "Editura Academiei Republicii Socialiste România"
+          },
+          "46": {
+            "dbcode": "46",
+            "name": "Greenwood Press",
+            "shortname": "Greenwood Press"
+          },
+          "47": {
+            "dbcode": "47",
+            "name": "Hoover Institution Press",
+            "shortname": "Hoover Institution Press"
+          },
+          "48": {
+            "dbcode": "48",
+            "name": "Indiana University Press",
+            "shortname": "Indiana University Press"
+          },
+          "49": {
+            "dbcode": "49",
+            "name": "Institute for the Translation of Hebrew Literature",
+            "shortname": "Institute for the Translation of Hebrew Literature"
+          },
+          "50": {
+            "dbcode": "50",
+            "name": "Livraría Freitas Bostos",
+            "shortname": "Livraría Freitas Bostos"
+          },
+          "51": {
+            "dbcode": "51",
+            "name": "Millî Eğitim Basımevi",
+            "shortname": "Millî Eğitim Basımevi"
+          },
+          "52": {
+            "dbcode": "52",
+            "name": "Nhà xuất bản Thống kê",
+            "shortname": "Nhà xuất bản Thống kê"
+          },
+          "53": {
+            "dbcode": "53",
+            "name": "Prosveta",
+            "shortname": "Prosveta"
+          },
+          "54": {
+            "dbcode": "54",
+            "name": "Schocken Books",
+            "shortname": "Schocken Books"
+          },
+          "55": {
+            "dbcode": "55",
+            "name": "Scientia Verlag",
+            "shortname": "Scientia Verlag"
+          },
+          "56": {
+            "dbcode": "56",
+            "name": "Söderström",
+            "shortname": "Söderström"
+          },
+          "57": {
+            "dbcode": "57",
+            "name": "Statistisk sentralbyrå",
+            "shortname": "Statistisk sentralbyrå"
+          },
+          "58": {
+            "dbcode": "58",
+            "name": "W. Söderström",
+            "shortname": "W. Söderström"
+          },
+          "59": {
+            "dbcode": "59",
+            "name": "A.W. Sijthoff",
+            "shortname": "A.W. Sijthoff"
+          },
+          "60": {
+            "dbcode": "60",
+            "name": "Atheneum",
+            "shortname": "Atheneum"
+          },
+          "61": {
+            "dbcode": "61",
+            "name": "Bŭlgarski pisatel",
+            "shortname": "Bŭlgarski pisatel"
+          },
+          "62": {
+            "dbcode": "62",
+            "name": "Bŭlgarski pisatel",
+            "shortname": "Bŭlgarski pisatel"
+          },
+          "63": {
+            "dbcode": "63",
+            "name": "Center for Near Eastern and North African Studies",
+            "shortname": "Center for Near Eastern and North African Studies"
+          },
+          "64": {
+            "dbcode": "64",
+            "name": "Dewan Bahasa dan Pustaka, Kementerian Pendidikan Malaysia",
+            "shortname": "Dewan Bahasa dan Pustaka, Kementerian Pendidikan Malaysia"
+          },
+          "65": {
+            "dbcode": "65",
+            "name": "distributed in the U.S. through Harper & Row",
+            "shortname": "distributed in the U.S. through Harper & Row"
+          },
+          "66": {
+            "dbcode": "66",
+            "name": "distribution for the U.S.A. and Canada, Elsevier/North-Holland",
+            "shortname": "distribution for the U.S.A. and Canada, Elsevier/North-Holland"
+          },
+          "67": {
+            "dbcode": "67",
+            "name": "Editura Militară",
+            "shortname": "Editura Militară"
+          },
+          "68": {
+            "dbcode": "68",
+            "name": "Elsevier Scientific Pub. Co.",
+            "shortname": "Elsevier Scientific Pub. Co."
+          },
+          "69": {
+            "dbcode": "69",
+            "name": "G. Olms",
+            "shortname": "G. Olms"
+          },
+          "70": {
+            "dbcode": "70",
+            "name": "Gyldendalske Boghandel",
+            "shortname": "Gyldendalske Boghandel"
+          },
+          "71": {
+            "dbcode": "71",
+            "name": "Hibru poblishing ḳompani",
+            "shortname": "Hibru poblishing ḳompani"
+          },
+          "72": {
+            "dbcode": "72",
+            "name": "Hokuseido Press",
+            "shortname": "Hokuseido Press"
+          },
+          "73": {
+            "dbcode": "73",
+            "name": "Houghton Mifflin",
+            "shortname": "Houghton Mifflin"
+          },
+          "74": {
+            "dbcode": "74",
+            "name": "Ilchisa",
+            "shortname": "Ilchisa"
+          },
+          "75": {
+            "dbcode": "75",
+            "name": "Ilchogak",
+            "shortname": "Ilchogak"
+          },
+          "76": {
+            "dbcode": "76",
+            "name": "Instituto de Investigação Científica de Angola",
+            "shortname": "Instituto de Investigação Científica de Angola"
+          },
+          "77": {
+            "dbcode": "77",
+            "name": "Massada",
+            "shortname": "Massada"
+          },
+          "78": {
+            "dbcode": "78",
+            "name": "Matica hrvatska",
+            "shortname": "Matica hrvatska"
+          },
+          "79": {
+            "dbcode": "79",
+            "name": "Matica srpska",
+            "shortname": "Matica srpska"
+          },
+          "80": {
+            "dbcode": "80",
+            "name": "Mifʻal ʻAl masekhet",
+            "shortname": "Mifʻal ʻAl masekhet"
+          },
+          "81": {
+            "dbcode": "81",
+            "name": "Nhà xuất bản Lao động",
+            "shortname": "Nhà xuất bản Lao động"
+          },
+          "82": {
+            "dbcode": "82",
+            "name": "Odeon",
+            "shortname": "Odeon"
+          },
+          "83": {
+            "dbcode": "83",
+            "name": "Oxford University Press",
+            "shortname": "Oxford University Press"
+          },
+          "84": {
+            "dbcode": "84",
+            "name": "Rōngphim Bamrungnukūnkit",
+            "shortname": "Rōngphim Bamrungnukūnkit"
+          },
+          "85": {
+            "dbcode": "85",
+            "name": "Scolar Press",
+            "shortname": "Scolar Press"
+          },
+          "86": {
+            "dbcode": "86",
+            "name": "Simon and Schuster",
+            "shortname": "Simon and Schuster"
+          },
+          "87": {
+            "dbcode": "87",
+            "name": "South India Saiva Siddhanta Works Pub. Society, Tinnevelly",
+            "shortname": "South India Saiva Siddhanta Works Pub. Society, Tinnevelly"
+          },
+          "88": {
+            "dbcode": "88",
+            "name": "University of California Press",
+            "shortname": "University of California Press"
+          },
+          "89": {
+            "dbcode": "89",
+            "name": "University of Tokyo Press",
+            "shortname": "University of Tokyo Press"
+          },
+          "90": {
+            "dbcode": "90",
+            "name": "Vallentine, Mitchell",
+            "shortname": "Vallentine, Mitchell"
+          },
+          "91": {
+            "dbcode": "91",
+            "name": "Wissenschaftliche Buchgesellschaft",
+            "shortname": "Wissenschaftliche Buchgesellschaft"
+          },
+          "92": {
+            "dbcode": "92",
+            "name": "一志社",
+            "shortname": "一志社"
+          },
+          "93": {
+            "dbcode": "93",
+            "name": "一潮閣",
+            "shortname": "一潮閣"
+          },
+          "94": {
+            "dbcode": "94",
+            "name": "American Academy for Jewish Research",
+            "shortname": "American Academy for Jewish Research"
+          },
+          "95": {
+            "dbcode": "95",
+            "name": "American Book",
+            "shortname": "American Book"
+          },
+          "96": {
+            "dbcode": "96",
+            "name": "American Elsevier Pub. Co.",
+            "shortname": "American Elsevier Pub. Co."
+          },
+          "97": {
+            "dbcode": "97",
+            "name": "Art Editora",
+            "shortname": "Art Editora"
+          },
+          "98": {
+            "dbcode": "98",
+            "name": "Cem Yayınevi",
+            "shortname": "Cem Yayınevi"
+          },
+          "99": {
+            "dbcode": "99",
+            "name": "Centraltr",
+            "shortname": "Centraltr"
+          },
+          "100": {
+            "dbcode": "100",
+            "name": "Collins and Harvill Press",
+            "shortname": "Collins and Harvill Press"
+          }
+        },
+        "sort_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "52",
+          "53",
+          "54",
+          "55",
+          "56",
+          "57",
+          "58",
+          "59",
+          "60",
+          "61",
+          "62",
+          "63",
+          "64",
+          "65",
+          "66",
+          "67",
+          "68",
+          "69",
+          "70",
+          "71",
+          "72",
+          "73",
+          "74",
+          "75",
+          "76",
+          "77",
+          "78",
+          "79",
+          "80",
+          "81",
+          "82",
+          "83",
+          "84",
+          "85",
+          "86",
+          "87",
+          "88",
+          "89",
+          "90",
+          "91",
+          "92",
+          "93",
+          "94",
+          "95",
+          "96",
+          "97",
+          "98",
+          "99",
+          "100"
+        ]
+      }
+    },
+    {
+      "dbfield": "is_gov_doc__id",
+      "type": "categorical",
+      "name": "Is Gov Doc",
+      "categorical": {
+        "descriptions": {
+          "1": {
+            "dbcode": "1",
+            "name": "No",
+            "shortname": "No"
+          }
+        },
+        "sort_order": [
+          "1"
+        ]
+      }
+    },
+    {
+      "dbfield": "date_year",
+      "initial": [
+        1760,
+        2010
+      ],
+      "range": [
+        1600,
+        2017
+      ],
+      "type": "time",
+      "name": "Date Year",
+      "unit": "Year"
+    },
+    {
+      "dbfield": "record_date_year",
+      "initial": [
+        1760,
+        2010
+      ],
+      "range": [
+        1600,
+        2017
+      ],
+      "type": "time",
+      "name": "Record Date Year",
+      "unit": "Year"
+    }
+  ],
+  "default_search": [
+    {
+      "smoothingSpan": 10,
+      "words_collation": "Case_Insensitive",
+      "time_measure": "date_year",
+      "search_limits": [
+        {
+          "word": [
+            "computer"
+          ],
+          "publication_country__id": [
+            "1"
+          ],
+          "date_year": {
+            "$gte": 1700,
+            "$lte": 2016
+          }
+        },
+        {
+          "word": [
+            "computer"
+          ],
+          "publication_country__id": [
+            "2"
+          ],
+          "date_year": {
+            "$gte": 1700,
+            "$lte": 2016
+          }
+        }
+      ],
+      "counttype": "Occurrences_per_Million_Words"
+    },
+    {
+      "smoothingSpan": 10,
+      "words_collation": "Case_Insensitive",
+      "time_measure": "date_year",
+      "search_limits": [
+        {
+          "word": [
+            "polka"
+          ],
+          "date_year": {
+            "$gte": 1760,
+            "$lte": 2010
+          },
+          "lc_classes__id": [
+            "2"
+          ]
+        },
+        {
+          "word": [
+            "polka"
+          ],
+          "date_year": {
+            "$gte": 1760,
+            "$lte": 2010
+          },
+          "lc_classes__id": [
+            "11"
+          ]
+        }
+      ],
+      "counttype": "Occurrences_per_Million_Words"
+    }
+  ]
+}
